@@ -7,7 +7,7 @@ import logoPNG from "/assets/logo.png";
 import logoSVG from "/assets/logo.svg";
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search";
+  activeNav?: "posts" | "tags" | "about" | "search" | "art" | "resume";
 }
 
 const { activeNav } = Astro.props;
@@ -50,14 +50,25 @@ const { activeNav } = Astro.props;
               Posts
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="/tags" class={activeNav === "tags" ? "active" : ""}>
               Tags
             </a>
-          </li>
+          </li> -->
           <li>
             <a href="/about" class={activeNav === "about" ? "active" : ""}>
               About
+            </a>
+          </li>
+          <li>
+            <a href="/art" class={activeNav === "art" ? "active" : ""}> Art</a>
+          </li>
+          <li>
+            <a
+              href="assets/palmer-cv.pdf"
+              class={activeNav === "resume" ? "active" : ""}
+            >
+              Resume
             </a>
           </li>
           <li>
