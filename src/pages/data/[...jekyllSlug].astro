@@ -1,0 +1,55 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+// import Posts from "@layouts/Posts.astro";
+// import PostDetails from "@layouts/PostDetails.astro";
+// import getSortedPosts from "@utils/getSortedPosts";
+// import getPageNumbers from "@utils/getPageNumbers";
+// import slugify from "@utils/slugify";
+// import { SITE } from "@config";
+
+export interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+export async function getStaticPaths() {
+  const redirectSlugs = [
+    "airflow-framework",
+    "art-page",
+    "big-ideas",
+    "data-council-austin",
+    "displaying-reading-list-in-real-time",
+    "hot-takes",
+    "how-git-works",
+    "on-trajectories",
+    "reflections-2021",
+    "scd-type-2",
+    "stress-balance-and-goals",
+    "the-very-best-cohorted-retention-view",
+  ];
+
+  const redirectPosts = await getCollection("blog", ({ slug }) => {
+    return redirectSlugs.includes(slug);
+  });
+
+  return redirectPosts.map(post => {
+    const postYear = post.data.pubDatetime.getUTCFullYear().toString();
+    const postMonth = (post.data.pubDatetime.getUTCMonth() + 1)
+      .toString()
+      .padStart(2, "0");
+    const postDate = post.data.pubDatetime
+      .getUTCDate()
+      .toString()
+      .padStart(2, "0");
+    const slug = post.slug;
+    const jekyllSlug = `${postYear}/${postMonth}/${postDate}/${post.slug}`;
+    return {
+      params: { jekyllSlug },
+      props: { slug },
+    };
+  });
+}
+
+const { slug } = Astro.props;
+---
+
+<meta http-equiv="refresh" content={`0;url=/posts/${slug}`} />

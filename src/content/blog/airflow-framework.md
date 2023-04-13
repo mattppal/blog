@@ -49,21 +49,21 @@ Take the following example of a [*warehouse friendly schema*](https://www.youtub
 Tom goes in to much more detail, but using this framework in our example:
 
 <figure>
-  <img src="public/assets/posts/airflow-etl/IMG_01.jpg" alt="Example implementation of Tom's warehouse."/>
+  <img src="airflow-etl/IMG_01.jpg" alt="Example implementation of Tom's warehouse."/>
   <figcaption><i><center>Example behavior of the first three steps of a DAG built from Tom's framework.</center></i></figcaption>
 </figure>
 
 Using hierarchical folders in our repo allows us to group steps together neatly in our DAG. Expanding the step provides more detail and demonstrates example usage of "priority groups."
 
 <figure>
-  <img src="public/assets/posts/airflow-etl/IMG_02.jpg" alt="TaskGroup expansion within the warehouse."/>
+  <img src="airflow-etl/IMG_02.jpg" alt="TaskGroup expansion within the warehouse."/>
   <figcaption><i><center>Expanding an overarching step shows sub-steps and priority groups therein.</center></i></figcaption>
 </figure>
 
 Here, priority groups are created by prepending a number to a script. Our code is written such that this will trigger another TaskGroup to be created and the labelled files to be dropped inside. With this method, multiple files can be named '1_' and executed in parallel. The implementation might create more nesting than is necessary, but it works for our purposes. Expanding these groups reveals the labeled scripts.
 
 <figure>
-  <img src="public/assets/posts/airflow-etl/IMG_03.jpg" alt="Example priority group behavior"/>
+  <img src="airflow-etl/IMG_03.jpg" alt="Example priority group behavior"/>
   <figcaption><i><center>Using naming conventions, we can prioritize script execution using only Git.</center></i></figcaption>
 </figure>
 

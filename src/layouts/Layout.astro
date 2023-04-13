@@ -16,6 +16,7 @@ const {
   author = SITE.author,
   description = SITE.desc,
   ogImage = SITE.ogImage,
+  googleAnalyticsId = SITE.googleAnalyticsId,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -61,6 +62,21 @@ const socialImageURL = new URL(
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Google Analytics -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-EC2ZQ7Y8TD"
+    ></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", { googleAnalyticsId });
+    </script>
 
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,

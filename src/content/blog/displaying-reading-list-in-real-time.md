@@ -7,11 +7,15 @@ ogImage: ''
 postSlug: displaying-reading-list-in-real-time
 pubDatetime: 2021-07-28 00:00:00
 tags: []
-title: Using Jekyll Hooks to dynamically generate site content from external sources.
+title: 📕 Using Jekyll Hooks to dynamically generate site content from external sources.
 ---
 
+### Note
+
+This content is now outdated, as I've migrated my site over to [Astro](https://astro.build). I hope you can still find it helpful. Enjoy 🙂
+
 <figure>
-  <center><img src="public/assets/posts/goodreads/header.png" alt="Currently Reading Header"/></center>
+  <center><img src="goodreads/header.png" alt="Currently Reading Header"/></center>
 </figure>
 
 ### Preface

@@ -10,13 +10,13 @@ tags: []
 title: ⚖️ Stress, Balance, & Goals
 ---
 
-I've written about the importance of trajectory— it's a foundational concept that _limits_ the upper bound of achievement. If you're headed in the wrong direction, it's unlikely that you'll ever arrive at your destination. This is a relatively obvious conclusion and makes the case for a good trajectory self-evident. 
+I've written about the importance of trajectory— it's a foundational concept that _limits_ the upper bound of achievement. If you're headed in the wrong direction, it's unlikely that you'll ever arrive at your destination. This is a relatively obvious conclusion and makes the case for a good trajectory self-evident.
 
 More opaque are the concepts of self-compassion, balance, and stress management. Are they really necessary? Why should I be kind to myself? If I want to achieve audacious things, I need to be the best: winning at all costs, right?
 
 ## Self-compassion
 
-For the longest time, my logic went "I'm kind to other people and I hold myself to a high standard. Therefore, it's ok to be hard on myself." Implicitly, I was making a concession to beat myself down when I did not succeed. This is unfortunate, because I fail quite often— to achieve personal goals, to reach milestones, in my everyday efforts, etc. 
+For the longest time, my logic went "I'm kind to other people and I hold myself to a high standard. Therefore, it's ok to be hard on myself." Implicitly, I was making a concession to beat myself down when I did not succeed. This is unfortunate, because I fail quite often— to achieve personal goals, to reach milestones, in my everyday efforts, etc.
 
 My own thought patterns were causing _additional_ stress when I failed. Not from bosses, teammates, partners, but from my own head. I was opening myself up to the [second arrow](https://grandrapidstherapygroup.com/second-arrow-of-suffering/#:~:text=The%20parable%20of%20the%20second,arrow%20is%20even%20more%20painful.). The parable of the second arrow is a Buddhist observation on suffering. When we suffer, two arrows are sent our way. The first is the painful event itself, the second is a manifestation of our thoughts. Frequently, the first arrow _is not_ the most painful— it's how we handle it (the second) that can be deadly.
 

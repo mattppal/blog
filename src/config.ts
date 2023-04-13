@@ -9,8 +9,9 @@ export const SITE: Site = {
     company: "Underline Infrastructure",
     location: "Asheville, NC",
     ogImage: "astropaper-og.jpg",
+    googleAnalyticsId: "G-EC2ZQ7Y8TD",
     lightAndDarkMode: true,
-    postPerPage: 5,
+    postPerPage: 8,
 };
 
 export const LOGO_IMAGE = {
@@ -24,31 +25,31 @@ export const SOCIALS: SocialObjects = [
     {
         name: "Github",
         href: "https://github.com/mattppal",
-        linkTitle: ` ${SITE.title} on Github`,
+        linkTitle: ` ${SITE.author} on Github`,
         active: true,
     },
     {
         name: "Instagram",
         href: "https://instagram.com/mattppal",
-        linkTitle: `${SITE.title} on Instagram`,
+        linkTitle: `${SITE.author} on Instagram`,
         active: true,
     },
     {
         name: "LinkedIn",
         href: "https://linkedin.com/in/matt-palmer",
-        linkTitle: `${SITE.title} on LinkedIn`,
+        linkTitle: `${SITE.author} on LinkedIn`,
         active: true,
     },
     {
         name: "Mail",
         href: "mailto:hello@mattpalmer.io",
-        linkTitle: `Send an email to ${SITE.title}`,
+        linkTitle: `Send an email to ${SITE.author}`,
         active: true,
     },
     {
         name: "Twitter",
         href: "https://twitter.com/mattppal",
-        linkTitle: `${SITE.title} on Twitter`,
+        linkTitle: `${SITE.author} on Twitter`,
         active: true,
     },
 ];

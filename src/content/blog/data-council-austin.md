@@ -12,7 +12,7 @@ title: "\U0001F913 Data Council Austin - Notes & Takeaways"
 
 <center>
 <figure>
-  <img src="public/assets/posts/data-council-austin/dca-logo-1.jpg" alt="Confirmed, not much bullsh*t."/>
+  <img src="data-council-austin/dca-logo-1.jpg" alt="Confirmed, not much bullsh*t."/>
 </figure>
 </center>
 

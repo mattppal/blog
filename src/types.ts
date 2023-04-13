@@ -2,6 +2,7 @@ export type Site = {
     website: string;
     author: string;
     email: string;
+    googleAnalyticsId: string;
     company: string;
     location: string;
     desc: string;
@@ -43,3 +44,9 @@ export type SocialMedia =
     | "Steam"
     | "Telegram"
     | "Mastodon";
+
+declare global {
+    interface Window {
+        dataLayer: any;
+    }
+}

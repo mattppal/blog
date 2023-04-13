@@ -7,7 +7,7 @@ ogImage: ''
 postSlug: the-very-best-cohorted-retention-view
 pubDatetime: 2021-11-16 00:00:00
 tags: []
-title: The very best cohorted retention view.
+title: 📈 The very best cohorted retention view.
 ---
 
 Note: the cohort grid here was adapted from a very helpful [towards data science article](https://towardsdatascience.com/a-step-by-step-introduction-to-cohort-analysis-in-python-a2cbbd8460ea).
@@ -20,7 +20,7 @@ A _cohorted retention chart_ plots cohorts by row and retention metrics by colum
 
 <center>
 <figure>
-  <img src="public/assets/posts/cohorted-retention/cohort-grid.png" alt="Example user retention cohort grid."/>
+  <img src="cohorted-retention/cohort-grid.png" alt="Example user retention cohort grid."/>
   <figcaption><i><center>Cohort months and totals are displayed for each row, with retention highlighted and colored by column.</center></i></figcaption>
 </figure>
 </center>
@@ -84,7 +84,7 @@ A great way to visualize cohort grids is in a "Spaghetti" chart— plotting the 
 
 <center>
 <figure>
-  <img src="public/assets/posts/cohorted-retention/spaghetti.jpg" alt="Example spaghetti chart."/>
+  <img src="cohorted-retention/spaghetti.jpg" alt="Example spaghetti chart."/>
   <figcaption><i><center>Example spaghetti chart for cohorted retention view.</center></i></figcaption>
 </figure>
 </center>

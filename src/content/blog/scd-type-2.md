@@ -10,8 +10,6 @@ tags: []
 title: Building a SCD Type-2 table with Databricks Delta Lake and Spark Streaming.
 ---
 
-* TOC
-{:toc}
 ### Background
 
 A common problem with visitor tracking is the inability to follow users across multiple devices. Even on the same device, should a visitor choose to clear their cookies, we will be unable to link them to their previous session. Unfortunately, that means processes that treat visitor cookies as unique visitors are imperfect.
@@ -21,7 +19,7 @@ For example, A/B test bucketing will be affected, even if acutely, by those visi
 While this is an unavoidable issue, there is one place where we can link visitor cookies— when they have an account on the site and log-in via multiple sessions. In these instances, it should be possible to generate a "change log" of visitor cookies for a given user. In practice, the result would be an [SCD Type-2 Table](https://en.wikipedia.org/wiki/Slowly_changing_dimension#Type_2:_add_new_row), with visitor cookie as the primary ID and a changing column of userids. That way, we can simply join in on visitor cookie id to get a relevant user for a given timeframe.
 
 <figure>
-  <img src="public/assets/posts/visitor-lookup/IMG_01.jpg" alt="Example behavior of SCD Type-2"/>
+  <img src="visitor-lookup/IMG_01.jpg" alt="Example behavior of SCD Type-2"/>
   <figcaption><i><center>An example SCD Type-2 entry for a visitor switching userids</center></i></figcaption>
 </figure>
 
@@ -542,7 +540,7 @@ Switching to partitioning by the first two characters of visitor cookie drastica
 I'm sure that wasn't entirely clear, so here's a brief diagram explaining the process:
 
 <figure>
-  <img src="public/assets/posts/visitor-lookup/visitor_lookup.png" alt="Execution schematic"/>
+  <img src="visitor-lookup/visitor_lookup.png" alt="Execution schematic"/>
   <figcaption><i><center>An example SCD Type-2 entry for a visitor switching userids</center></i></figcaption>
 </figure>
 
