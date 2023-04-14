@@ -2,6 +2,10 @@
 /*
 /public/_redirects
 public/og.jpg
+*.png
+*.jpg
+*.jpeg
+*.svg
 
 # Except these files & folders
 !/src
