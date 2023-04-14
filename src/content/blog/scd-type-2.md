@@ -1,13 +1,13 @@
 ---
 author: Matt Palmer
-description: ''
+description: ""
 draft: false
 featured: false
-ogImage: ''
+ogImage: ""
 postSlug: scd-type-2
 pubDatetime: 2021-04-27 00:00:00
 tags: []
-title: Building a SCD Type-2 table with Databricks Delta Lake and Spark Streaming.
+title: 😵‍💫 Building a SCD Type-2 table with Databricks Delta Lake and Spark Streaming.
 ---
 
 ### Background

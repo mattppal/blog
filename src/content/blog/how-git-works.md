@@ -1,16 +1,16 @@
 ---
 author: Matt Palmer
-description: ''
+description: ""
 draft: false
 featured: false
-ogImage: ''
+ogImage: ""
 postSlug: how-git-works
 pubDatetime: 2021-03-01 00:00:00
 tags: []
-title: How Git works.
+title: 😸 How Git works.
 ---
 
-### Notes 
+### Notes
 
 1. This is a pretty rough/unpolished guide I wrote while following a [Udemy course](https://www.udemy.com/course/git-and-github-complete-guide/). I found the first half of the course to be very helpful and interesting, while the latter half was a bit longwinded and unnecessary. For anyone that wants a fundamental understanding of Git, I think it's of great value.
 2. Here's a really cool interactive Git tool: [https://learngitbranching.js.org/](https://learngitbranching.js.org/)

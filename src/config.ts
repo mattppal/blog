@@ -10,7 +10,7 @@ export const SITE: Site = {
   team: "Data",
   company: "Underline Infrastructure",
   location: "Asheville, NC",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "og.jpg",
   googleAnalyticsId: "G-EC2ZQ7Y8TD",
   lightAndDarkMode: true,
   postPerPage: 8,
