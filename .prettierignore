@@ -1,5 +1,6 @@
 # Ignore everything
 /*
+/public/_redirects
 
 # Except these files & folders
 !/src
