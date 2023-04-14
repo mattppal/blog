@@ -3,13 +3,15 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-import { SITE } from "./src/config";
+import { SITE } from "config";
 
 I'm a member of the {SITE.team} Team at {SITE.company}. I graduated from Swarthmore College in 2018, where I majored in physics & economics— I also played baseball. I currently reside in {SITE.location}, but I've lived across the country, from the Smokies to the Uintas.
 
 <div>
-  <img src="/assets/golden_wall.png" class="sm:w-1/2 mx-auto" alt="That's me.">
-  <figcaption><center>That’s me.</center></figcaption>
+  <img src="/assets/golden_wall.png" class="mx-auto sm:w-1/2" alt="That's me.">
+    <figcaption>
+      <center>That’s me.</center>
+    </figcaption>
   </img>
 </div>
 
