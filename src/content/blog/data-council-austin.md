@@ -1,9 +1,9 @@
 ---
 author: Matt Palmer
-description: ''
+description: ""
 draft: false
 featured: true
-ogImage: ''
+ogImage: ""
 postSlug: data-council-austin
 pubDatetime: 2023-04-01 00:00:00
 tags: []
@@ -12,7 +12,7 @@ title: "\U0001F913 Data Council Austin - Notes & Takeaways"
 
 <center>
 <figure>
-  <img src="data-council-austin/dca-logo-1.jpg" alt="Confirmed, not much bullsh*t."/>
+  <img src="/posts/data-council-austin/dca-logo-1.jpg" alt="Confirmed, not much bullsh*t."/>
 </figure>
 </center>
 
@@ -26,8 +26,8 @@ I'd be remiss if I didn't give thanks to the _awesome_ practitioners at [Bytewax
 
 I was lucky to come across a few _excellent_ resources for building data teams. It was refreshing to realize that others are dealing with the same challenges. Engineers have been navigating barriers in analytics/politics/business for _quite a while_. The following are some I was reminded of at DCA:
 
-* The [GitLab](https://about.gitlab.com/handbook/business-technology/data-team/) and [Meltano](https://handbook.meltano.com/data-team/) handbooks, developed by [Taylor Murphy](https://www.linkedin.com/in/tayloramurphy), are excellent resources for managing data teams. Taylor spoke to the needs of transparency in both leadership _and_ code.
-* [Amplify Partners](https://datateams.amplifypartners.com/) has a pretty exhaustive list of resources for starting a data team. I'd highly recommend giving these a look.
+- The [GitLab](https://about.gitlab.com/handbook/business-technology/data-team/) and [Meltano](https://handbook.meltano.com/data-team/) handbooks, developed by [Taylor Murphy](https://www.linkedin.com/in/tayloramurphy), are excellent resources for managing data teams. Taylor spoke to the needs of transparency in both leadership _and_ code.
+- [Amplify Partners](https://datateams.amplifypartners.com/) has a pretty exhaustive list of resources for starting a data team. I'd highly recommend giving these a look.
 
 ## Industry Trends
 
@@ -49,25 +49,25 @@ As with any conference, I think the greatest value comes from meeting passionate
 
 💨 **Adoption of _faster_ frameworks**
 
-* **[Rust](https://www.rust-lang.org/)** appears to be gaining traction in the data community. These still appear _very_ experimental. I did not speak to anyone using Rust in production. Nonetheless, I think playing around with something like [Polars](https://www.pola.rs/) in Rust would be worthwhile.
-* **[Arrow](https://arrow.apache.org/)** defines a language-independent columnar memory format for flat and hierarchical data. Tools like pandas and others will be adopting Arrow in the near future.
-* **[Duckdb](https://duckdb.org/)** is SQL interface for common file storage types— think Redshift Spectrum, but more flexible. The concept is promising... could it be a OLAP killer? 🦆
+- **[Rust](https://www.rust-lang.org/)** appears to be gaining traction in the data community. These still appear _very_ experimental. I did not speak to anyone using Rust in production. Nonetheless, I think playing around with something like [Polars](https://www.pola.rs/) in Rust would be worthwhile.
+- **[Arrow](https://arrow.apache.org/)** defines a language-independent columnar memory format for flat and hierarchical data. Tools like pandas and others will be adopting Arrow in the near future.
+- **[Duckdb](https://duckdb.org/)** is SQL interface for common file storage types— think Redshift Spectrum, but more flexible. The concept is promising... could it be a OLAP killer? 🦆
 
 ### Modern Data Stack
 
 **dbt** is still a staple in data transformation from the warehouse layer down. Though there _is_ potential for disruption in the space, the ubiquity of the tool and the fact that it “just works” is good enough for now. Unfortunately, **dbt-core** development is still a huge pain. I spoke with several practitioners on how to better approach this problem. The following will be my approach to improving our current system:
 
-* **Codify permissions** we need to manage permissions as code. There are tools available to do so in Snowflake, but from my research a Redshift solution will require some custom Terraform.
-* **Create a development profile**: _only_ one database user should be making views/tables in production. A development database should be used to sample prod data and provide a playground for development. I've found [shockingly little](https://docs.getdbt.com/blog/configuring-grants) documentation on this.
-* **Develop a containerized approach to local development**. It’s _really_ hard to get setup in our dbt environment today. We need to turn our dbt repo into a fully-packaged environment that can be run in docker or another python framework. Even though we're on dbt-core, we'll need to make the tool as _accessible_ as possible for our analysts.
+- **Codify permissions** we need to manage permissions as code. There are tools available to do so in Snowflake, but from my research a Redshift solution will require some custom Terraform.
+- **Create a development profile**: _only_ one database user should be making views/tables in production. A development database should be used to sample prod data and provide a playground for development. I've found [shockingly little](https://docs.getdbt.com/blog/configuring-grants) documentation on this.
+- **Develop a containerized approach to local development**. It’s _really_ hard to get setup in our dbt environment today. We need to turn our dbt repo into a fully-packaged environment that can be run in docker or another python framework. Even though we're on dbt-core, we'll need to make the tool as _accessible_ as possible for our analysts.
 
 **Fivetran** has “solved” the problem of data ingestion. It’s a ubiquitous tool that’s the industry standard. This isn’t a point of contention. Their fees are reasonable considering the time/resource savings. In 2023, _no one_ should be writing custom connectors for sources that already exist. From our experience, **I would strongly recommend avoiding Airbyte**. We found the tool to be wholly insufficient and, quite frankly, not production-grade software. For those sources unsupported by Fivetran, **Meltano** can be used for custom connections— providing a framework that can build connections on the [Singer Spec](https://hub.meltano.com/singer/spec) to create order from perhaps disorderly APIs. Best of all, it can be run in Airflow, Dagster, etc.
 
 Speaking of which, **Dagster** has taken the slow-moving nature of Airflow development and innovated to provide a _similar_ tool that was re-worked from the ground up to be more suited towards modern data teams. It’s deployable via helm _and_ has native support for dbt. The nature of writing DAGs/ELT jobs is more developer friendly. Compared to Airflow, I would estimate a:
 
-* Decrease in time to develop DAGs (1.25-1.5x).
-* Reduction in maintenance of DAGs (1.25-1.5x).
-* Increase in user-friendliness of the platform (ability for others to develop) (2-3x).
+- Decrease in time to develop DAGs (1.25-1.5x).
+- Reduction in maintenance of DAGs (1.25-1.5x).
+- Increase in user-friendliness of the platform (ability for others to develop) (2-3x).
 
 From a time savings standpoint, I think Dagster is a no-brainer. Given the _extremely_ low friction to test it out, I think everyone should at least give it a try. Plus, it seems that migration is not too bad— a colleague migrated 70+ DAGs in 4 hours. I've been pretty frustrated by development blockers in Airflow TaskFlow as of late. The Dagster team said I'll _love_ Dagster if I like TaskFlow. I'm excited to give it a shot.
 

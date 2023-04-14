@@ -1,9 +1,9 @@
 ---
 author: Matt Palmer
-description: ''
+description: ""
 draft: false
 featured: false
-ogImage: ''
+ogImage: ""
 postSlug: reflections-2021
 pubDatetime: 2021-12-31 00:00:00
 tags: []
@@ -73,18 +73,18 @@ While I'm frustrated at my failure to accomplish these goals (and set reasonable
 
 ### Lessons learned
 
-Going forward, I will be making my own decisions. I will prioritize those things that bring me joy and emphasize relationships. _Rome was not built in a day_.  Consistency and balance take priority over long hours and moving to stay busy.
+Going forward, I will be making my own decisions. I will prioritize those things that bring me joy and emphasize relationships. _Rome was not built in a day_. Consistency and balance take priority over long hours and moving to stay busy.
 
 I truly want to make a difference in this world, but I realize that takes time. It's OK if I don't have a plan to bring that goal into reality right now. I will continue working to find my niche and understand how I can best create value. I will continue to show up and give my best everyday.
 
 I will continue to be grateful for this amazing life.
 
-<br>
+<!-- <br>
 <center>
 {% include carousel.html height="75" unit="%" duration="7" number="1" %}
 </center>
 <center><i>Amazing people and places of 2021.</i></center>
-<br>
+<br> -->
 
 ## 2022 Goals
 
