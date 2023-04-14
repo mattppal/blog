@@ -5,6 +5,7 @@ export const SITE: Site = {
   author: "Matt Palmer",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
   title: "MattPalmer",
+  jobTitle: "Data Engineer",
   email: "hello@mattpalmer.io",
   team: "Data",
   company: "Underline Infrastructure",

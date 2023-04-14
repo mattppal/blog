@@ -5,6 +5,7 @@ export type Site = {
   googleAnalyticsId: string;
   company: string;
   team: string;
+  jobTitle: string;
   location: string;
   desc: string;
   title: string;
