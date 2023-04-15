@@ -1,7 +1,8 @@
 # Ignore everything
 /*
-/public/_redirects
+public/_redirects
 public/og.jpg
+public/robots.txt
 *.png
 *.jpg
 *.jpeg
