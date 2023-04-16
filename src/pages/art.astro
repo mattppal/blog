@@ -1,4 +1,4 @@
-<!-- ---
+---
 import { Image } from "@astrojs/image/components";
 import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
@@ -6,52 +6,41 @@ import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 
-const allArt = await Astro.glob("../art/*.jpeg").then(files => {
+const allArt = await Astro.glob("../../public/art/*").then(files => {
   return files.map(file => file.default);
 });
 ---
 
 <Layout title={`Art | ${SITE.title}`}>
   <Header />
-  <Main pageTitle="Art" pageDesc="Some recent projects...">
-    <div class="image-gallery">
-      {allArt.map(sketch => <img src={sketch} />)};
-    </div>
+  <Main pageTitle="Art" pageDesc="🌸 Botanical pen & ink sketches">
+    <center>
+      <div class="container">
+        {
+          allArt.map(sketch => (
+            <Image
+              href={sketch}
+              src={sketch}
+              width={400}
+              aspectRatio="1:1"
+              alt=""
+            />
+          ))
+        }
+      </div>
+    </center>
   </Main>
   <Footer />
 </Layout>
 
 <style>
-  .image-gallery {
-    overflow: auto;
-    margin-left: -1% !important;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
   }
-
-  .image-gallery a {
-    float: left;
-    display: block;
-    margin: 0 0 1% 1%;
-    width: 19%;
-    text-align: center;
-    text-decoration: none !important;
+  .container div {
+    background-color: red;
+    aspect-ratio: 1;
   }
-
-  .image-gallery a span {
-    display: block;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 3px 0;
-  }
-
-  .image-gallery a img {
-    width: 100%;
-    display: block;
-  }
-
-  .square {
-    height: 19%;
-    width: 19%;
-    background-color: #ccc;
-  }
-</style> -->
+</style>
