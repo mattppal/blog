@@ -6,8 +6,9 @@ featured: false
 ogImage: ""
 postSlug: art-page
 pubDatetime: 2022-12-12 00:00:00
-tags: []
-title: "\U0001F33A Art Page"
+tags: [updates, art]
+title: Art Page
+emoji: 🖼️
 ---
 
 For the last few months, I've been sketching in pen & ink in my free time. I've found it incredibly cathartic. While I have no formal education in art, it's been fun to experiment and improve my drawings.

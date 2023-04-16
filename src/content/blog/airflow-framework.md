@@ -1,17 +1,19 @@
 ---
 author: Matt Palmer
-description: ''
+description: ""
 draft: true
 featured: false
-ogImage: ''
+ogImage: ""
 postSlug: airflow-framework
 pubDatetime: 2021-05-22 00:00:00
-tags: []
-title: Dynamically generated Airflow TaskGroups for data teams.
+tags: [data, guides]
+title: Dynamically generated Airflow TaskGroups for data teams
+emoji: 👨🏻‍💻
 ---
 
-* TOC
-{:toc}
+- TOC
+  {:toc}
+
 ### What is Airflow?
 
 Apache Airflow is an open-source, community-driven platform for programmatic scheduling and execution of workflows. It integrates with many popular data sources and offers an accessible way to build and deploy pipelines.
@@ -20,7 +22,7 @@ Airflow is great for analytics and engineering teams since it has a fairly gentl
 
 ### Dynamic TaskGroups
 
-Airflow provides a great opportunity for analytics teams— with a bit of setup, we can leverage the platform to provide dynamic workflow generation with minimal maintenance. 
+Airflow provides a great opportunity for analytics teams— with a bit of setup, we can leverage the platform to provide dynamic workflow generation with minimal maintenance.
 
 While little Airflow knowledge is needed after setup, anyone with a basic Python knowledge can troubleshoot a DAG or implement new features. In the example discussed here, analysts and others can still add/subtract operators to/from a workflow, reorder execution, and assign priority groups with only a basic knowledge of Git.
 
@@ -35,16 +37,16 @@ While we originally synced directly to GitHub, Airflow refresh frequencies quick
 
 With this method, analysts can push edits to the repository and sync them automatically with the DAG. We're currently working on a similar implementation at Storyblocks. Our old tool, Jenkins, made it terribly difficult to troubleshoot ETL failures and was quite opaque to analysts— knowledge of the tool was necessary to make updates. Additionally, each time a push to our existing data repo was made, we had to swap Docker tags, a manual process that was easy to overlook. An Airflow implementation makes the ETL structure more accessible to the analytics team, removes manual steps, and improves maintainability.
 
-Furthermore, with some string parsing, we can create conventions for excluding, prioritizing, and grouping file execution. For example, prepending an 'X_' to exclude a file in the repo or using '1_', '2_', etc. to create groups of files that need to be ordered.
+Furthermore, with some string parsing, we can create conventions for excluding, prioritizing, and grouping file execution. For example, prepending an 'X*' to exclude a file in the repo or using '1*', '2\_', etc. to create groups of files that need to be ordered.
 
 ### Implementation
 
-Take the following example of a [*warehouse friendly schema*](https://www.youtube.com/watch?v=D5hpjlYHEGw&t=386s) from Periscope Data co-founder Tom O'Neill. In Tom's example, four stages are used for effective data management.
+Take the following example of a [_warehouse friendly schema_](https://www.youtube.com/watch?v=D5hpjlYHEGw&t=386s) from Periscope Data co-founder Tom O'Neill. In Tom's example, four stages are used for effective data management.
 
 1. Protective: this stage enables file renaming and filtering. For example, suppose engineering has to rename a column in the source data. A protective view enables analytics to make one transformation from the source without having to rewrite multiple scripts.
 2. Staging: we can perform simple transforms and tests off of the protective layer to ensure data quality and make slight adjustments.
 3. Reporting: Wide tables generated from staging views. These are intended for transformations by analysts or to be used for aggregations, charts, etc.
-4. Data Marts: team-focused data marts are a *source of truth* for teams. For example, there might be an *Finance Data Mart* that provides aggregations off reporting and staged data specific to the accounting team. We're fine with building business logic into this mart, since the only consumers are the finance team and changes to their logic have no downstream consequences.
+4. Data Marts: team-focused data marts are a _source of truth_ for teams. For example, there might be an _Finance Data Mart_ that provides aggregations off reporting and staged data specific to the accounting team. We're fine with building business logic into this mart, since the only consumers are the finance team and changes to their logic have no downstream consequences.
 
 Tom goes in to much more detail, but using this framework in our example:
 
@@ -60,7 +62,7 @@ Using hierarchical folders in our repo allows us to group steps together neatly 
   <figcaption><i><center>Expanding an overarching step shows sub-steps and priority groups therein.</center></i></figcaption>
 </figure>
 
-Here, priority groups are created by prepending a number to a script. Our code is written such that this will trigger another TaskGroup to be created and the labelled files to be dropped inside. With this method, multiple files can be named '1_' and executed in parallel. The implementation might create more nesting than is necessary, but it works for our purposes. Expanding these groups reveals the labeled scripts.
+Here, priority groups are created by prepending a number to a script. Our code is written such that this will trigger another TaskGroup to be created and the labelled files to be dropped inside. With this method, multiple files can be named '1\_' and executed in parallel. The implementation might create more nesting than is necessary, but it works for our purposes. Expanding these groups reveals the labeled scripts.
 
 <figure>
   <img src="airflow-etl/IMG_03.jpg" alt="Example priority group behavior"/>

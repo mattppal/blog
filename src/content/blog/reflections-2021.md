@@ -1,13 +1,14 @@
 ---
 author: Matt Palmer
-description: ""
+description: Reflecting on 2021 and looking forward to 2022
 draft: false
 featured: false
 ogImage: ""
 postSlug: reflections-2021
 pubDatetime: 2021-12-31 00:00:00
-tags: []
-title: "\U0001FA9E 2021 Reflections"
+tags: [musings, goals, motivation]
+title: 2021 Reflections
+emoji: 🪞
 ---
 
 ## The past year

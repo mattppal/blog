@@ -1,13 +1,14 @@
 ---
 author: Matt Palmer
-description: ""
+description: Reflecting on the premier data conference in Austin, TX
 draft: false
 featured: true
 ogImage: ""
 postSlug: data-council-austin
 pubDatetime: 2023-04-01 00:00:00
-tags: []
-title: "\U0001F913 Data Council Austin - Notes & Takeaways"
+tags: [data, opinion]
+title: Data Council Austin - Notes & Takeaways
+emoji: 🤓
 ---
 
 <center>

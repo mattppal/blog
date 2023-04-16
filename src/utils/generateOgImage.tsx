@@ -25,7 +25,7 @@ const ogImage = (text: string) => {
   return (
     <div
       style={{
-        background: "#fefbfb",
+        background: "#212737",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -35,25 +35,7 @@ const ogImage = (text: string) => {
     >
       <div
         style={{
-          position: "absolute",
-          top: "-1px",
-          right: "-1px",
-          border: "4px solid #000",
-          background: "#ecebeb",
-          opacity: "0.9",
-          borderRadius: "4px",
-          display: "flex",
-          justifyContent: "center",
-          margin: "2.5rem",
-          width: "88%",
-          height: "80%",
-        }}
-      />
-
-      <div
-        style={{
-          border: "4px solid #000",
-          background: "#fefbfb",
+          background: "#212737",
           borderRadius: "4px",
           display: "flex",
           justifyContent: "center",
@@ -68,15 +50,21 @@ const ogImage = (text: string) => {
             flexDirection: "column",
             justifyContent: "space-between",
             margin: "20px",
-            width: "90%",
+            width: "96%",
             height: "90%",
           }}
         >
+          <img
+            height={120}
+            width={120}
+            src="https://mattpalmer.io/assets/hang-ten.png"
+          ></img>
           <p
             style={{
-              fontSize: 72,
+              fontSize: 48,
+              color: "#EAEDF3",
               fontWeight: "bold",
-              maxHeight: "84%",
+              maxHeight: "100%",
               overflow: "hidden",
             }}
           >
@@ -88,6 +76,7 @@ const ogImage = (text: string) => {
               justifyContent: "space-between",
               width: "100%",
               marginBottom: "8px",
+              color: "#EAEDF3",
               fontSize: 28,
             }}
           >
@@ -100,13 +89,25 @@ const ogImage = (text: string) => {
               >
                 "
               </span>
-              <span style={{ overflow: "hidden", fontWeight: "bold" }}>
+              <span
+                style={{
+                  overflow: "hidden",
+                  color: "#EAEDF3",
+                  fontWeight: "bold",
+                }}
+              >
                 {SITE.author}
               </span>
             </span>
 
-            <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-              {SITE.title}
+            <span
+              style={{
+                color: "#EAEDF3",
+                overflow: "hidden",
+                fontWeight: "normal",
+              }}
+            >
+              {SITE.website}
             </span>
           </div>
         </div>

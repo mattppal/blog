@@ -1,13 +1,14 @@
 ---
 author: Matt Palmer
-description: ''
+description: ""
 draft: true
 featured: false
-ogImage: ''
+ogImage: ""
 postSlug: big-ideas
 pubDatetime: 2022-06-12 00:00:00
-tags: []
-title: "\U0001F4AD Big Ideas"
+tags: [musings, goals, motivation]
+title: Big Ideas
+emoji: 💭
 ---
 
 Every now & then, I'm obsessed by a Big Idea. It plants itself in my mind and I think about it day and night. I have a purpose.

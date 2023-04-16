@@ -1,13 +1,14 @@
 ---
 author: Matt Palmer
-description: ""
+description: A look under-the-hood at git— from creating commits to resolving merge conflicts
 draft: false
 featured: false
 ogImage: ""
 postSlug: how-git-works
 pubDatetime: 2021-03-01 00:00:00
-tags: []
-title: 😸 How Git works.
+tags: [data, software, guides]
+title: How Git Works
+emoji: 🤔
 ---
 
 ### Notes
