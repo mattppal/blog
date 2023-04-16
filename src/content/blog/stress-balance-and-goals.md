@@ -1,13 +1,14 @@
 ---
 author: Matt Palmer
-description: ''
+description: ""
 draft: false
 featured: false
-ogImage: ''
+ogImage: ""
 postSlug: stress-balance-and-goals
 pubDatetime: 2023-03-25 00:00:00
 tags: []
-title: ⚖️ Stress, Balance, & Goals
+title: Stress, Balance, & Goals
+emoji: ⚖️
 ---
 
 I've written about the importance of trajectory— it's a foundational concept that _limits_ the upper bound of achievement. If you're headed in the wrong direction, it's unlikely that you'll ever arrive at your destination. This is a relatively obvious conclusion and makes the case for a good trajectory self-evident.

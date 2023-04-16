@@ -7,7 +7,8 @@ ogImage: ""
 postSlug: the-very-best-cohorted-retention-view
 pubDatetime: 2021-11-16 00:00:00
 tags: []
-title: 📈 The very best cohorted retention view.
+title: The very best cohorted retention view
+emoji: 📈
 ---
 
 Note: the cohort grid here was adapted from a very helpful [towards data science article](https://towardsdatascience.com/a-step-by-step-introduction-to-cohort-analysis-in-python-a2cbbd8460ea).

@@ -7,7 +7,8 @@ ogImage: ""
 postSlug: how-git-works
 pubDatetime: 2021-03-01 00:00:00
 tags: []
-title: 😸 How Git works.
+title: How Git works
+emoji: 🤔
 ---
 
 ### Notes

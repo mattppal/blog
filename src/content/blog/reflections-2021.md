@@ -7,7 +7,8 @@ ogImage: ""
 postSlug: reflections-2021
 pubDatetime: 2021-12-31 00:00:00
 tags: []
-title: "\U0001FA9E 2021 Reflections"
+title: 2021 Reflections
+emoji: 🪞
 ---
 
 ## The past year

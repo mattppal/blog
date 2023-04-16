@@ -1,13 +1,14 @@
 ---
 author: Matt Palmer
-description: ''
+description: ""
 draft: false
 featured: false
-ogImage: ''
+ogImage: ""
 postSlug: on-trajectories
 pubDatetime: 2022-02-15 00:00:00
 tags: []
-title: "\U0001F3F9 On Trajectories..."
+title: On Trajectories
+emoji: 🏹
 ---
 
 I frequently find myself worrying about the future. Will succeed and achieve my goals? What is success? Do I have the right goals? I've done this since I was a kid, but the outcome is usually the same: I'll get an idea in my head and work as hard as I can to make it happen. It's only in recent years that I've started to reconsider this approach.

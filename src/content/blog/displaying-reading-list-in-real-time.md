@@ -7,7 +7,8 @@ ogImage: ""
 postSlug: displaying-reading-list-in-real-time
 pubDatetime: 2021-07-28 00:00:00
 tags: []
-title: 📕 Using Jekyll Hooks to dynamically generate site content from external sources.
+title: Realtime Reading Lists With Jekyll Hooks
+emoji: 📕
 ---
 
 ### Note

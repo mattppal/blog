@@ -1,13 +1,14 @@
 ---
 author: Matt Palmer
-description: ''
+description: ""
 draft: false
 featured: true
-ogImage: ''
+ogImage: ""
 postSlug: hot-takes
 pubDatetime: 2023-04-07 00:00:00
 tags: []
-title: "\U0001F336️ Hot Takes on the Modern Data Stack"
+title: Hot Takes on the Modern Data Stack
+emoji: 🌶️
 ---
 
 ## Intro
