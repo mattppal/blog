@@ -1,12 +1,12 @@
 ---
 author: Matt Palmer
-description: ""
+description: Doing my best to make it all work in a way that promotes passion and longevity
 draft: false
 featured: false
 ogImage: ""
 postSlug: stress-balance-and-goals
 pubDatetime: 2023-03-25 00:00:00
-tags: []
+tags: [musings, goals, motivation]
 title: Stress, Balance, & Goals
 emoji: ⚖️
 ---

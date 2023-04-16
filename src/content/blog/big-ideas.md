@@ -6,7 +6,7 @@ featured: false
 ogImage: ""
 postSlug: big-ideas
 pubDatetime: 2022-06-12 00:00:00
-tags: []
+tags: [musings, goals, motivation]
 title: Big Ideas
 emoji: 💭
 ---

@@ -6,7 +6,7 @@ featured: false
 ogImage: ""
 postSlug: the-very-best-cohorted-retention-view
 pubDatetime: 2021-11-16 00:00:00
-tags: []
+tags: [data, analytics]
 title: The very best cohorted retention view
 emoji: 📈
 ---

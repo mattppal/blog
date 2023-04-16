@@ -6,7 +6,7 @@ featured: false
 ogImage: ""
 postSlug: art-page
 pubDatetime: 2022-12-12 00:00:00
-tags: []
+tags: [updates, art]
 title: Art Page
 emoji: 🖼️
 ---

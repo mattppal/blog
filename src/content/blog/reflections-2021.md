@@ -6,7 +6,7 @@ featured: false
 ogImage: ""
 postSlug: reflections-2021
 pubDatetime: 2021-12-31 00:00:00
-tags: []
+tags: [musings, goals, motivation]
 title: 2021 Reflections
 emoji: 🪞
 ---

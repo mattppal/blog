@@ -6,7 +6,7 @@ featured: true
 ogImage: ""
 postSlug: data-council-austin
 pubDatetime: 2023-04-01 00:00:00
-tags: []
+tags: [data, opinion]
 title: Data Council Austin - Notes & Takeaways
 emoji: 🤓
 ---

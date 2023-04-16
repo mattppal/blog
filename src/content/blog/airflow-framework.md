@@ -6,7 +6,7 @@ featured: false
 ogImage: ""
 postSlug: airflow-framework
 pubDatetime: 2021-05-22 00:00:00
-tags: []
+tags: [data, guides]
 title: Dynamically generated Airflow TaskGroups for data teams
 emoji: 👨🏻‍💻
 ---

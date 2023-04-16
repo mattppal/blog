@@ -1,12 +1,12 @@
 ---
 author: Matt Palmer
-description: ""
+description: Tracking changes in real time
 draft: false
 featured: false
 ogImage: ""
 postSlug: scd-type-2
 pubDatetime: 2021-04-27 00:00:00
-tags: []
+tags: [data, spark, delta]
 title: Building a SCD Type-2 table with Databricks Delta Lake & Spark Streaming
 emoji: 😵‍💫
 ---

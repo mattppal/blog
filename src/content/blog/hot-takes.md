@@ -1,12 +1,12 @@
 ---
 author: Matt Palmer
-description: ""
+description: "My takes on the state of the modern data stack."
 draft: false
 featured: true
 ogImage: ""
 postSlug: hot-takes
 pubDatetime: 2023-04-07 00:00:00
-tags: []
+tags: [data, opinion]
 title: Hot Takes on the Modern Data Stack
 emoji: 🌶️
 ---

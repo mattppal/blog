@@ -6,7 +6,7 @@ featured: false
 ogImage: ""
 postSlug: on-trajectories
 pubDatetime: 2022-02-15 00:00:00
-tags: []
+tags: [musings, goals, motivation]
 title: On Trajectories
 emoji: 🏹
 ---

@@ -1,12 +1,12 @@
 ---
 author: Matt Palmer
-description: ""
+description: Using Jekyll hooks to dynamically generate site content via Github Actions.
 draft: false
 featured: false
 ogImage: ""
 postSlug: displaying-reading-list-in-real-time
 pubDatetime: 2021-07-28 00:00:00
-tags: []
+tags: [software, guides]
 title: Realtime Reading Lists With Jekyll Hooks
 emoji: 📕
 ---
