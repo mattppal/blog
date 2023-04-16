@@ -10,6 +10,8 @@ import partytown from "@astrojs/partytown";
 
 import mdx from "@astrojs/mdx";
 
+import image from "@astrojs/image";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -28,6 +30,7 @@ export default defineConfig({
     react(),
     sitemap(),
     mdx(),
+    image(),
   ],
   markdown: {
     remarkPlugins: [
