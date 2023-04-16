@@ -1,6 +1,6 @@
 ---
 author: Matt Palmer
-description: "My takes on the state of the modern data stack."
+description: My takes on the state of the modern data stack
 draft: false
 featured: true
 ogImage: ""

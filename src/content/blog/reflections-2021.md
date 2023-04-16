@@ -1,6 +1,6 @@
 ---
 author: Matt Palmer
-description: ""
+description: Reflecting on 2021 and looking forward to 2022
 draft: false
 featured: false
 ogImage: ""
