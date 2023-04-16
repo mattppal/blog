@@ -1,0 +1,46 @@
+---
+import { Image } from "@astrojs/image/components";
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+const allArt = await Astro.glob("../../public/art/*").then(files => {
+  return files.map(file => file.default);
+});
+---
+
+<Layout title={`Art | ${SITE.title}`}>
+  <Header />
+  <Main pageTitle="Art" pageDesc="🌸 Botanical pen & ink sketches">
+    <center>
+      <div class="container">
+        {
+          allArt.map(sketch => (
+            <Image
+              href={sketch}
+              src={sketch}
+              width={400}
+              aspectRatio="1:1"
+              alt=""
+            />
+          ))
+        }
+      </div>
+    </center>
+  </Main>
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+  .container div {
+    background-color: red;
+    aspect-ratio: 1;
+  }
+</style>
