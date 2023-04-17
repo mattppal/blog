@@ -1,6 +1,6 @@
 ---
 author: Matt Palmer
-description: The most important component to success
+description: The most important component to success.
 draft: false
 featured: false
 ogImage: ""

@@ -28,8 +28,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       <p>
         I’m {SITE.author}, a {SITE.jobTitle} @ {SITE.company} living in {
           SITE.location
-        }. This is my personal blog, where I write about data, goals, and
-        whatever else comes to mind. Feel free to take a look: read a bit <LinkButton
+        }. This is my personal blog, where I <LinkButton
+          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
+          href="/writing/"
+        >
+          write
+        </LinkButton> about data, goals, and whatever else comes to mind. Feel free
+        to take a look: read a bit <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
           href="/about/"
         >

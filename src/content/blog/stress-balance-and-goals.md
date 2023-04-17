@@ -1,6 +1,6 @@
 ---
 author: Matt Palmer
-description: Doing my best to make it all work in a way that promotes passion and longevity
+description: Doing my best to make it all work in a way that promotes passion and longevity.
 draft: false
 featured: false
 ogImage: ""
