@@ -43,15 +43,21 @@ export const SOCIALS: SocialObjects = [
     active: true,
   },
   {
+    name: "Twitter",
+    href: "https://twitter.com/mattppal",
+    linkTitle: `${SITE.author} on Twitter`,
+    active: true,
+  },
+  {
     name: "Mail",
     href: "mailto:hello@mattpalmer.io",
     linkTitle: `Send an email to ${SITE.author}`,
     active: true,
   },
   {
-    name: "Twitter",
-    href: "https://twitter.com/mattppal",
-    linkTitle: `${SITE.author} on Twitter`,
+    name: "Calendly",
+    href: "https://calendly.com/matt-pal/15-min",
+    linkTitle: `Chat with Matt!`,
     active: true,
   },
 ];

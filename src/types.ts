@@ -29,6 +29,7 @@ export type SocialMedia =
   | "Github"
   | "Facebook"
   | "Instagram"
+  | "Calendly"
   | "LinkedIn"
   | "Mail"
   | "Twitter"

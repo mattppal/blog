@@ -29,12 +29,17 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         I’m {SITE.author}, a {SITE.jobTitle} @ {SITE.company} living in {
           SITE.location
         }. This is my personal blog, where I write about data, goals, and
-        whatever else comes to mind. Feel free to take a look or read a bit <LinkButton
+        whatever else comes to mind. Feel free to take a look: read a bit <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
           href="/about/"
         >
           about
-        </LinkButton> me. 🤘
+        </LinkButton> me or check out some <LinkButton
+          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
+          href="/art/"
+        >
+          art
+        </LinkButton>. 🤘
         <!-- or see what <i>I've</i> been <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
           href="/books/"
@@ -55,7 +60,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
+            <div class="social-links">Links:</div>
             <Socials />
           </div>
         )
