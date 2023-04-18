@@ -1,6 +1,6 @@
 ---
 author: Matt Palmer
-description: A look under-the-hood at git— from creating commits to resolving merge conflicts
+description: A look under-the-hood at git— from creating commits to resolving merge conflicts.
 draft: false
 featured: false
 ogImage: ""

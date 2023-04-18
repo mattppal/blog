@@ -1,6 +1,6 @@
 ---
 author: Matt Palmer
-description: Tracking changes in real time
+description: Tracking changes in real time with Databricks & Spark.
 draft: false
 featured: false
 ogImage: ""

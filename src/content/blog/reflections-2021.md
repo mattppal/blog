@@ -1,6 +1,6 @@
 ---
 author: Matt Palmer
-description: Reflecting on 2021 and looking forward to 2022
+description: Reflecting on 2021 and looking forward to 2022.
 draft: false
 featured: false
 ogImage: ""

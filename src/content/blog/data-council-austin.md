@@ -1,6 +1,6 @@
 ---
 author: Matt Palmer
-description: Reflecting on the premier data conference in Austin, TX
+description: Reflecting on the premier data conference in Austin, TX.
 draft: false
 featured: true
 ogImage: ""

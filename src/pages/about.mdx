@@ -3,7 +3,7 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-import { SITE } from "config";
+import { SITE, SOCIALS } from "config";
 
 I'm a member of the {SITE.team} Team at {SITE.company}. I graduated from Swarthmore College in 2018, where I majored in physics & economics— I also played baseball. I currently reside in {SITE.location}, but I've lived across the country, from the Smokies to the Uintas.
 
@@ -25,13 +25,14 @@ This website is a WIP, built using Astro and deployed with Cloudflare Pages.
 🥙&emsp;nutrition \
 🧗&emsp;climbing \
 👾&emsp;scripting \
-📚&emsp;reading (biographies) \
+📚&emsp;reading \
+✍️&emsp;[writing](/writing) \
 🥾&emsp;hiking \
 🌸&emsp;[art](/art) \
-🤓&emsp;data (shocker)
+🤓&emsp;data
 
 ## Contact
 
 📪&emsp;[{SITE.email}](mailto:{SITE.email})\
-👨‍💼&emsp;Reach out on [LinkedIn](https://www.linkedin.com/in/matt-palmer)\
-📆&emsp;Schedule time to [chat](https://calendly.com/matt-pal/15min)
+👨‍💼&emsp;Reach out on [LinkedIn](SOCIALS.linkedIn)\
+📆&emsp;Schedule time to [chat](SOCIALS.calendly)
