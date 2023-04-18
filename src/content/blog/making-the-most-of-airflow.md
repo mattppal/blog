@@ -7,11 +7,11 @@ ogImage: ""
 postSlug: making-the-most-of-airflow
 pubDatetime: 2023-04-22 00:00:00
 tags: [data, opinion, guide]
-title: Making the most of Airflow
+title: Making the Most of Airflow
 emoji: 🧂🤝
 ---
 
-## ◽️Shades of Grey
+## ◽️ Shades of Grey
 
 In my last post, [🌶️ Hot Takes on the Modern Data Stack](/posts/hot-takes), I presented my opinions in a raw, unfiltered format. Rather than diving into nuance, I opted for starkness & contrast. Of course, the truth is never black and white, rather, varying shades of grey. While "hot takes" are fun and generate a buzz, they might be misleading.
 
@@ -31,11 +31,11 @@ While I was writing this post, [Jake Watson](https://www.linkedin.com/in/jake-wa
 
 My goal this week is to give Airflow a fair shake and talk about how **you** can make the most of **your** Airflow deployment to build robust, production-ready DAGs.
 
-# 👨🏻‍🔬 Optimize
+## 👨🏻‍🔬 Let's Make the Most of It
 
-## 🏗️ DAG Structure
+### 🏗️ DAG Structure
 
-### Problem
+#### Problem
 
 I think one of the most _important_ aspects of DAG creation is structure— DAGs should be standardized as much as possible, prioritizing readability and consistency.
 
@@ -45,9 +45,9 @@ The result? Without the discipline and rigor to standardize a deployment, DAGs c
 
 ![](/posts/making-the-most-of-airflow/seinfeld.gif)
 
-### Solution
+#### Solution
 
-#### DAG Templates
+##### DAG Templates
 
 Luckily, simply using TaskFlow is a great start! In my own projects, I start from a template— pretty much _every_ job follows an extract-transform-load pattern that can be mapped to a few tasks. If not, the beauty of Airflow is that structure is completely mutable, but starting from basic, familiar components will reduce complexity in your DAGs and make them easier to interpret.
 
@@ -105,7 +105,7 @@ dag_name = dag_name()
 
 Consider storing something similar in your project _or_ if you're fancy, building the template into a VSCode [Snippet](https://code.visualstudio.com/docs/editor/userdefinedsnippets). We'll talk more about development environments later. This can get more complex as your team grows, but the _best_ solution will be to introduce modularity into your Airflow project, as we'll discuss shortly.
 
-#### Linting
+##### Linting
 
 Though linting will not solve all problems, consider a solution like [Black](https://pypi.org/project/black/) for keeping your `.py` files in check. Black is the golden standard of Python linting packages, bringing pragmatic, functional format to your code.
 
@@ -113,9 +113,9 @@ Using a formatter directly improves the readability of your code and creates a s
 
 I've been using Black in my projects, personal and professional, for the past few years and it's made a world of difference. If you're not using a code formatter, I _highly_ recommend it— for the sanity of everyone involved. 😀
 
-## 🏜️ DRY Code
+### 🏜️ DRY Code
 
-### Problem
+#### Problem
 
 Perhaps one of the trickiest things with a blank canvas like Airflow— users are left on their own to manage code reusability. [DRY](https://www.digitalocean.com/community/tutorials/what-is-dry-development) (Don't Repeat Yourself) is a principal of software development, aimed at reducing redundancy and abstracting common code.
 
@@ -125,9 +125,9 @@ With regards to Airflow, as Jake Watson notes in [_Why Airflow (Sometimes) Wins_
 
 So we need some way to improve operator modularity, which is specific to each use-case. Ideally, this would look like defining packages and functions for common hooks/tasks: reading an object from S3, writing to parquet, etc. Practically, it ends up not happening at all _or_ falling apart during parallel development.
 
-### Solution
+#### Solution
 
-#### Airflow Tasks-as-a-Service
+##### Airflow Tasks-as-a-Service
 
 The issue of DRY-ness can be addressed with an in-house solution, but who has time for that? The [AstroSDK](https://docs.astronomer.io/learn/astro-python-sdk#how-it-works) is a good example of a framework that makes DRY code simpler. An observant reader might notice the [available functions](https://docs.astronomer.io/learn/astro-python-sdk-etl#python-sdk-functions) fit into the framework I outlined above (we might be on to something 😉).
 
@@ -155,9 +155,9 @@ Now THIS approach is DRY 💨. See [Astro's docs](https://docs.astronomer.io/lea
 
 These features are something tools like [Mage](https://mage.ai) or [Dagster](https://dagster.io/) do exceptionally well— they allow "architects" to create reusable blocks of code that are then stitched together by downstream users. The boon of newer tools like Mage: they have a user-friendly GUI and pre-built testing framework out-of-the-box. For those in Airflow-land, however, the AstroSDK is a great way to implement similar functionality on your own.
 
-## 🧪 Testing
+### 🧪 Testing
 
-### Problem
+#### Problem
 
 DAGs can be incredibly complex— at each step (task), the number of unknowns multiply. Now imagine 100 of these DAGs, all running nightly. It's not hard to see how a data engineer's job can quickly become hell— you might find yourself on-call at 3AM looking like this:
 
@@ -165,11 +165,11 @@ DAGs can be incredibly complex— at each step (task), the number of unknowns mu
 
 Trying to solve every problem at once is overwhelming and, quite frankly, not possible. We need to start from first principles: break the problem down and tackle it at the source.
 
-### Solution
+#### Solution
 
 **Note:** Big thanks to [Daniel](https://www.linkedin.com/in/danielimberman/) for supplying these examples from the AstroSDK. 🤘
 
-#### ATaaS patterns + Testing = Happy Devs 🥳
+##### ATaaS patterns + Testing = Happy Devs 🥳
 
 Unit tests allow us to _be sure_ each component of a DAG is working exactly as we'd expect.
 
@@ -212,9 +212,9 @@ Where `connections.yaml` and `variables.yaml` should contain values that allow f
 
 Tying these all together, we have a robust framework for improving code reusability and test coverage while minimizing the time to failure by introducing break-points and leveraging `airflow dags test`.
 
-# 🎁 Wrap-up
+## 🎁 Wrap-up
 
-## 🔄 Embrace iteration
+### 🔄 Embrace iteration
 
 In summary, Airflow, while not for everyone, can be used as an effective data orchestration/ELT tool. To do so, I recommend:
 
@@ -229,7 +229,7 @@ The goal in building _any_ new piece of code should be to reach failure as fast 
 
 Optimizing for speed of failure can shorten the developer feedback loop and drastically improve your efficiency, creating more value and unlocking the power of your data team. 🏃‍♂️
 
-## 🚪Closing
+### 🚪 Closing
 
 There's no such thing as a perfect solution. Unfortunately, even when a great fit is found, implementations will be limited by dogma, politics, technical debt, security constraints, and deployment considerations.
 
