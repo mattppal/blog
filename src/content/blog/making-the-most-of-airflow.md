@@ -11,31 +11,33 @@ title: Making the Most of Airflow
 emoji: 🧂🤝
 ---
 
+## ToC
+
 ## ◽️ Shades of Grey
 
 In my last post, [🌶️ Hot Takes on the Modern Data Stack](/posts/hot-takes), I presented my opinions in a raw, unfiltered format. Rather than diving into nuance, I opted for starkness & contrast. Of course, the truth is never black and white, rather, varying shades of grey. While "hot takes" are fun and generate a buzz, they might be misleading.
 
-One specific point of contention is **Apache Airflow**.
+One specific point of contention was **[Apache Airflow](https://airflow.apache.org/)**.
 
-My perspective is one of a data engineer on a small team, who's able to implement _any_ open source tool I choose— what a luxury! From my point of view, Airflow isn't a top choice. There are so many tools that can move faster than Airflow, have better support, come with advanced functionality out-of-the-box, etc.
+My perspective is one of a data engineer on a small team, who's able to implement _any_ open source tool I choose. As a small team, we have minimal tech debt and existing infrastructure can easily be migrated— what a luxury! Hopefully, it isn't difficult to see why Airflow isn't a top choice. There are so many tools that can move faster, have better support, come with advanced functionality out-of-the-box, etc.
 
-For many, however, this **is not** the reality. Perhaps your an engineer on an established team with hundreds of pre-built DAGs, or you join an org that **mandates** an Airflow implementation. Hosted Airflow is also available on _every_ major cloud provider ([Amazon](https://aws.amazon.com/managed-workflows-for-apache-airflow/) / [Google](https://cloud.google.com/composer) / [Azure](https://learn.microsoft.com/en-us/azure/data-factory/concept-managed-airflow)).
+For many, however, this **is not** reality. Perhaps you're on an established team with hundreds of DAGs, or your org is one of many using hosted Airflow, which is available on _every_ major cloud provider ([Amazon](https://aws.amazon.com/managed-workflows-for-apache-airflow/) / [Google](https://cloud.google.com/composer) / [Azure](https://learn.microsoft.com/en-us/azure/data-factory/concept-managed-airflow)).
 
-Due to the popularity, adoption, and momentum of Airflow, it's a tool that will be around for years, if not decades, regardless of the competition. For the same reasons, understanding **how Airflow works** can be a game-changer for data engineers— upskilling popular tools allows you to market yourself to a broad audience. Hence, there are some direct and quite a few indirect reasons to know how Airflow works, at a minimum.
+Due to the popularity, adoption, and momentum of Airflow, it will be around for years, if not decades, regardless of competition. For the same reasons, understanding **how Airflow works** can be a game-changer for data engineers— upskilling popular tools improves marketability and potential impact. Hence, there are some direct and quite a few indirect reasons to know how Airflow works, at a minimum.
 
-Quite a bit has changed in the last few versions of Airflow— thought the [TaskFlow API was released in December 2020](https://airflow.apache.org/blog/airflow-two-point-oh-is-here/), the Airflow team has continued to provide improved functionality that competes with newer orchestrators (Dagster, Prefect, Mage) on a number of fronts, [fixing bugs and expanding the scope of Dynamic Task Mapping](https://github.com/apache/airflow/pulls?q=is%3Apr+author%3Auranusjr+is%3Aclosed+milestone%3A%22Airflow+2.5.0%22).
-
-Last week, I sat down with [Daniel Imberman](https://www.linkedin.com/in/danielimberman/), who walked me through some features of the [AstroSDK](https://github.com/astronomer/astro-sdk). Our conversation opened my eyes to potential solutions for common problems in Airflow.
-
-While I was writing this post, [Jake Watson](https://www.linkedin.com/in/jake-watson-data/) reached out about a [very similar peice](https://thedataplatform.substack.com/p/why-airflow-sometimes-wins). I agree with many of Jake's points and hope to extend his argument on why Airflow "sometimes wins."
+Last week, I sat down with [Daniel Imberman](https://www.linkedin.com/in/danielimberman/), who walked me through some features of the [AstroSDK](https://github.com/astronomer/astro-sdk). Our conversation opened my eyes to potential solutions for common problems in Airflow. While I was writing this post, [Jake Watson](https://www.linkedin.com/in/jake-watson-data/) reached out about a [very similar peice](https://thedataplatform.substack.com/p/why-airflow-sometimes-wins). I agree with many of Jake's points and hope to extend his argument on why Airflow "sometimes wins."
 
 My goal this week is to give Airflow a fair shake and talk about how **you** can make the most of **your** Airflow deployment to build robust, production-ready DAGs.
 
 ## 👨🏻‍🔬 Let's Make the Most of It
 
-### 🏗️ DAG Structure
+Quite a bit has changed in the last few versions of Airflow— thought the [TaskFlow API was released in December 2020](https://airflow.apache.org/blog/airflow-two-point-oh-is-here/), the Airflow team has continued to provide improved functionality that competes with newer orchestrators (Dagster, Prefect, Mage) on a number of fronts, [fixing bugs and expanding the scope of Dynamic Task Mapping](https://github.com/apache/airflow/pulls?q=is%3Apr+author%3Auranusjr+is%3Aclosed+milestone%3A%22Airflow+2.5.0%22).
 
-#### Problem
+Much of this new functionality can be used to provide a smoother experience during development and improve code testability. Coupled with some external libraries, we can _make the most of Airflow_ by adhering to best practices.
+
+**Here are a few common Airflow problems & my proposed solutions.**
+
+### 🏗️ DAG Structure
 
 I think one of the most _important_ aspects of DAG creation is structure— DAGs should be standardized as much as possible, prioritizing readability and consistency.
 
@@ -45,9 +47,7 @@ The result? Without the discipline and rigor to standardize a deployment, DAGs c
 
 ![](/posts/making-the-most-of-airflow/seinfeld.gif)
 
-#### Solution
-
-##### DAG Templates
+**Solution:** DAG Templates
 
 Luckily, simply using TaskFlow is a great start! In my own projects, I start from a template— pretty much _every_ job follows an extract-transform-load pattern that can be mapped to a few tasks. If not, the beauty of Airflow is that structure is completely mutable, but starting from basic, familiar components will reduce complexity in your DAGs and make them easier to interpret.
 
@@ -105,7 +105,7 @@ dag_name = dag_name()
 
 Consider storing something similar in your project _or_ if you're fancy, building the template into a VSCode [Snippet](https://code.visualstudio.com/docs/editor/userdefinedsnippets). We'll talk more about development environments later. This can get more complex as your team grows, but the _best_ solution will be to introduce modularity into your Airflow project, as we'll discuss shortly.
 
-##### Linting
+**Solution:** Linting
 
 Though linting will not solve all problems, consider a solution like [Black](https://pypi.org/project/black/) for keeping your `.py` files in check. Black is the golden standard of Python linting packages, bringing pragmatic, functional format to your code.
 
@@ -115,8 +115,6 @@ I've been using Black in my projects, personal and professional, for the past fe
 
 ### 🏜️ DRY Code
 
-#### Problem
-
 Perhaps one of the trickiest things with a blank canvas like Airflow— users are left on their own to manage code reusability. [DRY](https://www.digitalocean.com/community/tutorials/what-is-dry-development) (Don't Repeat Yourself) is a principal of software development, aimed at reducing redundancy and abstracting common code.
 
 With regards to Airflow, as Jake Watson notes in [_Why Airflow (Sometimes) Wins_](https://thedataplatform.substack.com/p/why-airflow-sometimes-wins):
@@ -125,9 +123,7 @@ With regards to Airflow, as Jake Watson notes in [_Why Airflow (Sometimes) Wins_
 
 So we need some way to improve operator modularity, which is specific to each use-case. Ideally, this would look like defining packages and functions for common hooks/tasks: reading an object from S3, writing to parquet, etc. Practically, it ends up not happening at all _or_ falling apart during parallel development.
 
-#### Solution
-
-##### Airflow Tasks-as-a-Service
+**Solution:** Airflow Tasks-as-a-Service (ATaaS)
 
 The issue of DRY-ness can be addressed with an in-house solution, but who has time for that? The [AstroSDK](https://docs.astronomer.io/learn/astro-python-sdk#how-it-works) is a good example of a framework that makes DRY code simpler. An observant reader might notice the [available functions](https://docs.astronomer.io/learn/astro-python-sdk-etl#python-sdk-functions) fit into the framework I outlined above (we might be on to something 😉).
 
@@ -157,19 +153,13 @@ These features are something tools like [Mage](https://mage.ai) or [Dagster](htt
 
 ### 🧪 Testing
 
-#### Problem
-
 DAGs can be incredibly complex— at each step (task), the number of unknowns multiply. Now imagine 100 of these DAGs, all running nightly. It's not hard to see how a data engineer's job can quickly become hell— you might find yourself on-call at 3AM looking like this:
 
 ![](/posts/making-the-most-of-airflow/elmo.gif)
 
 Trying to solve every problem at once is overwhelming and, quite frankly, not possible. We need to start from first principles: break the problem down and tackle it at the source.
 
-#### Solution
-
-**Note:** Big thanks to [Daniel](https://www.linkedin.com/in/danielimberman/) for supplying these examples from the AstroSDK. 🤘
-
-##### ATaaS patterns + Testing = Happy Devs 🥳
+**Solution:** Implement unit tests, assertions, & break-points.
 
 Unit tests allow us to _be sure_ each component of a DAG is working exactly as we'd expect.
 
@@ -208,9 +198,7 @@ if __name__ == "__main__":
 # If you found this code useful, follow for more! https://www.linkedin.com/in/matt-palmer/
 ```
 
-Where `connections.yaml` and `variables.yaml` should contain values that allow for local development. Once again, our friends at Astronomer have a [great guide](https://docs.astronomer.io/learn/testing-airflow#use-dagtest-with-the-astro-cli) for the functionality.
-
-Tying these all together, we have a robust framework for improving code reusability and test coverage while minimizing the time to failure by introducing break-points and leveraging `airflow dags test`.
+Once again, our friends at Astronomer have a [great guide](https://docs.astronomer.io/learn/testing-airflow#use-dagtest-with-the-astro-cli) for the functionality. Tying these all together, we have a robust framework for improving code reusability and test coverage while minimizing the time to failure by introducing break-points and leveraging `airflow dags test`.
 
 ## 🎁 Wrap-up
 
