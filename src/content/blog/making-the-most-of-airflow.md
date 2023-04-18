@@ -15,15 +15,15 @@ emoji: 🧂🤝
 
 ## ◽️ Shades of Grey
 
-In my last post, [🌶️ Hot Takes on the Modern Data Stack](/posts/hot-takes), I presented my opinions in a raw, unfiltered format. Rather than diving into nuance, I opted for starkness & contrast. Of course, the truth is never black and white, rather, varying shades of grey. While "hot takes" are fun and generate a buzz, they might be misleading.
+In my last post, [🌶️ Hot Takes on the Modern Data Stack](/posts/hot-takes), I presented my opinions in a raw, unfiltered format, opting for starkness & contrast over nuance. Of course, the truth is rarely black and white— more commonly, it's varying shades of grey. While "hot takes" are fun and generate a buzz, they might be misleading.
 
 One specific point of contention was **[Apache Airflow](https://airflow.apache.org/)**.
 
-My perspective is one of a data engineer on a small team, who's able to implement _any_ open source tool I choose. As a small team, we have minimal tech debt and existing infrastructure can easily be migrated— what a luxury! Hopefully, it isn't difficult to see why Airflow isn't a top choice. There are so many tools that can move faster, have better support, come with advanced functionality out-of-the-box, etc.
+My perspective is one of a solo data engineer, who's able to implement _any_ open source tool I choose. As a small team, we have minimal tech debt and existing infrastructure can easily be migrated— what a luxury! Hopefully, it isn't difficult to see why Airflow isn't a top choice. There are so many tools that can move faster, have better support, or come with advanced functionality out-of-the-box.
 
-For many, however, this **is not** reality. Perhaps you're on an established team with hundreds of DAGs, or your org is one of many using hosted Airflow, which is available on _every_ major cloud provider ([Amazon](https://aws.amazon.com/managed-workflows-for-apache-airflow/) / [Google](https://cloud.google.com/composer) / [Azure](https://learn.microsoft.com/en-us/azure/data-factory/concept-managed-airflow)).
+For many, however, this **is not** reality. Perhaps you're on an established team with hundreds of DAGs or your org is one of many using hosted Airflow, which is available on _every_ major cloud provider ([Amazon](https://aws.amazon.com/managed-workflows-for-apache-airflow/) / [Google](https://cloud.google.com/composer) / [Azure](https://learn.microsoft.com/en-us/azure/data-factory/concept-managed-airflow)).
 
-Due to the popularity, adoption, and momentum of Airflow, it will be around for years, if not decades, regardless of competition. For the same reasons, understanding **how Airflow works** can be a game-changer for data engineers— upskilling popular tools improves marketability and potential impact. Hence, there are some direct and quite a few indirect reasons to know how Airflow works, at a minimum.
+Due to the popularity, adoption, and momentum of Airflow, it will be around for years, if not decades, regardless of competition. For the same reasons, understanding **how Airflow works** can be a game-changer for data engineers— up-skilling popular tools improves marketability and potential impact. Hence, there are some direct and quite a few indirect reasons to know how Airflow works, at a minimum.
 
 Last week, I sat down with [Daniel Imberman](https://www.linkedin.com/in/danielimberman/), who walked me through some features of the [AstroSDK](https://github.com/astronomer/astro-sdk). Our conversation opened my eyes to potential solutions for common problems in Airflow. While I was writing this post, [Jake Watson](https://www.linkedin.com/in/jake-watson-data/) reached out about a [very similar peice](https://thedataplatform.substack.com/p/why-airflow-sometimes-wins). I agree with many of Jake's points and hope to extend his argument on why Airflow "sometimes wins."
 
@@ -33,7 +33,7 @@ My goal this week is to give Airflow a fair shake and talk about how **you** can
 
 Quite a bit has changed in the last few versions of Airflow— thought the [TaskFlow API was released in December 2020](https://airflow.apache.org/blog/airflow-two-point-oh-is-here/), the Airflow team has continued to provide improved functionality that competes with newer orchestrators (Dagster, Prefect, Mage) on a number of fronts, [fixing bugs and expanding the scope of Dynamic Task Mapping](https://github.com/apache/airflow/pulls?q=is%3Apr+author%3Auranusjr+is%3Aclosed+milestone%3A%22Airflow+2.5.0%22).
 
-Much of this new functionality can be used to provide a smoother experience during development and improve code testability. Coupled with some external libraries, we can _make the most of Airflow_ by adhering to best practices.
+Much of this new functionality can be used to provide a smoother experience during development and improve code testability. Coupled with some external tools, we can _make the most of Airflow_ by adhering to best practices.
 
 **Here are a few common Airflow problems & my proposed solutions.**
 
@@ -111,7 +111,7 @@ Though linting will not solve all problems, consider a solution like [Black](htt
 
 Using a formatter directly improves the readability of your code and creates a smooth experience for every developer on your team. Black formatted code looks the same, regardless of the project you're reading. Though _nothing_ needs to be configured with Black, it can be [configured](https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file) via a `pyproject.toml` file.
 
-I've been using Black in my projects, personal and professional, for the past few years and it's made a world of difference. If you're not using a code formatter, I _highly_ recommend it— for the sanity of everyone involved. 😀
+I've been using Black in my projects, both personal and professional, for the past few years and it's made a world of difference. If you're not using a code formatter, I _highly_ recommend it— for the sanity of everyone involved. 😀
 
 ### 🏜️ DRY Code
 
@@ -123,9 +123,9 @@ With regards to Airflow, as Jake Watson notes in [_Why Airflow (Sometimes) Wins_
 
 So we need some way to improve operator modularity, which is specific to each use-case. Ideally, this would look like defining packages and functions for common hooks/tasks: reading an object from S3, writing to parquet, etc. Practically, it ends up not happening at all _or_ falling apart during parallel development.
 
-**Solution:** Airflow Tasks-as-a-Service (ATaaS)
+**Solution:** External Libraries & Airflow Tasks-as-a-Service (ATaaS)
 
-The issue of DRY-ness can be addressed with an in-house solution, but who has time for that? The [AstroSDK](https://docs.astronomer.io/learn/astro-python-sdk#how-it-works) is a good example of a framework that makes DRY code simpler. An observant reader might notice the [available functions](https://docs.astronomer.io/learn/astro-python-sdk-etl#python-sdk-functions) fit into the framework I outlined above (we might be on to something 😉).
+While the issue of DRY-ness can be addressed with an in-house/DIY solution, who has time for that? The [AstroSDK](https://docs.astronomer.io/learn/astro-python-sdk#how-it-works) is a good example of a framework that makes DRY code straightforward. An observant reader might notice the [available functions](https://docs.astronomer.io/learn/astro-python-sdk-etl#python-sdk-functions) fit into the framework I outlined above (we might be on to something!)
 
 By abstracting away some raw python, the SDK allows users to simply and quickly define functions to:
 
@@ -133,7 +133,7 @@ By abstracting away some raw python, the SDK allows users to simply and quickly 
 - Perform SQL transformations on extracted data
 - Convert data between common formats (dataframes, etc)
 
-No more fiddling with `S3Hooks` or storing `BytesIO` objects (which ALWAYS befuddles me). Instead, we can take the [Data Architecture as a Service](https://www.eckerson.com/articles/data-architecture-as-a-service-liberation-for-data-users) (DAaaS) approach and apply it to Airflow Tasks (ATaaS? 🤔).
+No more fiddling with `S3Hooks` or storing `BytesIO` objects (which ALWAYS befuddles me). Instead, we can take the [Data Architecture as a Service](https://www.eckerson.com/articles/data-architecture-as-a-service-liberation-for-data-users) (DAaaS) approach and apply it to Airflow Tasks. (ATaaS? 🤔)
 
 DAaaS applies mainly to the transformation (warehouse) layer, but operates under a building block approach— architects design SQL patterns that can be implemented by a wide audience, eliminating bottlenecks. We can do the same with Airflow— start with the _building blocks_ of a DAG instead of the DAG itself!
 
