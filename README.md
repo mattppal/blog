@@ -1,0 +1,1 @@
+This is the repo for my personal blog, currently hosted at https://mattpalmer.io. I write about data, tech, and whatever else is on my mind. I'm still new to Astro & TypeScript, so this repo is very much a WIP.
