@@ -15,7 +15,7 @@ emoji: 🧂🤝
 
 ## ◽️ Shades of Grey
 
-In my last post, [🌶️ Hot Takes on the Modern Data Stack](/posts/hot-takes), I presented my opinions in a raw, unfiltered format, opting for starkness & contrast over nuance. Of course, the truth is rarely black and white— more commonly, it's varying shades of grey. While "hot takes" are fun and generate a buzz, they might be misleading.
+In my last post, [🌶️ Hot Takes on the Modern Data Stack](/posts/hot-takes), I presented my opinions in a raw, unfiltered format, opting for starkness & contrast over nuance. Of course, the truth is rarely black and white— often just a shade of grey. While "hot takes" are fun and generate a buzz, they might not tell the whole story.
 
 One specific point of contention was **[Apache Airflow](https://airflow.apache.org/)**.
 
@@ -23,15 +23,21 @@ My perspective is one of a solo data guy on a small team. We have minimal tech d
 
 For many, however, this **is not** reality. Perhaps you're on an established team with hundreds of DAGs or your org is one of many using hosted Airflow, which is available on _every_ major cloud provider ([Amazon](https://aws.amazon.com/managed-workflows-for-apache-airflow/) / [Google](https://cloud.google.com/composer) / [Azure](https://learn.microsoft.com/en-us/azure/data-factory/concept-managed-airflow)). In the words of [Annath](https://www.linkedin.com/in/ananthdurai/) at [Data Engineering Weekly](https://www.dataengineeringweekly.com/): "[sometimes] a known devil is better than an unknown [one]."
 
-Due to the popularity, adoption, and momentum of Airflow, it will be around for years, if not decades, regardless of competition. For the same reasons, understanding **how Airflow works** can be a game-changer for data engineers— up-skilling popular tools improves marketability and potential impact. Hence, there are quite a few reasons to know how Airflow works, at a minimum.
+Due to the popularity, adoption, and momentum of Airflow, it will be around for years, if not decades, regardless of competition. For the same reasons, understanding **how Airflow works** can be a game-changer for data engineers— up-skilling popular tools improves marketability and potential impact.
 
-Last week, I sat down with [Daniel Imberman](https://www.linkedin.com/in/danielimberman/) of [Astronomer](https://www.astronomer.io/), who walked me through some features of their [AstroSDK](https://github.com/astronomer/astro-sdk), which I found quite helpful. While I was writing this post, [Jake Watson](https://www.linkedin.com/in/jake-watson-data/) reached out about a [very similar peice](https://thedataplatform.substack.com/p/why-airflow-sometimes-wins). I agree with many of Jake's points and hope to extend his argument on why Airflow "sometimes wins."
+A few weeks ago, I sat down with [Daniel Imberman](https://www.linkedin.com/in/danielimberman/) of [Astronomer](https://www.astronomer.io/), who walked me through some features of their [AstroSDK](https://github.com/astronomer/astro-sdk), which I found quite helpful. While I was writing this post, [Jake Watson](https://www.linkedin.com/in/jake-watson-data/) reached out about a [very similar peice](https://thedataplatform.substack.com/p/why-airflow-sometimes-wins). I agree with many of Jake's points and hope to extend his argument on why Airflow "sometimes wins."
 
 My goal this week is to give Airflow a fair shake 🧂 and talk about how **you** can make the most of **your** Airflow deployment to build robust, production-ready DAGs.
 
 ## 👨🏻‍🔬 Let's Make the Most of It
 
-Quite a bit has changed in the last few versions of Airflow— though the [TaskFlow API was released in December 2020](https://airflow.apache.org/blog/airflow-two-point-oh-is-here/), the Airflow team has continued to provide improved functionality that competes with newer orchestrators (Dagster, Prefect, Mage) on a number of fronts, [fixing bugs and expanding the scope of Dynamic Task Mapping](https://github.com/apache/airflow/pulls?q=is%3Apr+author%3Auranusjr+is%3Aclosed+milestone%3A%22Airflow+2.5.0%22).
+If you've read this far, you're going forward with Airflow... 😬
+
+<img src="https://media.giphy.com/media/t1RCtCTlFUhby/giphy.gif" width = "35%" />
+
+**Not to fear!**
+
+Quite a bit has changed in the last few versions— though the [TaskFlow API was released in December 2020](https://airflow.apache.org/blog/airflow-two-point-oh-is-here/), the Airflow team has continued to provide improved functionality that competes with newer orchestrators (Dagster, Prefect, Mage) on a number of fronts, [fixing bugs and expanding the scope of Dynamic Task Mapping](https://github.com/apache/airflow/pulls?q=is%3Apr+author%3Auranusjr+is%3Aclosed+milestone%3A%22Airflow+2.5.0%22).
 
 Much of this new functionality can be used to provide a smoother experience during development and improve code testability. Coupled with some external tools, we can _make the most of Airflow_ by adhering to best practices.
 
