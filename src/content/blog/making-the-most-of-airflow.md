@@ -3,7 +3,7 @@ author: Matt Palmer
 description: Airflow is obsolete, but here's why you should still use it.
 draft: false
 featured: true
-ogImage: "/posts/making-the-most-of-airflow/seinfeld.gif"
+ogImage: "/posts/making-the-most-of-airflow/guster.gif"
 postSlug: making-the-most-of-airflow
 pubDatetime: 2023-04-22 00:00:00
 tags: [data, opinion, guide]
@@ -31,9 +31,9 @@ My goal this week is to give Airflow a fair shake 🧂 and talk about how **you*
 
 ## 👨🏻‍🔬 Let's Make the Most of It
 
-If you've read this far, you're going forward with Airflow... 😬
+If you've read this far, you're either using Airflow or going forward with an implementation... 😬
 
-<img src="https://media.giphy.com/media/t1RCtCTlFUhby/giphy.gif" width = "35%" />
+<img src="/posts/making-the-most-of-airflow/guster.gif" width = "35%" />
 
 **Not to fear!**
 
@@ -47,7 +47,7 @@ Much of this new functionality can be used to provide a smoother experience duri
 
 I think one of the most _important_ aspects of DAG creation is structure— DAGs should be standardized as much as possible, prioritizing readability and consistency.
 
-Perhaps the biggest weakness of Airflow is also it's biggest strength: _possibility_. Airflow revolutionized orchestration by providing engineers with a blank canvas— a `.py` file where they could do _whatever they want_. Unfortunately, it was introduced without any framework for modularity or testing.
+Perhaps the biggest weakness of Airflow is also its biggest strength: _possibility_. Airflow revolutionized orchestration by providing engineers with a blank canvas— a `.py` file where they could do _whatever they want_. Unfortunately, it was introduced without any framework for modularity or testing.
 
 The result? Without the discipline and rigor to standardize a deployment, DAGs can quickly turn into untested scripts.
 
@@ -55,7 +55,7 @@ The result? Without the discipline and rigor to standardize a deployment, DAGs c
 
 **Solution:** [TaskFlow](https://airflow.apache.org/docs/apache-airflow/stable/tutorial/taskflow.html) & DAG Templates
 
-Simply using TaskFlow is a great start! With the new structure, readability is greatly improved. In my own projects, I start from a template— pretty much _every_ job follows an extract-transform-load pattern that can be mapped to a few tasks. If not, the beauty of Airflow is **mutability**, but starting from basic, familiar components will reduce complexity in your DAGs and make them easier to interpret.
+Simply using TaskFlow is a great start! With the new structure, readability is greatly improved. In my own projects, I start from a template— pretty much _every_ job follows an extract-transform-load pattern that can be mapped to a few tasks. If not, the beauty of Airflow is **mutability**, but starting from basic, familiar components will reduce the complexity of your DAGs and make them easier to interpret.
 
 Here's my basic DAG template for a classic ETL job:
 
@@ -113,7 +113,7 @@ Consider storing something similar in your project _or_ if you're fancy, buildin
 
 **Solution:** Linting
 
-Though linting will not solve all problems, consider a solution like [Black](https://pypi.org/project/black/) for keeping your `.py` files in check. Black is the golden standard of Python linting packages, bringing pragmatic, functional format to your code.
+Though linting will not solve all problems, consider a solution like [Black](https://pypi.org/project/black/) for keeping your `.py` files in check. Black is the golden standard of Python linting packages, bringing a pragmatic, functional format to your code.
 
 Using a formatter directly improves the readability of your code and creates a smooth experience for every developer on your team. Black formatted code looks the same, regardless of the project you're reading. Though _nothing_ needs to be configured with Black, it can be [configured](https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file) via a `pyproject.toml` file.
 
@@ -121,19 +121,19 @@ I've been using Black in my projects, both personal and professional, for the pa
 
 ### 🏜️ DRY Code
 
-Perhaps one of the trickiest things with a blank canvas like Airflow— users are left on their own to manage code reusability. [DRY](https://www.digitalocean.com/community/tutorials/what-is-dry-development) (Don't Repeat Yourself) is a principal of software development, aimed at reducing redundancy and abstracting common code.
+Perhaps one of the trickiest things with a blank canvas like Airflow— users are left on their own to manage code reusability. [DRY](https://www.digitalocean.com/community/tutorials/what-is-dry-development) (Don't Repeat Yourself) is a principle of software development, aimed at reducing redundancy and abstracting common code.
 
 With regards to Airflow, as Jake Watson notes in [_Why Airflow (Sometimes) Wins_](https://thedataplatform.substack.com/p/why-airflow-sometimes-wins):
 
 > Airflow operators are amazing as they are free with the Airflow service, and there are over [1000 operators](https://registry.astronomer.io/modules?types=operators) to choose from. On the other, they are [not as modular as they could be especially when it comes to data copying](https://airbyte.com/blog/airflow-etl-pipelines#airflow-operator-sources-and-destinations-are-tightly-coupled).
 
-So we need some way to improve operator modularity, which is specific to each use-case. Ideally, this would look like defining packages and functions for common hooks/tasks: reading an object from S3, writing to parquet, etc. Practically, it ends up not happening at all _or_ falling apart during parallel development.
+So we need some way to improve operator modularity, which is specific to each use case. Ideally, this would look like defining packages and functions for common hooks/tasks: reading an object from S3, writing to parquet, etc. Practically, it ends up not happening at all _or_ falling apart during parallel development.
 
 **Solution:** External Libraries & Airflow Tasks-as-a-Service (ATaaS)
 
 While the issue of DRY-ness can be addressed with an in-house/DIY solution, who has time for that? The [AstroSDK](https://docs.astronomer.io/learn/astro-python-sdk#how-it-works) is a good example of a framework that makes DRY code straightforward. An observant reader might notice the [available functions](https://docs.astronomer.io/learn/astro-python-sdk-etl#python-sdk-functions) fit into the framework I outlined above (we might be on to something!)
 
-By abstracting away some raw python, the SDK allows users to simply and quickly define functions to:
+By abstracting away some raw Python, the SDK allows users to simply and quickly define functions to:
 
 - Extract data from a warehouse or cloud storage, like Snowflake or S3
 - Perform SQL transformations on extracted data
@@ -143,17 +143,17 @@ No more fiddling with `S3Hooks` or storing `BytesIO` objects (which ALWAYS befud
 
 DAaaS applies mainly to the transformation (warehouse) layer, but operates under a building block approach— architects design SQL patterns that can be implemented by a wide audience, eliminating bottlenecks. We can do the same with Airflow— start with the _building blocks_ of a DAG instead of the DAG itself!
 
-Define reusable imports to do things like write, read, and transform data using the AstroSDK, then pull those task "blocks" into your DAGs. Note that Astro's framework simplifies the process of transforming dags as well, by minimizing the friction to transforming in _either_ SQL or Python.
+Define reusable imports to do things like write, read, and transform data using the AstroSDK, then pull those task "blocks" into your DAGs. Note that Astro's framework simplifies the process of transforming DAGs as well, by minimizing the friction to transforming in _either_ SQL or Python.
 
 By following this pattern, you'll improve the DRY-ness of your code _and_ improve the efficacy of your data team:
 
 - Junior engineers will benefit, as they can focus on implementing building blocks rather than writing them from scratch. This is easier to review and unblocks downstream work.
-- Senior engineers will benefit, since they can focus on patterns and architecture, amplifying impact.
-- The _team_ will benefit, since more will get done, problems will be solved, and everyone's time will be freed to pursue meaningful projects, it's a win-win-win!
+- Senior engineers will benefit since they can focus on patterns and architecture, amplifying impact.
+- The _team_ will benefit since more will get done, problems will be solved, and everyone's time will be freed to pursue meaningful projects, it's a win-win-win!
 
 <img src="/posts/making-the-most-of-airflow/biden.gif"  width="40%">
 
-These features are things new tools like [Mage](https://mage.ai) or [Dagster](https://dagster.io/) do exceptionally well— they allow "architects" to create reusable blocks of code that are then stitched together by downstream users. Even better, their user-friendly GUIs and testing frameworks come out-of-the-box.
+These features are things new tools like [Mage](https://mage.ai) or [Dagster](https://dagster.io/) do exceptionally well— they allow "architects" to create reusable blocks of code that are then stitched together by downstream users. Even better, their user-friendly GUIs and testing frameworks come out of the box.
 
 For those in Airflow-land, however, the AstroSDK is a great way to implement similar functionality on your own.
 
@@ -169,13 +169,13 @@ Trying to solve every problem concurrently is overwhelming and, quite frankly, n
 
 Unit tests allow us to _be sure_ each component of a DAG is working exactly as we'd expect.
 
-Using DRY code makes testing easier, since there are fewer unique functions to test! Best of all, coverage is guaranteed when tested code is reused. It's best to write tests for hooks, operators, and other commonly used pieces of logic in your DAG.
+Using DRY code makes testing easier since there are fewer unique functions to test! Best of all, coverage is guaranteed when tested code is reused. It's best to write tests for hooks, operators, and other commonly used pieces of logic in your DAG.
 
 With the Airflow 2.5.0, we can:
 
 - Use `dag.test` to test individual components of a DAG, in effect creating "mini-DAGs."
 - Incorporate local/dev versions of our data sources/targets _or_ use `unittests.mock`
-  - In [this example](https://github.com/astronomer/astro-sdk/blob/main/python-sdk/tests/sql/operators/test_dataframe.py#L197-L214) from the AstroSDK, dataframes are being mocked with sample data, then a sample dag is created and validated.
+  - In [this example](https://github.com/astronomer/astro-sdk/blob/main/python-sdk/tests/sql/operators/test_dataframe.py#L197-L214) from the AstroSDK, dataframes are mocked with sample data, then a sample dag is created and validated.
   - In this [example](https://github.com/astronomer/astro-sdk/blob/main/python-sdk/tests/sql/operators/test_load_file.py#L48-L69), local files are used for testing.
 - Use `pytest` to check inputs— see [this example](https://github.com/astronomer/astro-sdk/blob/main/python-sdk/tests/sql/operators/test_merge.py#L16-L53).
 
@@ -183,7 +183,7 @@ Additionally, via the Airflow 2.5.0 release notes:
 
 > Task logs are visible right there in the console, instead of hidden away inside the task log files b. It is about an order of magnitude quicker to run the tasks than before (i.e. it gets to running the task code so much quicker) c. Everything runs in one process, so you can put a breakpoint in your IDE, and configure it to run `airflow dags test <mydag>` then debug code!
 
-Using the new testing framework, you can mock inputs, like execution date, local connections, and run configs from the command line. This is as simple as adding an `if __name__ == "__main__":` to the bottom of your DAG— you can then pass inputs using the `.test()` method, for example:
+Using the new testing framework, you can mock inputs, like execution date, connections, and configs, from the command line. This is as simple as adding an `if __name__ == "__main__":` to the bottom of your DAG— you can then pass inputs using the `.test()` method, for example:
 
 ```python
 ...
@@ -204,7 +204,7 @@ if __name__ == "__main__":
 # If you found this code useful, follow for more! https://www.linkedin.com/in/matt-palmer/
 ```
 
-Once again, Astronomer has a [great guide](https://docs.astronomer.io/learn/testing-airflow#use-dagtest-with-the-astro-cli) for the functionality. Tying these all together, we have a robust framework for improving code reusability and test coverage while minimizing the time to failure by introducing break-points and leveraging `airflow dags test`.
+Once again, Astronomer has a [great guide](https://docs.astronomer.io/learn/testing-airflow#use-dagtest-with-the-astro-cli). Tying these all together, we have a robust framework for improving code reusability and test coverage while minimizing the time to failure by introducing breakpoints and leveraging `airflow dags test`.
 
 ## 🎁 Wrap-up
 
@@ -221,16 +221,16 @@ Each of the above works to streamline the development process, reduce bottleneck
 
 The goal in building _any_ new piece of code should be to reach failure as fast as possible. Getting down to the root of the issue with minimal friction will allow you to spend more time doing fun stuff (building solutions) and less time trying to recreate errors.
 
-Optimizing for speed of failure can drastically improve your efficiency, creating more value and unlocking the power of your data team. The slow feedback loop is one of my biggest qualms with Airflow. Luckily, unlike the _unfortunate_ XCom backend, it's something we can fix (or at least try to). 🤣
+Optimizing for the speed of failure can drastically improve your efficiency, creating more value and unlocking the power of your data team. The slow feedback loop is one of my biggest qualms with Airflow. Luckily, unlike the _unfortunate_ XCom backend, it's something we can fix (or at least try to). 🤣
 
 ### 🚪 Closing
 
 There's no such thing as a perfect solution. Unfortunately, even a great tool can be blocked by dogma, politics, technical debt, security constraints, and deployment considerations.
 
-Airflow, like dbt, was the first tool of it's kind and revolutionized data engineering. As a result of its popularity, many subsequent tools have built upon its strengths and minimized its flaws. Still, the momentum and ubiquity of Airflow make it the de-facto choice. Broad adoption means that understanding Airflow is **essential**— it will be around for quite some time.
+Airflow, like dbt, was the first tool of its kind and revolutionized data engineering. As a result of its popularity, many subsequent tools have built upon its strengths and minimized its flaws. Still, the momentum and ubiquity of Airflow make it the de-facto choice. Broad adoption means that understanding Airflow is **essential**— it will be around for quite some time.
 
-Today, many opinions are presented without nuance or balance. I hope that this article provided a sufficient deep-dive to explore just how a tool like Airflow can be used effectively, providing a balanced perspective. Sometimes, "good enough" is better than "not at all."
+Today, many opinions are presented without nuance or balance. I hope that this article provided a sufficient deep dive to explore just how a tool like Airflow can be used effectively, providing a balanced perspective. Sometimes, "good enough" is better than "not at all."
 
 Until next time! ✌️
 
-**NOTE:** I have no affiliation with Astronomer. Their SDK is a useful extension of Airflow. Unfortunately, the incentives of companies that profit from open-source libraries are complex and vague. I can not comment on their motivations, but I imagine they have a biased perspective. Nonentheless, everyone I've spoken with at Astronomer has been helpful and nice.
+**NOTE:** I have no affiliation with Astronomer. Their SDK is a useful extension of Airflow. Unfortunately, the incentives of companies that profit from open-source libraries are complex and vague. I can not comment on their motivations, but I imagine they have a biased perspective. Nonetheless, everyone I've spoken with at Astronomer has been helpful and nice.
