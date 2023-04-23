@@ -5,7 +5,7 @@ draft: false
 featured: true
 ogImage: "/posts/making-the-most-of-airflow/seinfeld.gif"
 postSlug: making-the-most-of-airflow
-pubDatetime: 2023-04-22 00:00:00
+pubDatetime: 2023-04-23 06:15:00
 tags: [data, opinion, guide]
 title: Making the Most of Airflow
 emoji: 🧂🤝
