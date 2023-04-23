@@ -33,7 +33,7 @@ My goal this week is to give Airflow a fair shake 🧂 and talk about how **you*
 
 If you've read this far, you're either using Airflow or going forward with an implementation... 😬
 
-<img src="/posts/making-the-most-of-airflow/guster.gif" width = "35%" />
+<img src="/posts/making-the-most-of-airflow/guster.gif" width = "40%" />
 
 **Not to fear!**
 
@@ -151,7 +151,7 @@ By following this pattern, you'll improve the DRY-ness of your code _and_ improv
 - Senior engineers will benefit since they can focus on patterns and architecture, amplifying impact.
 - The _team_ will benefit since more will get done, problems will be solved, and everyone's time will be freed to pursue meaningful projects, it's a win-win-win!
 
-<img src="/posts/making-the-most-of-airflow/biden.gif"  width="30%">
+<img src="/posts/making-the-most-of-airflow/biden.gif"  width="40%">
 
 These features are things new tools like [Mage](https://mage.ai) or [Dagster](https://dagster.io/) do exceptionally well— they allow "architects" to create reusable blocks of code that are then stitched together by downstream users. Even better, their user-friendly GUIs and testing frameworks come out of the box.
 
@@ -187,20 +187,21 @@ Using the new testing framework, you can mock inputs, like execution date, conne
 
 ```python
 ...
+
 dag_obj = my_dag()
 
 if __name__ == "__main__":
   conn_path = "connections.yaml"
- variables_path = "variables.yaml"
+  variables_path = "variables.yaml"
   overwrite = True
 
   dag_obj.test(
-   execution_date=datetime(2023, 1, 1),
+    execution_date=datetime(2023, 1, 1),
     conn_file_path=conn_path,
     variable_file_path=variables_path,
     run_conf={'overwrite': overwrite}
   )
-
+...
 # If you found this code useful, follow for more! https://www.linkedin.com/in/matt-palmer/
 ```
 
