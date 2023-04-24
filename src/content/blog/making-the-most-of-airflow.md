@@ -186,7 +186,7 @@ Additionally, via the Airflow 2.5.0 release notes:
 Using the new testing framework, you can mock inputs, like execution date, connections, and configs, from the command line. This is as simple as adding an `if __name__ == "__main__":` to the bottom of your DAG— you can then pass inputs using the `.test()` method, for example:
 
 ```python
-…
+...
 
 dag_obj = my_dag()
 
@@ -201,7 +201,7 @@ if __name__ == "__main__":
     variable_file_path=variables_path,
     run_conf={'overwrite': overwrite}
   )
-…
+...
 # If you found this code useful, follow for more! https://www.linkedin.com/in/matt-palmer/
 ```
 
