@@ -3,7 +3,7 @@ author: Matt Palmer
 description: Airflow is obsolete, but here's why you should still use it.
 draft: false
 featured: true
-ogImage: "/posts/making-the-most-of-airflow/seinfeld-almost.gif"
+ogImage: "/posts/making-the-most-of-airflow/seinfeld.gif"
 postSlug: making-the-most-of-airflow
 pubDatetime: 2023-04-23 06:15:00
 tags: [data, opinion, guide]
@@ -25,13 +25,13 @@ For many, however, this **is not** reality. Perhaps you're on an established tea
 
 Due to the popularity, adoption, and momentum of Airflow, it will be around for years, if not decades, regardless of competition. For the same reasons, understanding **how Airflow works** can be a game-changer for data engineers— up-skilling popular tools improves marketability and potential impact.
 
-A few weeks ago, I sat down with [Daniel Imberman](https://www.linkedin.com/in/danielimberman/) of [Astronomer](https://www.astronomer.io/), who walked me through some features of their [AstroSDK](https://github.com/astronomer/astro-sdk), which I found quite helpful. While I was writing this post, [Jake Watson](https://www.linkedin.com/in/jake-watson-data/) reached out about a [very similar peice](https://thedataplatform.substack.com/p/why-airflow-sometimes-wins). I agree with many of Jake's points and hope to extend his argument on why Airflow "sometimes wins."
+A few weeks ago, I sat down with [Daniel Imberman](https://www.linkedin.com/in/danielimberman/) of [Astronomer](https://www.astronomer.io/), who walked me through some features of their [AstroSDK](https://github.com/astronomer/astro-sdk), which I found quite helpful. While I was writing this post, [Jake Watson](https://www.linkedin.com/in/jake-watson-data/) reached out about a [similar peice](https://thedataplatform.substack.com/p/why-airflow-sometimes-wins). I agree with many of Jake's points and hope to extend his argument on why Airflow "sometimes wins."
 
 My goal this week is to give Airflow a fair shake 🧂 and talk about how **you** can make the most of **your** Airflow deployment to build robust, production-ready DAGs.
 
 ## 👨🏻‍🔬 Let's Make the Most of It
 
-If you've read this far, you're either using Airflow or going forward with an implementation... 😬
+If you've read this far, you're either using Airflow or going forward with an implementation… 😬
 
 <img src="/posts/making-the-most-of-airflow/guster.gif" width = "40%" />
 
@@ -123,7 +123,7 @@ I've been using Black in my projects, both personal and professional, for the pa
 
 Perhaps one of the trickiest things with a blank canvas like Airflow— users are left on their own to manage code reusability. [DRY](https://www.digitalocean.com/community/tutorials/what-is-dry-development) (Don't Repeat Yourself) is a principle of software development, aimed at reducing redundancy and abstracting common code.
 
-With regards to Airflow, as Jake Watson notes in [_Why Airflow (Sometimes) Wins_](https://thedataplatform.substack.com/p/why-airflow-sometimes-wins):
+As Jake Watson notes in [_Why Airflow (Sometimes) Wins_](https://thedataplatform.substack.com/p/why-airflow-sometimes-wins):
 
 > Airflow operators are amazing as they are free with the Airflow service, and there are over [1000 operators](https://registry.astronomer.io/modules?types=operators) to choose from. On the other, they are [not as modular as they could be especially when it comes to data copying](https://airbyte.com/blog/airflow-etl-pipelines#airflow-operator-sources-and-destinations-are-tightly-coupled).
 
@@ -159,7 +159,7 @@ For those in Airflow-land, however, the AstroSDK is a great way to implement sim
 
 ### 🧪 Testing
 
-DAGs can be incredibly complex— at each step (task), the number of unknowns multiply. Now imagine 100... or 1000... all running nightly. It's not hard to envision yourself on-call at 3AM looking like this:
+DAGs can be incredibly complex— at each step (task), the number of unknowns multiply. Now imagine 100… or 1000… all running nightly. It's not hard to envision yourself on-call at 3 A.M. looking like this:
 
 ![](/posts/making-the-most-of-airflow/elmo.gif)
 
