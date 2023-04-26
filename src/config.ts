@@ -56,7 +56,7 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Calendly",
-    href: "https://calendly.com/matt-pal/15-min",
+    href: "https://calendar.app.google/fnyVvSXwU3MNC7aZ6",
     linkTitle: `Chat with Matt!`,
     active: true,
   },
