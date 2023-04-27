@@ -1,5 +1,7 @@
 export type Site = {
   website: string;
+  calendar: string;
+  linkedin: string;
   author: string;
   email: string;
   googleAnalyticsId: string;
