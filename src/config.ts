@@ -2,6 +2,8 @@ import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
   website: "https://mattpalmer.io",
+  calendar: "https://calendar.app.google/3PSjPiP6esTBwMb47",
+  linkedin: "https://linkedin.com/in/matt-palmer",
   author: "Matt Palmer",
   desc: "Matt's musings— all things data, writing, & fun.",
   title: "MattPalmer",
@@ -38,7 +40,7 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/matt-palmer",
+    href: SITE.linkedin,
     linkTitle: `${SITE.author} on LinkedIn`,
     active: true,
   },
@@ -50,13 +52,13 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Mail",
-    href: "mailto:hello@mattpalmer.io",
+    href: `mailto:${SITE.email}`,
     linkTitle: `Send an email to ${SITE.author}`,
     active: true,
   },
   {
     name: "Calendly",
-    href: "https://calendar.app.google/fnyVvSXwU3MNC7aZ6",
+    href: SITE.calendar,
     linkTitle: `Chat with Matt!`,
     active: true,
   },
