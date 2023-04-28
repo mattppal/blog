@@ -169,7 +169,7 @@ For those in Airflow-land, however, the AstroSDK is a great way to implement sim
 
 DAGs can be incredibly complex— at each step (task), the number of unknowns multiply. Now imagine 100… or 1000… all running nightly. It's not hard to envision yourself on-call at 3 A.M. looking like this:
 
-![](/posts/making-the-most-of-airflow/elmo.gif)
+<img src="/posts/making-the-most-of-airflow/elmo.gif">
 
 Trying to solve every problem concurrently is overwhelming and, quite frankly, not possible (my brain can't parallelize and autoscale, unfortunately 🤖). We need to start from first principles: break the problem down and tackle it at the source.
 
