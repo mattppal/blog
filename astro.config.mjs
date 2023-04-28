@@ -5,9 +5,7 @@ import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
-
 import mdx from "@astrojs/mdx";
-
 import image from "@astrojs/image";
 
 // https://astro.build/config
