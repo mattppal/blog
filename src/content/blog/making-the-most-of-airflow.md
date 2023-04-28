@@ -11,6 +11,14 @@ title: Making the Most of Airflow
 emoji: 🧂🤝
 ---
 
+<style>
+  img {
+    width: 45%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+  }
+</style>
+
 ## ToC
 
 ## ◽️ Shades of Grey
@@ -33,7 +41,7 @@ My goal this week is to give Airflow a fair shake 🧂 and talk about how **you*
 
 If you've read this far, you're either using Airflow or going forward with an implementation… 😬
 
-<img src="/posts/making-the-most-of-airflow/guster.gif" width = "40%" />
+<img src="/posts/making-the-most-of-airflow/guster.gif"/>
 
 **Not to fear!**
 
@@ -51,7 +59,7 @@ Perhaps the biggest weakness of Airflow is also its biggest strength: _possibili
 
 The result? Without the discipline and rigor to standardize a deployment, DAGs can quickly turn into untested scripts.
 
-<img src="/posts/making-the-most-of-airflow/seinfeld.gif"  width="50%">
+<img src="/posts/making-the-most-of-airflow/seinfeld.gif">
 
 **Solution:** [TaskFlow](https://airflow.apache.org/docs/apache-airflow/stable/tutorial/taskflow.html) & DAG Templates
 
@@ -151,7 +159,7 @@ By following this pattern, you'll improve the DRY-ness of your code _and_ improv
 - Senior engineers will benefit since they can focus on patterns and architecture, amplifying impact.
 - The _team_ will benefit since more will get done, problems will be solved, and everyone's time will be freed to pursue meaningful projects, it's a win-win-win!
 
-<img src="/posts/making-the-most-of-airflow/biden.gif"  width="40%">
+<img src="/posts/making-the-most-of-airflow/biden.gif">
 
 These features are things new tools like [Mage](https://mage.ai) or [Dagster](https://dagster.io/) do exceptionally well— they allow "architects" to create reusable blocks of code that are then stitched together by downstream users. Even better, their user-friendly GUIs and testing frameworks come out of the box.
 
