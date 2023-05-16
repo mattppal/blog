@@ -2,7 +2,7 @@
 author: Matt Palmer
 description: Reflecting on the premier data conference in Austin, TX.
 draft: false
-featured: true
+featured: false
 ogImage: ""
 postSlug: data-council-austin
 pubDatetime: 2023-04-01 00:00:00

@@ -2,7 +2,7 @@
 author: Matt Palmer
 description: Airflow is obsolete, but here's why you should still use it.
 draft: false
-featured: true
+featured: false
 ogImage: "/posts/making-the-most-of-airflow/seinfeld.gif"
 postSlug: making-the-most-of-airflow
 pubDatetime: 2023-04-23 06:15:00
