@@ -21,7 +21,7 @@ emoji: 🤔
 
 ## 🤔 What's a meme?
 
-Take a look at [top posts](https://www.reddit.com/r/dataengineering/top/?t=year) in r/dataengineering and you'll notice a trend: memes dominate. While expected on Reddit, LinkedIn has started to look eerily similar. It's only recently that "professional" circles have adopted memes as a communication style. Anecdotally, I've noticed that a larger share of my personal interactions (DMs, texts, mentions) have become meme-oriented, but maybe that's just part of being a [millennial](https://en.wikipedia.org/wiki/Millennials).
+Take a look at [top posts](https://www.reddit.com/r/dataengineering/top/?t=year) in r/dataengineering and you'll notice a trend: memes dominate. While expected on Reddit, LinkedIn has started to look eerily similar. Professional circles only recently adopted memes as a communication style, but they've quickly gained traction. Anecdotally, I've noticed that a larger share of my interactions (DMs, texts, mentions) have become meme-oriented, but maybe that's just part of being a [millennial](https://en.wikipedia.org/wiki/Millennials).
 
 Memes have [been around for quite a while](https://www.nytimes.com/2022/01/26/crosswords/what-is-a-meme.html), though they've only gained steam in the past decade or so. At the core of a meme is an **idea**, usually tinged with comedy, that conveys a relatable message. The power of memes comes in their stark simplicity: a meme can traverse complex ideas yet make them available to a broad audience.
 
