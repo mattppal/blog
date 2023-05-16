@@ -3,7 +3,7 @@ author: Matt Palmer
 description: Considerations for short- vs. long-form content in the data space.
 draft: false
 featured: true
-ogImage: ""
+ogImage: "/posts/data-is-a-meme/genie-aladdin.gif"
 postSlug: data-is-a-meme
 pubDatetime: 2023-05-10 00:08:27
 tags: [data, opinion, hot-takes]
