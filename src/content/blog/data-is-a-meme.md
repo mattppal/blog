@@ -5,7 +5,7 @@ draft: false
 featured: true
 ogImage: "/posts/data-is-a-meme/genie-aladdin.gif"
 postSlug: data-is-a-meme
-pubDatetime: 2023-05-10 00:08:27
+pubDatetime: 2023-05-16 00:07:51
 tags: [data, opinion, hot-takes]
 title: Data is a meme... and that's a good thing
 emoji: 🤔
