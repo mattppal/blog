@@ -2,7 +2,7 @@ import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
   website: "https://mattpalmer.io",
-  calendar: "https://calendar.app.google/eURsfAUG6vA2jnRW8",
+  calendar: "https://calendar.app.google/mVAr85FzJQqzpVce9",
   linkedin: "https://linkedin.com/in/matt-palmer",
   author: "Matt Palmer",
   desc: "Matt's musings— all things data, writing, & fun.",
@@ -13,7 +13,7 @@ export const SITE: Site = {
   company: "Underline Infrastructure",
   location: "Asheville, NC",
   ogImage: "og.jpg",
-  googleAnalyticsId: "G-EC2ZQ7Y8TD",
+  googleAnalyticsId: "",
   lightAndDarkMode: true,
   postPerPage: 8,
 };
@@ -29,14 +29,14 @@ export const SOCIALS: SocialObjects = [
   {
     name: "Github",
     href: "https://github.com/mattppal",
-    linkTitle: ` ${SITE.author} on Github`,
+    linkTitle: `${SITE.author} on Github`,
     active: true,
   },
   {
     name: "Instagram",
     href: "https://instagram.com/mattppal",
     linkTitle: `${SITE.author} on Instagram`,
-    active: true,
+    active: false,
   },
   {
     name: "LinkedIn",
