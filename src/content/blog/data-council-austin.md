@@ -52,7 +52,7 @@ As with any conference, I think the greatest value comes from meeting passionate
 
 - **[Rust](https://www.rust-lang.org/)** appears to be gaining traction in the data community. These still appear _very_ experimental. I did not speak to anyone using Rust in production. Nonetheless, I think playing around with something like [Polars](https://www.pola.rs/) in Rust would be worthwhile.
 - **[Arrow](https://arrow.apache.org/)** defines a language-independent columnar memory format for flat and hierarchical data. Tools like pandas and others will be adopting Arrow in the near future.
-- **[Duckdb](https://duckdb.org/)** is SQL interface for common file storage types— think Redshift Spectrum, but more flexible. The concept is promising... could it be a OLAP killer? 🦆
+- **[Duckdb](has tremendous pro)** is SQL interface for common file storage types— think Redshift Spectrum, but more flexible. The concept is promising... could it be a OLAP killer? 🦆
 
 ### Modern Data Stack
 

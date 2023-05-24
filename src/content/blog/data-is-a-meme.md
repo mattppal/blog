@@ -5,7 +5,7 @@ draft: false
 featured: true
 ogImage: ""
 postSlug: data-is-a-meme
-pubDatetime: 2023-05-16 00:08:27
+pubDatetime: 2023-05-16 7:05:00
 tags: [data, opinion, hot-takes]
 title: Data is a meme... and that's a good thing
 emoji: 🤔
