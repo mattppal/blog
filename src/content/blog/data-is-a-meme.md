@@ -1,9 +1,9 @@
 ---
 author: Matt Palmer
-description: Considerations for short- vs. long-form content in the data space.
+description: Exploring trends in short-form content about data and arguing in favor of that which builds community and generates discourse.
 draft: false
 featured: true
-ogImage: ""
+ogImage: "/posts/data-is-a-meme/genie-aladdin.gif"
 postSlug: data-is-a-meme
 pubDatetime: 2023-05-16 7:05:00
 tags: [data, opinion, hot-takes]
