@@ -43,7 +43,9 @@ Let's dig in! According to the folks at [DuckDB](https://duckdb.org/):
 
 > DuckDB is an <u>in-process</u> ..
 
-Ok, so it runs in memory, _not_ on disk, i.e. RAM vs. SSD. [Here's a good write-up](https://aws.amazon.com/nosql/in-memory/) by Amazon on in-memory DBs.
+Ok, so it runs in-process— that means DuckDB shares memory with your host language, but it can process larger than RAM datasets and persist to disk. [Here's a solid write-up](https://sqlite.org/forum/info/13f48a20f3a94fa59ad36c9f987eb7d616a2855a648ca9d57e9ca865503c15dd) of what it means to be in-process.
+
+💡 **NOTE:** V1 of this post incorrectly stated DuckDB was an in-memory database.[Thanks to Alex Monahan for the correction](https://twitter.com/__AlexMonahan__/status/1661577625238921216?s=20). [In-memory DBs](https://aws.amazon.com/nosql/in-memory/) are something entirely different (almost precisely the opposite of in-process DBs 🤣). A topic for a future post!
 
 > .. <u>SQL OLAP</u> ..
 
@@ -61,7 +63,7 @@ Being a vectorized engine just means that large batches of values (vectors) are 
 
 ![A graphic describing the difference between row- & column-oriented databases.](/posts/whats-the-hype-duckdb/row-vs-col.png)
 
-While _technically_ not new, there's a pretty big movement in the open source community right now: [PyArrow](https://arrow.apache.org/docs/python/index.html), [Polars](https://github.com/pola-rs/polars), [Pandas 2.0](https://pandas.pydata.org/docs/dev/whatsnew/v2.0.0.html), _and_ [DuckDB](https://duckdb.org/) all tools built on in-memory, vectorized operations. Usually, when many things point in the same direction, it's wise to take note! 📝
+While _technically_ not new, there's a pretty big movement in the open source community right now: [PyArrow](https://arrow.apache.org/docs/python/index.html), [Polars](https://github.com/pola-rs/polars), [Pandas 2.0](https://pandas.pydata.org/docs/dev/whatsnew/v2.0.0.html), _and_ [DuckDB](https://duckdb.org/) all tools built on in-process, vectorized operations. Usually, when many things point in the same direction, it's wise to take note! 📝
 
 While the features of DuckDB are not new— we've had OLAP DBMS for years: the real innovation behind DuckDB is its **simplicity** and **distribution** (free & [open-source](https://github.com/duckdb/duckdb)).
 
@@ -95,7 +97,7 @@ SELECT * FROM read_parquet('input.parquet');
 CREATE new_tbl AS SELECT * FROM read_parquet('input.parquet');
 ```
 
-Wow! So basically, we can go from zero ➡️ in-memory, vectorized databases with:
+Wow! So basically, we can go from zero ➡️ in-process, vectorized databases with:
 
 - A python installation
 - Three lines of code
