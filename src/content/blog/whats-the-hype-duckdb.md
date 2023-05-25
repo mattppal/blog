@@ -6,7 +6,7 @@ featured: true
 ogImage: "/posts/whats-the-hype-duckdb/ducks-mid.png"
 postSlug: whats-the-hype-duckdb
 pubDatetime: 2023-05-24 8:00:00
-tags: [data, tutorial]
+tags: [data, tutorial, duckdb, opinion]
 title: What's the hype behind DuckDB?
 emoji: 🐥
 ---
@@ -214,13 +214,68 @@ I also cleaned up the columns a bit— there were some trailing spaces hanging a
 bank_df.head()
 ```
 
-|     |                  Bank Name |              City | State |  Cert |               Acquiring Institution | Closing Date |  Fund |
-| --: | -------------------------: | ----------------: | ----: | ----: | ----------------------------------: | -----------: | ----: |
-|   0 |        First Republic Bank |     San Francisco |    CA | 59017 |           JPMorgan Chase Bank, N.A. |     1-May-23 | 10543 |
-|   1 |             Signature Bank |          New York |    NY | 57053 |                 Flagstar Bank, N.A. |    12-Mar-23 | 10540 |
-|   2 |        Silicon Valley Bank |       Santa Clara |    CA | 24735 | First–Citizens Bank & Trust Company |    10-Mar-23 | 10539 |
-|   3 |          Almena State Bank |            Almena |    KS | 15426 |                         Equity Bank |    23-Oct-20 | 10538 |
-|   4 | First City Bank of Florida | Fort Walton Beach |    FL | 16748 |           United Fidelity Bank, fsb |    16-Oct-20 | 10537 |
+<center>
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Bank Name</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Cert</th>
+      <th>Acquiring Institution</th>
+      <th>Closing Date</th>
+      <th>Fund</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>First Republic Bank</td>
+      <td>San Francisco</td>
+      <td>CA</td>
+      <td>59017</td>
+      <td>JPMorgan Chase Bank, N.A.</td>
+      <td>1-May-23</td>
+      <td>10543</td>
+    </tr>
+    <tr>
+      <td>Signature Bank</td>
+      <td>New York</td>
+      <td>NY</td>
+      <td>57053</td>
+      <td>Flagstar Bank, N.A.</td>
+      <td>12-Mar-23</td>
+      <td>10540</td>
+    </tr>
+    <tr>
+      <td>Silicon Valley Bank</td>
+      <td>Santa Clara</td>
+      <td>CA</td>
+      <td>24735</td>
+      <td>First–Citizens Bank &amp; Trust Company</td>
+      <td>10-Mar-23</td>
+      <td>10539</td>
+    </tr>
+    <tr>
+      <td>Almena State Bank</td>
+      <td>Almena</td>
+      <td>KS</td>
+      <td>15426</td>
+      <td>Equity Bank</td>
+      <td>23-Oct-20</td>
+      <td>10538</td>
+    </tr>
+    <tr>
+      <td>First City Bank of Florida</td>
+      <td>Fort Walton Beach</td>
+      <td>FL</td>
+      <td>16748</td>
+      <td>United Fidelity Bank, fsb</td>
+      <td>16-Oct-20</td>
+      <td>10537</td>
+    </tr>
+  </tbody>
+</table>
+</center>
 
 Nice! A cleaned dataset. Now we have to configure a few variables:
 
