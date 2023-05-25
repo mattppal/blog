@@ -117,6 +117,12 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-skin-card-muted;
   }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+    white-space: normal;
+  }
 }
 
 @layer components {
