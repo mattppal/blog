@@ -7,7 +7,7 @@ import LinkButton from "./LinkButton.astro";
 // import logoSVG from "/assets/logo.svg";
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search" | "resume";
+  activeNav?: "posts" | "tags" | "about" | "search" | "CV";
 }
 
 const { activeNav } = Astro.props;
@@ -66,9 +66,9 @@ const { activeNav } = Astro.props;
           <li>
             <a
               href="/assets/palmer-cv.pdf"
-              class={activeNav === "resume" ? "active" : ""}
+              class={activeNav === "CV" ? "active" : ""}
             >
-              Resume
+              CV
             </a>
           </li>
           <li>
