@@ -39,11 +39,11 @@ Note that we're not referencing a particular language, rather we're using softwa
 
 ### 📝 The imperative approach
 
-Many data engineering systems are imperative by default— [Airflow DAGs begin as an empty canvas](making-the-most-of-airflow/#%EF%B8%8F-dag-structure) and dbt projects are a clean slate. This introduces _possibility_ and _flexibility_ to your system.
+Many data engineering systems are imperative— [Airflow DAGs begin as an empty canvas](making-the-most-of-airflow/#%EF%B8%8F-dag-structure), dbt projects are a clean slate. This introduces _possibility_ and _flexibility_ to the system.
 
 Imperative code allows data engineers to write custom logic tailored to specific requirements: you might have an Airflow DAG that needs to interface with a very unique data source— so unique that _no_ prebuilt tool exists\_ for the task! **No problem**, as a data engineer with an imperative tool, you whip up some Python to do as you, please!
 
-Furthermore, as I'm sure we're all aware, no two datasets are alike. Hence, data manipulation and processing are inherently bespoke. Imperative tooling, i.e. Python and SQL, allows us to build the most precise solutions possible for manipulating data.
+As I'm sure we're all aware, no two datasets are alike. Hence, data manipulation and processing are inherently bespoke. Imperative tooling, i.e. Python and SQL, allows us to build the most precise solutions possible for manipulating data.
 
 Finally, once we have those cleaned datasets, we need to apply advanced analytics techniques and machine learning logic to derive insight. Imperative code lets us define the exact logic we need for our analysis, regardless of the underlying data.
 
@@ -51,7 +51,7 @@ Sounds great, right? There's a catch... 😬
 
 ![](/posts/declarative-imperative/futurama-bender.gif)
 
-Actually, there are a few:
+Well, actually, there are a few:
 
 1. Imperative code takes _a long time to write_.
 2. Purely imperative code _doesn't generalize_.
@@ -59,38 +59,49 @@ Actually, there are a few:
 
 ### 🗣️ The declarative approach
 
-A declarative query language is attractive because it is typically more concise and easier to work with than an imperative API. But more importantly, it also hides implementation details of the underlying code.
+Declarative solutions are attractive because they're typically more concise and easier to work with. Declarative code abstracts away implementation details and allows users to focus on defining the desired results.
 
-1. Data transformations and ETL processes: Declarative code, such as SQL queries, abstracts away the implementation details and allows users to focus on defining desired results. **Templates, CTEs, Macros, etc.**
-   1. E.g. `SELECT * FROM views.active_accounts`
-2. Data pipelines: Tools like AstroSDK can be used to create the building blocks of common transformations, making code more DRY. Coalesce.io is a good example, as are Airflow libs.
-3. Common data-eng problem: taking a purely imperative approach from a building-block tool: e.g. configuring dbt Core from scratch, building DAGs from scratch, etc. Instead, a declarative approach can save resources.
+This can be a huge win when these tools work. Perhaps the most salient form of declarative programming in data engineering is ingestion tooling: we simply say "I want my Intercom data in Snowflake" and... voila! Fivetran makes it happen. _The reason_ ingestion benefitted so starkly from declaration? There are a predefined set of inputs and outputs: sources and targets. By _reusing common components_ and being intelligent about architecture, Fivetran was able to serve a declarative solution to an age-old problem.
+
+The downside? What happens when Fivetran doesn't have the connector you need?
+
+![](/posts/declarative-imperative/oh-no-monkey.gif)
+
+While Airbyte [claims](https://airbyte.com/blog/data-orchestration-trends#declarative-pipelines-are-taking-over-imperative-pipelines) declarative pipelines are on the rise, purely declarative tools are an _incomplete solution at best_ without an accompanying API or imperative component. I've spoken about [my qualms with Airbyte](/posts/hot-takes#-hot-takes), so I will refrain from doing so here.
+
+_BUT_
+
+This is what makes a tool like Meltano so powerful. In addition to the _declarative_ aspect, you can also _easily build your own taps_. This Swiss army knife-like functionality combines the declarative and imperative to solve _most_ problems quickly, while still allowing you to handle edge cases elegantly (using best practices).
+
+This is the pattern we'll focus on for the rest of the article, the hybrid declarative/imperative tool.
 
 ## 🚗 Declarative or imperative? An analogy
 
+> TODO: Does this make sense within the context of this article?
+
 If you've ever heard Enzo Ferrari speak about his cars, you might have confused his [effervescence](https://www.youtube.com/watch?v=Sk1-7llcR20) for that of a passionate lover, and with good reason— his drive and legacy for manufacturing live on to this day.
 
-Each Ferrari is custom made, from start to finish— this begets quality, but also scarcity. [Around 10,000](https://www.continentalautosports.com/ferrari-information/how-many-cars-does-ferrari-make-a-year/) are produced per year, with prices ranging from $200,000-400,000 USD: these tools are _inaccessible_ to all but a fortunate few. Furthermore, while a Ferrari might be beautiful and _really_ good at one thing (going fast), they aren't exactly known for their utility, fuel efficiency, or carrying capacity.
+Each Ferrari is custom made, from start to finish— this begets quality, but also scarcity. [Around 10,000](https://www.continentalautosports.com/ferrari-information/how-many-cars-does-ferrari-make-a-year/) are produced per year, with prices ranging from $200,000-400,000 USD: they're _inaccessible_ to all but a fortunate few. Furthermore, while a Ferrari might be beautiful and _really_ good at one thing (going fast), they aren't exactly known for their utility, fuel efficiency, or carrying capacity.
 
-Ferraris are like imperative solutions: custom, expensive, and _really_ good at what they were designed for, but not much else!
+Ferraris are like imperative tools: custom, expensive, and _really_ good at what they were designed for, but not much else!
 
 Toyota, by contrast, has a very different business model. They [pioneered a system](https://global.toyota/en/company/vision-and-philosophy/production-system/) centered around reducing waste and utilizing an assembly line process in the production of their cars. Over the years, they've focused on procuring the most cost-effective components, reusing them in their vehicles, and delivering vehicles that, for the most part, are durable and suitable for many use cases.
 
-Toyota sold [536,740 cars in 2022](https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-year-end-2022-us-sales-results-301713474.html), with several models under $30k (it's wild that this is a low price for a car these days, but talk to Jay Powell). Despite their affordability, Toyota has become [renowned for quality and durability](https://www.thestreet.com/automotive/most-least-reliable-cars-and-car-brands-according-to-consumer-reports#gid=ci02b0e590400025f0&pid=25-lexus-brand-lexus).
+Toyota sold [536,740 cars in 2022](https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-year-end-2022-us-sales-results-301713474.html), with several models under $30k (it's wild that this is a low price for a car these days, but talk to Jay Powell, not me). Despite their affordability, Toyota has become [renowned for its quality and durability](https://www.thestreet.com/automotive/most-least-reliable-cars-and-car-brands-according-to-consumer-reports#gid=ci02b0e590400025f0&pid=25-lexus-brand-lexus).
 
-Toyota is like a declarative solution. While you _can't_ buy a Toyota with 700 horsepower, 95% of us could have our needs met by a car in their line-up.
-
-Declarative and imperative solutions are just that: solutions— ways of solving problems. If you're attempting to drive data at scale in your organization, you should consider a solution _suited_ to scale and longevity. By contrast, if you need a high-powered, bleeding-edge product for an _essential_ problem, there may be considerable costs and a dearth of extensibility in that tool.
-
-... but data engineering _tools_ should cater to BOTH solutions!
+While you _can't_ buy a Toyota that goes zero-to-sixty in under 3 seconds, 95% of us could have our needs met by a car in their line-up. I think you can see where I'm going here... This is the declarative equivalent.
 
 ### The problem with tooling today
 
-Today, **there is no middle ground in data engineering tools.** Practitioners are either forced towards things like Airflow and dbt, with hefty implementation costs, steep learning curves, and _OH_ so much wasted energy (have you ever built a dbt project from scratch?) or overly-declarative GUI tools— Matillion, Informatica, Wherescape (if I have to click something more than 3 times, I'm out).
+Declarative and imperative solutions are just that: solutions— ways of solving problems. If you're attempting to drive data at scale in your organization, you should consider a solution _suited_ to scale and longevity. By contrast, if you need a high-powered, bleeding-edge product for an _essential_ problem, there may be considerable costs and zero extensibility in that tool.
 
-The _ideal_ data engineering tool is one that combines the declarative and imperative
+Today, **there is no middle ground in data engineering products.** Practitioners either begin with tools like Airflow and dbt, with hefty implementation costs, steep learning curves, and _OH_ so much wasted energy (have you ever built a dbt project from scratch?) or overly-declarative GUI tools— Matillion, Informatica, Wherescape (if I have to click something more than 3 times, I'm out).
+
+This is all about to change however. The next wave of great data engineering tools will be _both_ declarative _and_ imperative and existing tools will adapt... or die. The _ideal_ data engineering tool combines the declarative and imperative— it handles the common remarkably well, but also allows for robust solutions at the edge.
 
 ## 🔄 Synergy
+
+### Analytics engineers know what's up
 
 SQL is a great example of a language where imperative and declarative patterns can be used to construct high-level transformations. Many analytics engineers are familiar with the following pattern:
 
@@ -98,26 +109,27 @@ SQL is a great example of a language where imperative and declarative patterns c
 2. Use common tables as inputs to queries.
 3. Leverage CTEs as the "building blocks" of calculations.
 
-```sql
-WITH step_1 AS (
-    SELECT
-        *
-    FROM prebuilt_table_1
-), step_2 AS (
-    SELECT
-        *
-    FROM prebuilt_table_2
-)
-SELECT
-    *
-FROM prebuilt_table_3
-LEFT JOIN step_1
-    USING(id)
-LEFT JOIN step_2
-    USING(id)
-```
+So why hasn't SQL _tooling_ adopted this framework? dbt lacks a robust framework for DRY code. Coalesce is pioneering this approach, but their product is closed source and targeted primarly at the Snowflake-enterprise market. Even in analytics, the idea of a "query library" is not a solved problem. SQL is written, stashed, and lost more than _any_ company will admit. Worse, there's no community marketplace to go find common SQL tidbits.
 
-This pattern
+What we NEED is a transformation tool that allows users to share _patterns_ and _nodes_. And not just SQL! Orchestration & data-engineering, too! One that democratizes data transformation in the most meaningful way possible: by making common transformations available in a marketplace-like setting.
+
+A prime example? Github Actions.
+
+Github Actions _revolutionized_ CI/CD. I say this, because I can remember a time that I knew absolutely nothing about CI/CD. While some may claim that's still true, I have been able to build some _pretty awesome_ stuff with Actions. 😂
+
+The innovation? Open-source the jobs step. Anyone can build a runtime job and create an action in the market place. This means that, for almost every step of my actions, I'm grabbing pre-built code off-the-shelf and plugging it in. Do I need to know how to get a list of all the changed files in my repo on merge? [Nope](https://github.com/marketplace/actions/changed-files). Do I need to spend hours figuring out how to deploy to kubernetes? [Nope](https://github.com/marketplace/actions/deploy-to-kubernetes-cluster).
+
+The **only** things I need to know are:
+
+1. What I want my tool to accomplish.
+2. What actions are available.
+3. (Maybe) how to build a custom solution if I'm doing something obscure.
+
+Thanks to Google (and LLMs 🤖), #2 is pretty easy. So really, _all_ I need to understand is the solution and edge cases... That's insanely powerful.
+
+Could you imagine if the same thing were true for data orchestration? Transformation? Analysis? The technical barrier to entry would be effectively reduced to zero.
+
+###
 
 - What's the current state of paradigms in data-eng tooling?
 
@@ -164,3 +176,6 @@ Resources
 - <https://dev.to/ruizb/declarative-vs-imperative-4a7l>
 - Query Languages for Data, Designing Data Intensive Applications p. 42
   **Examples**
+
+1. Data pipelines: Tools like AstroSDK can be used to create the building blocks of common transformations, making code more DRY. Coalesce.io is a good example, as are Airflow libs.
+2. Common data-eng problem: taking a purely imperative approach from a building-block tool: e.g. configuring dbt Core from scratch, building DAGs from scratch, etc. Instead, a declarative approach can save resources.
