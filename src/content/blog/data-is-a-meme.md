@@ -25,7 +25,8 @@ Take a look at [top posts](https://www.reddit.com/r/dataengineering/top/?t=year)
 
 Memes have [been around for quite a while](https://www.nytimes.com/2022/01/26/crosswords/what-is-a-meme.html), though they've only gained steam in the past decade or so. At the core of a meme is an **idea**, usually tinged with comedy, that conveys a relatable message. The power of memes comes in their stark simplicity: a meme can traverse complex ideas yet make them available to a broad audience.
 
-<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3349_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"Meme","geo":"US","time":"2004-01-01 2023-05-07"}],"category":0,"property":""}, {"exploreQuery":"date=all&geo=US&q=Meme","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
+![Google Trends for the term "Meme".](/posts/data-is-a-meme/google-trends.png)
+
 <center><figcaption>Search interest in memes might have dipped with COVID, but the term is here to stay.</figcaption></center>
 
 Today, many data creators are opting for short, catchy headlines, which can make LinkedIn look and feel quite a bit like Reddit. Don't get me wrong, there are clear differences: the anonymity of Reddit lends itself to unconstrained commentary, which can be helpful for an honest opinion but is also responsible for some of the worst parts of the internet. 💀 😂
