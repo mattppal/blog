@@ -131,11 +131,11 @@ Could you imagine if the same thing were true for data orchestration? Transforma
 
 ## Additional considerations
 
-### Shared resources
+### [TODO] Shared resources
 
 Perhaps this is idealist, but could you IMAGINE if everyone shared their dbt models and DAGs? I'm willing to bet a solution _has been found_ for most problems!
 
-### 🐘 The elephant in the room (AI)
+### [TODO] 🐘 The elephant in the room (AI)
 
 - As A.I. improves, more "building blocks" of code will be automated.
 - This shifts skill from being able to construct low-level solutions to accurately describing an objective _and the most efficient way to complete that objective._
