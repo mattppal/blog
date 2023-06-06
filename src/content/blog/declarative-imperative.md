@@ -97,7 +97,7 @@ Declarative and imperative solutions are just that: solutions— ways of solving
 
 Today, **there is no middle ground in data engineering products.** Practitioners either begin with tools like Airflow and dbt, with hefty implementation costs, steep learning curves, and _OH_ so much wasted energy (have you ever built a dbt project from scratch?) or overly-declarative GUI tools— Matillion, Informatica, Wherescape (if I have to click something more than 3 times, I'm out).
 
-This is all about to change however. The next wave of great data engineering tools will be _both_ declarative _and_ imperative and existing tools will adapt... or die. The _ideal_ data engineering tool combines the declarative and imperative— it handles the common remarkably well, but also allows for robust solutions at the edge.
+This is all about to change, however. The next wave of great data engineering tools will be _both_ declarative _and_ imperative and existing tools will adapt... or die. The _ideal_ data engineering tool combines the declarative and imperative— it handles the common remarkably well, but also allows for robust solutions at the edge.
 
 ## 🔄 Synergy
 
@@ -109,13 +109,13 @@ SQL is a great example of a language where imperative and declarative patterns c
 2. Use common tables as inputs to queries.
 3. Leverage CTEs as the "building blocks" of calculations.
 
-So why hasn't SQL _tooling_ adopted this framework? dbt lacks a robust framework for DRY code. Coalesce is pioneering this approach, but their product is closed source and targeted primarly at the Snowflake-enterprise market. Even in analytics, the idea of a "query library" is not a solved problem. SQL is written, stashed, and lost more than _any_ company will admit. Worse, there's no community marketplace to go find common SQL tidbits.
+So why hasn't SQL _tooling_ adopted this framework? dbt lacks a robust framework for DRY code. Coalesce is pioneering this approach, but their product is closed source and targeted primarily at the Snowflake-enterprise market. Even in analytics, the idea of a "query library" is not a solved problem. SQL is written, stashed, and lost more than _any_ company will admit. Worse, there's no community marketplace to go find common SQL tidbits.
 
-What we NEED is a transformation tool that allows users to share _patterns_ and _nodes_. And not just SQL! Orchestration & data-engineering, too! One that democratizes data transformation in the most meaningful way possible: by making common transformations available in a marketplace-like setting.
+What we NEED is a transformation tool that allows users to share _patterns_ and _nodes_. And not just SQL! Orchestration & data engineering, too! One that democratizes data transformation in the most meaningful way possible: by making common transformations available in a marketplace-like setting.
 
-A prime example? Github Actions.
+A prime example? GitHub Actions.
 
-Github Actions _revolutionized_ CI/CD. I say this, because I can remember a time that I knew absolutely nothing about CI/CD. While some may claim that's still true, I have been able to build some _pretty awesome_ stuff with Actions. 😂
+GitHub Actions _revolutionized\_\_ CI/CD. I say this, because I can remember a time when I knew absolutely nothing about CI/CD. While some may claim that's still true, I have been able to build some \_pretty awesome_ stuff with Actions. 😂
 
 The innovation? Open-source the jobs step. Anyone can build a runtime job and create an action in the market place. This means that, for almost every step of my actions, I'm grabbing pre-built code off-the-shelf and plugging it in. Do I need to know how to get a list of all the changed files in my repo on merge? [Nope](https://github.com/marketplace/actions/changed-files). Do I need to spend hours figuring out how to deploy to kubernetes? [Nope](https://github.com/marketplace/actions/deploy-to-kubernetes-cluster).
 
@@ -128,26 +128,6 @@ The **only** things I need to know are:
 Thanks to Google (and LLMs 🤖), #2 is pretty easy. So really, _all_ I need to understand is the solution and edge cases... That's insanely powerful.
 
 Could you imagine if the same thing were true for data orchestration? Transformation? Analysis? The technical barrier to entry would be effectively reduced to zero.
-
-###
-
-- What's the current state of paradigms in data-eng tooling?
-
-  - Most code patterns are _currently_ imperative. Data engineering is a new industry, but many problems are _solved problems_.
-  - We're behind in shifting to _declarative_ interfaces.
-    - Why are we building solutions from scratch in 2023?
-    - We need flexible tooling that can be both _declarative_ and _imperative_.
-
-- Highlight the need for both approaches in a data team:
-  - Different users have varying skill sets and preferences for expressing their intent.
-    - Imperative code offers flexibility and empowers users to solve specific problems.
-    - Declarative code enables rapid development, scalability, and ease of maintenance.
-  - Many problems are solved problems (declarative).
-  - Hard problems require custom solutions (imperative).
-- Emphasize the importance of feedback between the two approaches:
-  - Solutions developed imperatively can be transformed into declarative interfaces.
-    - Helps democratize complex solutions, making them accessible to a wider range of users.
-    - Declarative interfaces serve as building blocks for reusable components and higher-level abstractions.
 
 ## Additional considerations
 
@@ -169,13 +149,35 @@ Perhaps this is idealist, but could you IMAGINE if everyone shared their dbt mod
 - Encourage data engineers to embrace the power of both paradigms and foster a culture of feedback and innovation.
 - Express the potential for advancements in the modern data stack through iterative improvements in both declarative and imperative methodologies.
 
-Resources
-**Sources**
+## Scratch
+
+### Thoughts
+
+- What's the current state of paradigms in data-eng tooling?
+
+  - Most code patterns are _currently_ imperative. Data engineering is a new industry, but many problems are _solved problems_.
+  - We're behind in shifting to _declarative_ interfaces.
+    - Why are we building solutions from scratch in 2023?
+    - We need flexible tooling that can be both _declarative_ and _imperative_.
+
+- Highlight the need for both approaches in a data team:
+  - Different users have varying skill sets and preferences for expressing their intent.
+    - Imperative code offers flexibility and empowers users to solve specific problems.
+    - Declarative code enables rapid development, scalability, and ease of maintenance.
+  - Many problems are solved problems (declarative).
+  - Hard problems require custom solutions (imperative).
+- Emphasize the importance of feedback between the two approaches:
+  - Solutions developed imperatively can be transformed into declarative interfaces.
+    - Helps democratize complex solutions, making them accessible to a wider range of users.
+    - Declarative interfaces serve as building blocks for reusable components and higher-level abstractions.
+
+### Resources
 
 - <https://www.educative.io/blog/declarative-vs-imperative-programming>
 - <https://dev.to/ruizb/declarative-vs-imperative-4a7l>
 - Query Languages for Data, Designing Data Intensive Applications p. 42
-  **Examples**
+
+### Examples
 
 1. Data pipelines: Tools like AstroSDK can be used to create the building blocks of common transformations, making code more DRY. Coalesce.io is a good example, as are Airflow libs.
 2. Common data-eng problem: taking a purely imperative approach from a building-block tool: e.g. configuring dbt Core from scratch, building DAGs from scratch, etc. Instead, a declarative approach can save resources.
