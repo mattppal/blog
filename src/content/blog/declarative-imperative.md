@@ -25,7 +25,7 @@ emoji: ❗️
 
 ## 🎞️ Intro
 
-Programming paradigms are a way to classify languages based on common characteristics— some are concerned primarily with execution, while others deal with how code is organized (e.g. object-oriented). An understanding of paradigms can be useful for solution architecture— knowing _how_ code operates is a prerequisite to selecting the most efficient solution.
+Programming paradigms are a way to classify languages based on common characteristics— some are concerned with execution, while others deal with how code is organized (e.g. object-oriented). An understanding of paradigms can be useful for solution architecture— knowing _how_ code operates is a prerequisite to selecting the most efficient solution.
 
 We can also classify _solutions_ according to the same paradigms. Today, we'll be concerned with two overarching classes of code paradigms and how they relate to data engineering: **imperative** and **declarative** code.
 
@@ -35,17 +35,17 @@ Note that we're not referencing a particular language, rather we're using softwa
 
 **Imperative** code tells a machine _precisely_ how to change its state to produce a desired outcome. Think Python scripts, dbt macros, custom DAGs— these are often detailed code that procedurally performs a complex task. As such, they're written from scratch.
 
-**Declarative** code merely describes a result— the calculation of that result is left to some underlying process. For example, to obtain a list of active users, I might run the SQL `SELECT * FROM accounts.active_users`. Note that _how_ we arrived at `accounts.active_users` is unspecified, I'm merely stating the values I'd like returned. Declarative code _abstracts away_ underlying computations. I neither know nor care how `active_users` came to be, only that I can obtain the underlying result.
+**Declarative** code merely describes a result— the calculation of that result is left to some underlying process. For example, to obtain a list of active users, I might run the SQL `SELECT * FROM accounts.active_users`. Note that _how_ we arrived at `accounts.active_users` is unspecified, I'm merely stating the values I'd like returned. Declarative code _abstracts away_ underlying computations. I neither know nor care how `active_users` came to be, only that I can obtain the underlying result: users who are active.
 
 ### 📝 The imperative approach
 
 Many data engineering systems are imperative— [Airflow DAGs begin as an empty canvas](making-the-most-of-airflow/#%EF%B8%8F-dag-structure), dbt projects are a clean slate. This introduces _possibility_ and _flexibility_ to the system.
 
-Imperative code allows data engineers to write custom logic tailored to specific requirements: you might have an Airflow DAG that needs to interface with a very unique data source— so unique that _no_ prebuilt tool exists\_ for the task! **No problem**, as a data engineer with an imperative tool, you whip up some Python to do as you, please!
+Imperative code allows data engineers to write custom logic tailored to specific requirements: you might have an Airflow DAG that needs to interface with a very unique data source— so unique that _no_ prebuilt tool exists\_ for the task! **No problem**, as a data engineer with an imperative tool, you whip up some Python to do as you please!
 
-As I'm sure we're all aware, no two datasets are alike. Hence, data manipulation and processing are inherently bespoke. Imperative tooling, i.e. Python and SQL, allows us to build the most precise solutions possible for manipulating data.
+As I'm sure we're all aware, no two datasets are alike. Hence, there is no one-size-fits-all solution to data manipulation and processing. Imperative tooling, i.e. Python and SQL, allows us to build the most precise pipelines possible.
 
-Finally, once we have those cleaned datasets, we need to apply advanced analytics techniques and machine learning logic to derive insight. Imperative code lets us define the exact logic we need for our analysis, regardless of the underlying data.
+Once we have cleaned datasets, we need to apply analytics techniques and ML logic to derive insight. Imperative code lets us define the exact logic we need for our analysis, regardless of the underlying data.
 
 Sounds great, right? There's a catch... 😬
 
@@ -53,31 +53,41 @@ Sounds great, right? There's a catch... 😬
 
 Well, actually, there are a few:
 
-1. Imperative code takes _a long time to write_.
-2. Purely imperative code _doesn't generalize_.
-3. There's a steep learning curve to imperative solutions.
+- Imperative code takes _a long time to write_.
+- Purely imperative code _doesn't generalize_.
+- There's a steep learning curve to imperative solutions.
+
+These facts are often overlooked in many open-source imperative tools. There is a cost to implement _any_ tool, regardless of it's price. Building a data stack from scratch can wind up being more costly than purchasing off the shelf tools— labor is often the most expensive component.
+
+Furthermore, the particular nature of imperative solutions mean that _they don't generalize_, i.e. they're difficult to reuse. This brings us further from DRY (don't repeat yourself) principles.
+
+Lastly, the steep learning curve means that imperative tools impose a technological barrier to contribution. Need to make a small change to that dbt model? If you need to know bash, Git, SQL, and Python to do so, _only_ the data team will be able to make that change, creating a bottleneck.
 
 ### 🗣️ The declarative approach
 
-Declarative solutions are attractive because they're typically more concise and easier to work with. Declarative code abstracts away implementation details and allows users to focus on defining the desired results.
+On the other hand, declarative solutions are attractive because they're typically more concise with a more gradual learning curve. Declarative code abstracts away implementation details and allows users to focus on defining the desired results.
 
-This can be a huge win when these tools work. Perhaps the most salient form of declarative programming in data engineering is ingestion tooling: we simply say "I want my Intercom data in Snowflake" and... voila! Fivetran makes it happen. _The reason_ ingestion benefitted so starkly from declaration? There are a predefined set of inputs and outputs: sources and targets. By _reusing common components_ and being intelligent about architecture, Fivetran was able to serve a declarative solution to an age-old problem.
+This can be a huge win. Perhaps the most salient declarative solution in data engineering is ingestion: we simply say "I want my Intercom data in Snowflake" and... voila! Fivetran makes it happen.
+
+Ingestion is a perfect problem space for declarative solutions. There are a predefined set of inputs and outputs: sources and targets. By _reusing common components_ and being intelligent about architecture, Fivetran was able to serve a declarative solution to an age-old problem.
 
 The downside? What happens when Fivetran doesn't have the connector you need?
 
 ![](/posts/declarative-imperative/oh-no-monkey.gif)
 
-While Airbyte [claims](https://airbyte.com/blog/data-orchestration-trends#declarative-pipelines-are-taking-over-imperative-pipelines) declarative pipelines are on the rise, purely declarative tools are an _incomplete solution at best_ without an accompanying API or imperative component. I've spoken about [my qualms with Airbyte](/posts/hot-takes#-hot-takes), so I will refrain from doing so here.
+<center><figcaption>A data engineer realizes they need a custom DAG/Lambda for data ingestion.</figcaption></center>
 
-_BUT_
+Though Airbyte [claims](https://airbyte.com/blog/data-orchestration-trends#declarative-pipelines-are-taking-over-imperative-pipelines) declarative pipelines are on the rise, purely declarative tools are an _incomplete solution_ without an accompanying API or imperative component. I've spoken about [my qualms with Airbyte](/posts/hot-takes#-hot-takes), so I will refrain from doing so here.
 
-This is what makes a tool like Meltano so powerful. In addition to the _declarative_ aspect, you can also _easily build your own taps_. This Swiss army knife-like functionality combines the declarative and imperative to solve _most_ problems quickly, while still allowing you to handle edge cases elegantly (using best practices).
+However, this is what makes a tool like [Meltano](https://meltano.com/) powerful. In addition to its [declarative](https://hub.meltano.com/extractors/) marketplace, you can also build your own sources/targets. This Swiss army knife-like functionality combines the declarative and imperative to solve _most_ problems quickly, while still allowing you to handle edge cases elegantly (using best practices).
 
-This is the pattern we'll focus on for the rest of the article, the hybrid declarative/imperative tool.
+Though both Airbyte and Meltano have functionality for DIY source/target creation, I feel _both_ tools have a ways to go in making this a user-friendly, sustainable solution.
+
+This is the pattern we'll focus on for the rest of the article: the hybrid declarative/imperative tool.
 
 ## 🚗 Declarative or imperative? An analogy
 
-> TODO: Does this make sense within the context of this article?
+`TODO: Does this make sense within the context of this article?`
 
 If you've ever heard Enzo Ferrari speak about his cars, you might have confused his [effervescence](https://www.youtube.com/watch?v=Sk1-7llcR20) for that of a passionate lover, and with good reason— his drive and legacy for manufacturing live on to this day.
 
@@ -131,11 +141,11 @@ Could you imagine if the same thing were true for data orchestration? Transforma
 
 ## Additional considerations
 
-### [TODO] Shared resources
+### `TODO` Shared resources
 
 Perhaps this is idealist, but could you IMAGINE if everyone shared their dbt models and DAGs? I'm willing to bet a solution _has been found_ for most problems!
 
-### [TODO] 🐘 The elephant in the room (AI)
+### `TODO` 🐘 The elephant in the room (AI)
 
 - As A.I. improves, more "building blocks" of code will be automated.
 - This shifts skill from being able to construct low-level solutions to accurately describing an objective _and the most efficient way to complete that objective._
