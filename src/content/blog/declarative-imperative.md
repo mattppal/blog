@@ -35,13 +35,13 @@ Note that we're not referencing a particular language, rather we're using softwa
 
 **Imperative** code tells a machine _precisely_ how to change its state to produce a desired outcome. Think Python scripts, dbt macros, custom DAGs— these are often detailed code that procedurally performs a complex task. As such, they're written from scratch.
 
-**Declarative** code merely describes a result— the calculation of that result is left to some underlying process. For example, to obtain a list of active users, I might run the SQL `SELECT * FROM accounts.active_users`. Note that _how_ we arrived at `accounts.active_users` is unspecified, I'm merely stating the values I'd like returned. Declarative code _abstracts away_ underlying computations. I neither know nor care how `active_users` came to be, only that I can obtain the underlying result: users who are active.
+**Declarative** code merely describes a result— the calculation is left to some underlying process. For example, to obtain a list of active users, I might run the SQL `SELECT * FROM accounts.active_users`. Note that _how_ we arrived at `accounts.active_users` is unspecified, I'm merely stating the values I'd like returned. Declarative code _abstracts away_ underlying computations. I neither know nor care how `active_users` came to be, only that I can obtain the underlying result: users who are active.
 
 ### 📝 The imperative approach
 
 Many data engineering systems are imperative— [Airflow DAGs begin as an empty canvas](making-the-most-of-airflow/#%EF%B8%8F-dag-structure), dbt projects are a clean slate. This introduces _possibility_ and _flexibility_ to the system.
 
-Imperative code allows data engineers to write custom logic tailored to specific requirements: you might have an Airflow DAG that needs to interface with a very unique data source— so unique that _no_ prebuilt tool exists\_ for the task! **No problem**, as a data engineer with an imperative tool, you whip up some Python to do as you please!
+Imperative code allows data engineers to write custom logic tailored to specific requirements: you might have an Airflow DAG that needs to interface with a very unique data source— so unique that _no_ prebuilt tool exists for the task! **No problem**, as a data engineer with an imperative tool, you whip up some Python to do as you please!
 
 As I'm sure we're all aware, no two datasets are alike. Hence, there is no one-size-fits-all solution to data manipulation and processing. Imperative tooling, i.e. Python and SQL, allows us to build the most precise pipelines possible.
 
@@ -75,15 +75,9 @@ The downside? What happens when Fivetran doesn't have the connector you need?
 
 ![](/posts/declarative-imperative/oh-no-monkey.gif)
 
-<center><figcaption>A data engineer realizes they need a custom DAG/Lambda for data ingestion.</figcaption></center>
+<center><figcaption>A data engineer realizes they need a custom code for data ingestion.</figcaption></center>
 
-Though Airbyte [claims](https://airbyte.com/blog/data-orchestration-trends#declarative-pipelines-are-taking-over-imperative-pipelines) declarative pipelines are on the rise, purely declarative tools are an _incomplete solution_ without an accompanying API or imperative component. I've spoken about [my qualms with Airbyte](/posts/hot-takes#-hot-takes), so I will refrain from doing so here.
-
-However, this is what makes a tool like [Meltano](https://meltano.com/) powerful. In addition to its [declarative](https://hub.meltano.com/extractors/) marketplace, you can also build your own sources/targets. This Swiss army knife-like functionality combines the declarative and imperative to solve _most_ problems quickly, while still allowing you to handle edge cases elegantly (using best practices).
-
-Though both Airbyte and Meltano have functionality for DIY source/target creation, I feel _both_ tools have a ways to go in making this a user-friendly, sustainable solution.
-
-This is the pattern we'll focus on for the rest of the article: the hybrid declarative/imperative tool.
+Furthermore, because declarative solutions abstract away implementation details, they can be harder to debug and maintain— it's not always apparent _why_ something breaks and without access to the underlying code (or a thorough understanding of how it's structured) it can be impossible to triage the issue.
 
 ## 🚗 Declarative or imperative? An analogy
 
@@ -105,31 +99,48 @@ While you _can't_ buy a Toyota that goes zero-to-sixty in under 3 seconds, 95% o
 
 Declarative and imperative solutions are just that: solutions— ways of solving problems. If you're attempting to drive data at scale in your organization, you should consider a solution _suited_ to scale and longevity. By contrast, if you need a high-powered, bleeding-edge product for an _essential_ problem, there may be considerable costs and zero extensibility in that tool.
 
-Today, **there is no middle ground in data engineering products.** Practitioners either begin with tools like Airflow and dbt, with hefty implementation costs, steep learning curves, and _OH_ so much wasted energy (have you ever built a dbt project from scratch?) or overly-declarative GUI tools— Matillion, Informatica, Wherescape (if I have to click something more than 3 times, I'm out).
+**Today, there is no middle ground in data engineering products.**
+
+Tools like Airflow and dbt traditionally come with hefty implementation costs, steep learning curves, and _OH_ so much wasted energy (have you ever built a dbt project from scratch?).
+
+By contrast, overly-declarative GUI tools, i.e. Matillion, Informatica, Wherescape (if I have to click something more than 3 times, I'm out), are tough to debug and mandate hacky workarounds for edge cases.
 
 This is all about to change, however. The next wave of great data engineering tools will be _both_ declarative _and_ imperative and existing tools will adapt... or die. The _ideal_ data engineering tool combines the declarative and imperative— it handles the common remarkably well, but also allows for robust solutions at the edge.
 
 ## 🔄 Synergy
 
-### Analytics engineers know what's up
+Leveraging both declarative and imperative components, tools like [Meltano](https://meltano.com/), [Mage](https://www.mage.ai/), and even [Airflow](https://airflow.apache.org/) (with some third party integrations) can be incredibly powerful.
 
-SQL is a great example of a language where imperative and declarative patterns can be used to construct high-level transformations. Many analytics engineers are familiar with the following pattern:
+Take Meltano as an example: in addition to its [declarative "marketplace,"](https://hub.meltano.com/extractors/) you can also build your own sources/targets. Functionally fungible, Meltano taps combine the declarative and imperative.
 
-1. Store the result of common transformations in tables.
+This is the pattern we'll focus on for the rest of the article: the hybrid declarative/imperative tool.
+
+### Analytics engineers are paradigm ninjas
+
+SQL is a great example of a language where imperative and declarative patterns are **already** used to construct high-level transformations. Many analytics engineers are familiar with the following pattern:
+
+1. Store common transformations in tables.
 2. Use common tables as inputs to queries.
 3. Leverage CTEs as the "building blocks" of calculations.
+4. Chain CTEs, tables, and aggregates to construct a query.
 
-So why hasn't SQL _tooling_ adopted this framework? dbt lacks a robust framework for DRY code. Coalesce is pioneering this approach, but their product is closed source and targeted primarily at the Snowflake-enterprise market. Even in analytics, the idea of a "query library" is not a solved problem. SQL is written, stashed, and lost more than _any_ company will admit. Worse, there's no community marketplace to go find common SQL tidbits.
+One area where AE's fall short, in my experience, is reusage at the _query_ level. "Query libraries" remain an unsolved problem. SQL is written, stashed, and lost more than _any_ company will admit. Worse, there's no community marketplace to go find common SQL tidbits.
+
+Surprisingly, the imperative/declarative framework and query libraries are entirely absent from SQL tooling. I find this odd, since many seem [enamored](https://www.getdbt.com/product/semantic-layer/) with the semantic layer, which one could argue is tangential to developing data transformation at scale.
+
+To be fair, [Coalesce](https://www.coalesce.io) is pioneering a hybrid approach (they call it Data Architecture as a Service, or [DAaaS](https://www.eckerson.com/articles/data-architecture-as-a-service-liberation-for-data-users) for short), but their product is targeted at the Snowflake enterprise market.
+
+### Shared Resources
 
 What we NEED is a transformation tool that allows users to share _patterns_ and _nodes_. And not just SQL! Orchestration & data engineering, too! One that democratizes data transformation in the most meaningful way possible: by making common transformations available in a marketplace-like setting.
 
-A prime example? GitHub Actions.
+A prime example of this marketplace? **GitHub Actions.**
 
-GitHub Actions _revolutionized\_\_ CI/CD. I say this, because I can remember a time when I knew absolutely nothing about CI/CD. While some may claim that's still true, I have been able to build some \_pretty awesome_ stuff with Actions. 😂
+GitHub Actions _revolutionized_ CI/CD. I say this, because I can remember a time when I knew absolutely nothing about CI/CD. While some may claim that's still true, I have been able to build some _pretty awesome_ stuff with Actions. 😂
 
-The innovation? Open-source the jobs step. Anyone can build a runtime job and create an action in the market place. This means that, for almost every step of my actions, I'm grabbing pre-built code off-the-shelf and plugging it in. Do I need to know how to get a list of all the changed files in my repo on merge? [Nope](https://github.com/marketplace/actions/changed-files). Do I need to spend hours figuring out how to deploy to kubernetes? [Nope](https://github.com/marketplace/actions/deploy-to-kubernetes-cluster).
+The innovation? GitHub open-sourced the "jobs" step. Anyone can create an action in the marketplace. This means, for almost every step of my actions, I'm grabbing pre-built code and plugging it in. Do I need to know how to get a list of all the changed files in my repo on merge? [Nope](https://github.com/marketplace/actions/changed-files). Do I need to spend hours figuring out how to deploy to kubernetes? [Nope](https://github.com/marketplace/actions/deploy-to-kubernetes-cluster).
 
-The **only** things I need to know are:
+The **only** things I need to know:
 
 1. What I want my tool to accomplish.
 2. What actions are available.
@@ -137,20 +148,39 @@ The **only** things I need to know are:
 
 Thanks to Google (and LLMs 🤖), #2 is pretty easy. So really, _all_ I need to understand is the solution and edge cases... That's insanely powerful.
 
-Could you imagine if the same thing were true for data orchestration? Transformation? Analysis? The technical barrier to entry would be effectively reduced to zero.
+Could you imagine if the same thing were true for data orchestration? Transformation? Analysis? The technical barrier to entry would be effectively zero. How many times have you written the same code _someone else wrote last month_? What if we could capture 10% of those solutions and open-source them? 30%? 75%? **We could revolutionize data transformation.** Yes, this is utopian, but I truly believe it.
 
-## Additional considerations
+![](/posts/declarative-imperative/utopia.gif)
 
-### `TODO` Shared resources
+## ✌️ Examples
 
-Perhaps this is idealist, but could you IMAGINE if everyone shared their dbt models and DAGs? I'm willing to bet a solution _has been found_ for most problems!
+Unfortunately, my idealistic ramblings aren't helping for building efficient pipelines, so here are a few ways you can combine the declarative and imperative to make efficient use of programming patterns. See that! I'll never let you leave empty handed.
 
-### `TODO` 🐘 The elephant in the room (AI)
+### Declarative plugins for imperative tools
 
-- As A.I. improves, more "building blocks" of code will be automated.
-- This shifts skill from being able to construct low-level solutions to accurately describing an objective _and the most efficient way to complete that objective._
-- A.I. tooling should focus on solving imperative problems and allowing users to use declarative language to architect larger solutions.
-- Non-determinism
+Airflow is a great example of a purely imperative tool that has some publicly available declarative components. Take, for example, [DAG factory](https://github.com/ajbosco/dag-factory), which allows users to generate DAGs from YAML. A similar package, [Gusty](https://github.com/pipeline-tools/gusty), goes a step further, allowing the user to explicitly reference [declarative dependencies](https://github.com/pipeline-tools/gusty#easy-dependencies). The [AstroSDK](https://github.com/astronomer/astro-sdk) also provides a suite of tools for ETL jobs that _drastically_ simplifies and democratizes the development process. Other frameworks, like Metaflow or ZenML, exists for ML-specific workloads and providers, like Databricks, even have their own [TaskGroups](https://github.com/astronomer/astro-provider-databricks).
+
+I have [mixed feelings about Airflow](https://mattpalmer.io/posts/making-the-most-of-airflow/), but I do feel the above is a valid solution for many data teams, _especially_ those with existing deployments.
+
+For dbt, leveraging macros is _essential_ for introducing declarative solutions to dbt projects. Unfortunately, I still find that this does not solve the problem of duplicated SQL. There is a _huge_ opportunity for a hybrid SQL transformation tool, but it's a big problem to solve. Please correct me if I'm wrong, but to me, declarative frameworks in dbt must be custom-built.
+
+I will add that [datacoves](https://datacoves.com/) is trying to bring best practices to open-source tools. If you have a proclivity to solutions like dbt, Airflow, etc. I'd take a look at their offering.
+
+### Hybrid tools
+
+While they're in short supply, new data transformation tools are being built from the ground-up to support declarative/imperative patterns natively. Two such tools are:
+
+<figure>
+  <center><img src="/posts/declarative-imperative/mage.png"/></center>
+</figure>
+
+[Mage](https://www.mage.ai/)— the core functionality of Mage caters to the idea of pattern reuse. Each "step" in a pipeline exists as a "block." End-to-end pipelines are constructed by chaining blocks to produce the desired output. Blocks can load, transform, and export data. It's not difficult to see how an intelligent architecture could effectively democratize data engineering and eliminate bottlenecks in data analytics.
+
+<figure>
+  <center><img src="/posts/declarative-imperative/coalesce-c.png"/></center>
+</figure>
+
+[Coalesce](https://coalesce.io/)— as I mentioned earlier, Coalesce is very intriguing. Combining column-level lineage with Data Architecture as a Service (DAaaS), Coalesce allows architects to define SQL patterns (like a SCD Type-2 table) that can be subsequently implemented by _anyone_, even less-technical users, via a GUI. The tool is currently positioned as an enterprise solution and only works on Snowflake, but I think they'll be a player to watch.
 
 ## 🎬 Conclusion
 
@@ -158,36 +188,3 @@ Perhaps this is idealist, but could you IMAGINE if everyone shared their dbt mod
 - Highlight the symbiotic relationship between the two, enabling collaboration and knowledge sharing within data teams.
 - Encourage data engineers to embrace the power of both paradigms and foster a culture of feedback and innovation.
 - Express the potential for advancements in the modern data stack through iterative improvements in both declarative and imperative methodologies.
-
-## Scratch
-
-### Thoughts
-
-- What's the current state of paradigms in data-eng tooling?
-
-  - Most code patterns are _currently_ imperative. Data engineering is a new industry, but many problems are _solved problems_.
-  - We're behind in shifting to _declarative_ interfaces.
-    - Why are we building solutions from scratch in 2023?
-    - We need flexible tooling that can be both _declarative_ and _imperative_.
-
-- Highlight the need for both approaches in a data team:
-  - Different users have varying skill sets and preferences for expressing their intent.
-    - Imperative code offers flexibility and empowers users to solve specific problems.
-    - Declarative code enables rapid development, scalability, and ease of maintenance.
-  - Many problems are solved problems (declarative).
-  - Hard problems require custom solutions (imperative).
-- Emphasize the importance of feedback between the two approaches:
-  - Solutions developed imperatively can be transformed into declarative interfaces.
-    - Helps democratize complex solutions, making them accessible to a wider range of users.
-    - Declarative interfaces serve as building blocks for reusable components and higher-level abstractions.
-
-### Resources
-
-- <https://www.educative.io/blog/declarative-vs-imperative-programming>
-- <https://dev.to/ruizb/declarative-vs-imperative-4a7l>
-- Query Languages for Data, Designing Data Intensive Applications p. 42
-
-### Examples
-
-1. Data pipelines: Tools like AstroSDK can be used to create the building blocks of common transformations, making code more DRY. Coalesce.io is a good example, as are Airflow libs.
-2. Common data-eng problem: taking a purely imperative approach from a building-block tool: e.g. configuring dbt Core from scratch, building DAGs from scratch, etc. Instead, a declarative approach can save resources.
