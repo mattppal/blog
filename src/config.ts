@@ -11,7 +11,7 @@ export const SITE: Site = {
   email: "hello@mattpalmer.io",
   team: "Data",
   company: "Mage.ai",
-  location: "Santa Clara, CA",
+  location: "San Jose, CA",
   ogImage: "og.jpg",
   googleAnalyticsId: "",
   lightAndDarkMode: true,
