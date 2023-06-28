@@ -18,13 +18,7 @@ const allArt = await Astro.glob("../../public/art/*").then(files => {
       <div class="container">
         {
           allArt.map(sketch => (
-            <Image
-              href={sketch}
-              src={sketch}
-              width={400}
-              aspectRatio="1:1"
-              alt=""
-            />
+            <Image src={sketch} width={400} aspectRatio="1:1" alt="" />
           ))
         }
       </div>
