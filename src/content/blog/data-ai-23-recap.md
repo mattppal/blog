@@ -1,7 +1,7 @@
 ---
 author: Matt Palmer
 description: Reflecting on the 2023 Databricks Data+AI Summit
-draft: false
+draft: true
 featured: false
 ogImage: "/posts/data-ai-23-recap/data-ai-summit-og.gif"
 postSlug: data-ai-23-recap
@@ -20,8 +20,6 @@ emoji: 🤓
 </style>
 
 ![](/posts/data-ai-23-recap/data-ai-summit-og.png)
-
-## ToC
 
 ## Real time data processing
 
