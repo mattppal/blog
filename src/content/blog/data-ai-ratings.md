@@ -1,13 +1,13 @@
 ---
 author: Matt Palmer
-description: Whimsical ratings on the Data+AI Summit
+description: Whimsical ratings on the Data+AI Summit.
 draft: false
 featured: false
-ogImage: "/posts/data-ai-23-ratings/data-ai-ratings-og.gif"
-postSlug: data-ai-23-ratings
+ogImage: "/posts/data-ai-23-rated/data-ai-summit-rated-og.gif"
+postSlug: data-ai-23-rated
 pubDatetime: 2023-06-27 00:00:00
-tags: [data, opinion, jokes]
-title: Databricks Data+AI - Notes & Takeaways
+tags: [data, jokes]
+title: "'23 Databricks Data+AI Summit: Rated"
 emoji: 🃏
 ---
 
@@ -19,50 +19,91 @@ emoji: 🃏
   }
 </style>
 
-![](/posts/data-ai-23-recap/data-ai-summit-og.png)
+![](/posts/data-ai-23-rated/data-ai-summit-rated-og.png)
 
 ## ToC
 
-## Overview
+## 🧱 Overview
 
 My take is that a good conference experience should strive to distance itself from an airport as much as possible. You know, where everyone you speak to is after your money, and TSA agents and conference attendants are like long-lost siblings with their credential scanning and gruff expressions. And let's not forget the constant search for outlets and the aimless wandering in a sea of people. But hey, I'll leave it to the attendees to score Databricks and the Moscone Center on that scale. Now, onto my whimsical takes on the conference as a whole:
 
-## Coffee
+## ☕️ Coffee
 
 **Score:** 🤨 / 10
 
-Coffee should never require an essay-length comment, right? Just tell me if it's hot and caffeinated! Well, prepare for disappointment because the coffee availability was a rollercoaster ride. I ended up spending a fortune on $7 single origin pour overs at Blue Bottle. On the first day, there wasn't a drop of coffee in sight when I arrived late, leaving me yawning my way through the morning. Luckily, they got their act together on the second day and coffee magically appeared everywhere. It was like a caffeine miracle! But then, on the third day, they played hide-and-seek with the coffee schedule. I couldn't find a cup between 9:30 and 11:00 AM. Back to Blue Bottle I went! Interestingly, the coffee reappeared at 11:30. Talk about coffee mysteries! And when they did serve coffee, it was Peets, which was decent. When it wasn't available, there was a tiny kiosk at the Moscone Center selling $5 apples and brews. I mean, come on, I'm not about to pay five bucks for a Granny Smith. Thankfully, snacks became more abundant as the conference went on.
+Coffee should be a simple affair: is it hot? Does it contain caffeine? Right? Wrong.
 
-## SF
+The coffee availability was highly variable. As such, I ran up my tab at Blue Bottle on $7 single origin pour overs. To kick it off, I did not see a drop of coffee on the first day. Admittedly, I arrived after breakfast, but I found it a bit odd. My caffeine levels neared dangerous lows and the first day was accompanied by many yawns. Thankfully, this was rectified on the second day— coffee was present throughout. Wow! Quite the turnaround. I was pleasantly surprised and my fears were quelled. I expected the third day to be promising given full levels of decaffeination.
+
+I was again disappointed: I saw no coffee between the hours of 9:30 and 11:00 AM. Off to blue bottle again! Oddly, coffee re-appeared at 11:30. 🤔
+
+![](/posts/data-ai-23-rated/this-is-fine.gif)
+
+When coffee was to be found, it was Peet's. This was satisfactory by my standards. When coffee wasn't present, there was a single small kiosk doling out $5 apples, bananas, and brews. I have never paid $5 for a Granny Smith and this was not going to be the first time I did so. Snacks seemed to become more prevalent as the conference progressed.
+
+## 🌁 SF
 
 **Score:** 🧖🏻‍♂️ / 10
 
-Days one and two were all about full-on fog and gusty winds, but guess what? Day three surprised us with actual sunshine! Shout-out to Striim for organizing an outdoor event by the Bay and providing heaters. It was cozy, with cool views and tasty ceviche. What a mood changer!
+Full fog and windiness days 1 & 2 followed by Sunshine (!!!!) on day three. I was freezing all three days. As Mark Twain said: "The coldest winter I ever spent was at the Moscone Center in June." At least I'm pretty sure that was the quote.
 
-## Talks
+S/O to the folks at Striim, who held an _outdoor_ event on the Bay, but made sure heaters were present. It was very comfortable with some pretty sweet views. I enjoyed the ceviche and got a signed copy of _Fundamentals of Data Engineering_. Talk about an awesome time. 🤣
+
+## 🎙️ Talks
 
 **Score:** 🤓 / 10
 
-The talks were like a rollercoaster ride themselves. On day one, there was zero line management. All the talks were crammed into one of the twelve conference halls, and the lines snaked around like a maze. It got so chaotic that I ended up in the wrong talk after standing in a super long line. Then, I hopped into another line, only to find out it had reached capacity and I was left out in the cold (well, not literally, but you get the point). Kudos to the organizers, though, because they completely fixed this mess on day two. But seriously, why wasn't this anticipated on day one? The presentations didn't even allow for standing room (apparently, fire code regulations were to blame). Sometimes I like to stand and watch a talk, you know? Oh well. My favorite talk was by Oz Katz, the founder of lakeFS. The topic was "Delta-rs, Apache Arrow, Polars, WASM: Is Rust the Future of Analytics?" It was a perfect mix of humor and information. While I'm a bit skeptical about Rust replacing Python, I must admit that Rust-based Python packages are shaking things up (🐻‍❄️). Plus, the solutions presented by Oz in WebAssembly (WASM) piqued my interest. It's such an underrated tech (my coworker and I had no clue what WASM stood for 😂), but it seems super useful.
+Another rollercoaster of an experience. On the first day, there was no line management. All talks were held in one of 12 conference halls. Lines snaked around the main hall back to the doors of the keynote hall. I managed to:
 
-## Events & Socialization
+- Get into a super long line and end up in the wrong talk.
+- Get into a line where the talk reached capacity and I wasn't allowed in 😢.
+
+To the credit of the organizers, this was completely fixed on the second day, but I feel like this is one of the things to have in-check when organizing a conference. Presentations not only had no standing room, but standing was entirely disallowed (the fire code was blamed>). There's plenty of sitting at conferences, so it's nice to sometimes stand and watch a talk. Oh well 🤷‍♂️.
+
+My favorite talk was by Oz Katz, founder of lakeFS: Delta-rs, Apache Arrow, Polars, WASM: Is Rust the Future of Analytics? It was both funny and informative. While I'm skeptical of Rust as a replacement for Python, Rust-based python packages are already changing the game 🐻‍❄️. Additionally, I think the solutions presented by Oz in WebAssembly (WASM) warrant a further look. This tech is _so_ under the radar (my coworker and I had no idea what WASM stood for), but seems super useful.
+
+## 🎉 Events & Socialization
 
 **Score:** 🥳 / 10
 
-Ah, my favorite part of conferences—the opportunity to meet passionate people and hear their stories. And boy, there was no shortage of sharp individuals to chat with. On Wednesday night, I had a conversation with a guest from Australia who noticed how Americans seem to spend money with zero self-control. As a recent Bay Area transplant, I couldn't argue with him. And this observation happened at the Chase Club, which is located court-side at the Golden State Warriors' home. Databricks went all out and rented the entire stadium for a performance by none other than Salt-N-Pepa. Maybe the Aussie guest was onto something after all.
+Often my favorite part of conferences, I get the most value from meeting other passionate folks and learning about their experiences. I accomplished just that: there was no shortage of sharp individuals to meet.
 
-Now, personally, I prefer low-key events. I didn't even know who Salt-N-Pepa were until some "distinguished" members of the community enlightened me. Just give me some tasty snacks and a room full of sharp data minds, and I'm happy to chat for hours. Renting out the entire Chase Center may have been impressive, but Salt-N-Pepa? Well, let's just say their pauses for the audience to sing along made it clear that a crowd of data nerds wasn't ready to go word-for-word with the Grammy-winning duo from 1995.
+On Wednesday night, I spoke with a guest from Australia who observed that Americans seem to spend their money with almost no self control. Having recently moved to the Bay Area, I was in no position to argue. Additionally, his observation occurred at the Chase Club, which is located court-side at the home of the Golden State Warriors. This occurred at an event where Databricks rented the stadium for a performance by none other than Salt-N-Pepa... he might be on to something.
 
-Oh, and speaking of performances, most technical authors fear their material will put people to sleep, but Matt & Joe should be proud that their content was more interesting than a live hip-hop show. Trust me, it's quite an accomplishment.
+![](/posts/data-ai-23-rated/salt-n-peppa.gif)
 
-## Beef with Snowflake
+Personally, I'm a much bigger fan of low-key events. I didn't even know who the performers were until some more... ahem... “distinguished” members of the community informed me.
 
-**Score:** 😡 Unlikely to recommend to a friend
+Give me some solid snacks and a room full of sharp data minds and I'm more than happy to chat for hours. Renting the entire Chase Center comes across as a big flex, Salt-N-Pepa a weird flex. My favorite moments were their pauses for the audience to sing along— after the very first it was apparent that a crowd of data nerds were not prepared to go word-for-word with the 1995 grammy-award winning duo.
 
-If you drove on the 101 into SF, you'd think Snowflake was taking over the world with their billboards outnumbering Databricks 3-to-1. Sure, Databricks mentioned Snowflake in their slides and spoke about unifying frameworks, but it seemed like a shallow attempt at taking the high road, especially since they held their conference on the exact same day as their competitor. I mean, seriously? Let's not divide the data community, folks!
+The concert also highlighted that, while most technical authors fear their material will be used as a sedative, Matt & Joe should be proud theirs is actually more interesting than a live hip-hop performance.
 
-Competition should drive progress and unite the community. I get it, not everyone would attend both conferences (especially not for $2k each), but many vendors and data community members would have. Both companies disappointed me. We should be sharing solutions and improving the data experience as a community, rather than trying to throw the biggest party, invite the most famous guest speakers, or make the flashiest headlines. /rant
+![](/posts/data-ai-23-rated/party-time.png)
 
-## Overall
+<center><figcaption>Thanks to <a href=https://twitter.com/paolapardoat/status/1674296693846867969>Paola</a> for sharing.</figcaption></center>
 
-I could have done without the very loud pop music being piped into every crevace of the Moscone Center, but a few quirks, I had a blast. I met amazing people and learned so much. But you know what my favorite part was? The Rivian parked in the Expo Hall!
+## 🥩 Beef with Snowflake
+
+**Score:** 😡 Unlikely to recommend
+
+Snowflake billboards outnumbered Databricks 3-to-1 on the 101, oof. While Databricks had Snowflake logos in their slides and made unification a _major_ theme, this appeared to be a shallow attempt at taking the high road evidenced by literally holding a conference on the same day as their competitor.
+
+![](/posts/data-ai-23-rated/logo-in-pres.png)
+
+<center><figcaption>Thanks to <a href=https://www.linkedin.com/posts/mehd-io_i-wonder-if-snowflake-had-somewhere-in-their-activity-7079875867849420800-yEqZ>Medhi</a> for sharing.</figcaption></center>
+
+In all seriousness, I do not appreciate these companies bifurcating the data community.
+
+While few practitioners would have attended both conferences (not for $2k each, at least) many vendors and data community members would have. I am pretty disappointed: competition should drive progress and unite community, not the opposite. A long-term view recognizes there is no fixed pie for market share— competition and collaboration make the pie bigger.
+
+The easier it is to access and analyze data, the more folks join the data movement. A great example is Tesla's supercharger network. Rivian signing on means their customers now have a broad network to charge their vehicles. Tesla makes a bunch of money from licensing, Rivian's customers are happy, more EV's will sign on. EV's win, Tesla wins, manufactures win... Most importantly the customer wins.
+
+Gee, wow. It's almost like we can create win-win-win scenarios by ignoring ego 🤨
+
+It doesn't matter if you're a Snowflake or Databricks customer, at the end of the day, you're a member of the data community. We should be sharing solutions and improving the data experience as a community, not seeing who can throw the biggest party, invite the most famous guest speakers, or make the biggest headlines /rant.
+
+## 💯 Overall
+
+I could have done without the very loud pop music being piped into every crevice of the Moscone Center, but aside from a few quirks, I had a blast. I met amazing people, learned a ton, and gained a better understanding of where data is headed. My favorite part? The Rivian parked in the Expo Hall.
+
+![](/posts/data-ai-23-rated/rivian.png)
