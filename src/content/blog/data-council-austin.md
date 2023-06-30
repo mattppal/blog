@@ -17,6 +17,8 @@ emoji: 🤓
 </figure>
 </center>
 
+## ToC
+
 ## Intro and Thanks 🙏
 
 I spent the last few days in Austin, Texas, attending the [2023 Data Council Conference](https://www.datacouncil.ai/austin). I'll be here through the weekend (and I'm stoked to explore), but I wanted to drop my notes while they're fresh.
