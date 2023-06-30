@@ -27,9 +27,9 @@ emoji: 🃏
 
 While I synthesize some pedestrian takeaways from the conference (new tech, tools, methods 🥱), I thought I'd present you with what _actually_ matters: my trite opinions on the Moscone Center amenities.
 
-My take is that a good conference experience distances itself from that of an airport as much as possible. At airports, everyone is after your money, it's difficult to find good food, agents constantly look for credentials, there's quite a bit of aimless wandering, and the walls are lined with folks whose batteries are running low.
+My take is that a good conference experience distances itself from that of an airport as much as possible. At airports, everyone is after your money, it's difficult to find food, agents constantly look for credentials, there's quite a bit of aimless wandering, and the walls are lined with those whose batteries are running low.
 
-I'll leave it to attendees to score Databricks and the Moscone Center on that. Now for the individual components of the _2023 Data+AI Summit_ conference experience:
+I'll leave it to attendees to score Databricks and the Moscone Center in that regard. Now, for the individual components of the _2023 Data+AI Summit_ conference experience:
 
 ## ☕️ Coffee
 
@@ -37,27 +37,29 @@ I'll leave it to attendees to score Databricks and the Moscone Center on that. N
 
 Coffee should be a simple affair: is it hot? Does it contain caffeine? Right? Wrong.
 
-The coffee availability was highly variable. As such, I ran up my tab at Blue Bottle on $7 single origin pour overs. To kick it off, I did not see a drop of coffee on the first day. Admittedly, I arrived after breakfast, but I found it quite odd for such a large event to have no coffee.
+The coffee availability at this conference was highly variable. As a result, I ran up my tab at Blue Bottle on $7 single origin pour overs. To kick it off, I did not see a drop of coffee on the first day. Admittedly, I arrived after breakfast, but I found it quite odd for such a large event.
 
-My caffeine levels neared dangerous lows and the start of the conference was accompanied by many yawns. Thankfully, this was rectified on the second day— coffee was present throughout. Wow! Quite the turnaround. I was pleasantly surprised and my fears were quelled. I expected the third day to be promising given full levels of caffeination.
+My caffeine levels neared dangerous lows as the start of the conference was accompanied by many yawns. Thankfully, this was rectified on the second day— coffee was present all day! Wow! Quite the turnaround. I was pleasantly surprised and my fears were quelled. I expected the third day to be promising, given full levels of caffeination.
 
-Unfortunately, I was again disappointed: I saw no coffee between the hours of 9:30 and 11:00 AM. Off to Blue Bottle again! Oddly, coffee reappeared at 11:30. 🤔
+Unfortunately, I was again disappointed: I saw no coffee between the hours of 9:30 and 11:00 AM. Off to Blue Bottle! Oddly, coffee reappeared at 11:30 directly _after_ I parted with $7.63 to Blue Bottle and the State of California. 🤔
 
 ![](/posts/data-ai-23-rated/this-is-fine.gif)
 
 When coffee was to be found, it was Peet's. This was satisfactory by my standards. When coffee wasn't present, there was a single small kiosk doling out $5 apples, bananas, and brews. I have never paid $5 for a Granny Smith and this was not going to be the first time I did so.
 
-Snacks, too, seemed to become more prevalent as the conference progressed.
+Snacks, too, seemed to become more abundant as the conference progressed.
 
 ## 🌁 SF
 
+(that's short for _San Francisco_ for out of towners)
+
 **Score:** 🧖🏻‍♂️ / 10
 
-Full fog and windiness on days 1 & 2 followed by Sunshine (!!!!) on day three. I was freezing all three days. As Mark Twain said: "The coldest winter I ever spent was in the Moscone Center." At least, I'm pretty sure that was the quote.
+Full fog and windiness on days 1 & 2 followed by glorious sunshine (!!!!) on day three. I was freezing all days. As Mark Twain said: "The coldest winter I ever spent was in the Moscone Center." At least, I'm pretty sure that was the quote.
 
 Also, shout-out to the folks at [Striim](https://www.striim.com/), who held an _outdoor_ event on the Bay, but made sure sufficient heaters were present. It was very comfortable with some pretty sweet views. I enjoyed the ceviche and got a signed copy of _Fundamentals of Data Engineering_.
 
-I left a happy camper. 🎒
+I left a happy camper. 🎒😎
 
 ## 🎙️ Talks
 
@@ -70,15 +72,15 @@ All talks were held in one of 12 conference halls. Lines snaked around the main 
 - Get into a super long line and end up in the wrong talk.
 - Get into a line where the talk reached capacity and I wasn't allowed in 😢.
 
-To the credit of the organizers, this was completely fixed on the second day, but I feel like this is something to have in check _before_ day 1.
+To the credit of the organizers, this was completely fixed on the second day, but I feel like this is something to have on day 1.
 
-Additionally, presentations not only had no standing room, but standing was entirely disallowed (fire code was blamed?). There's plenty of sitting at conferences, so it's nice to sometimes stand and watch a talk. Oh well 🤷‍♂️.
+Another observation: presentations not only had no standing room, but standing was entirely disallowed (fire code was blamed?). There's plenty of sitting at conferences, so it's nice to stand and watch a talk sometimes. Oh well 🤷‍♂️.
 
 That being said, I found most of the speakers fantastic and the content great. I _love_ the data community and I'm so grateful to learn from such bright minds.
 
-I think my favorite talk was by Oz Katz, of [lakeFS](https://lakefs.io/): _Delta-rs, Apache Arrow, Polars, WASM: Is Rust the Future of Analytics?_
+I think my favorite talk was by Oz Katz of [lakeFS](https://lakefs.io/): _Delta-rs, Apache Arrow, Polars, WASM: Is Rust the Future of Analytics?_
 
-It was both funny and informative. While I'm skeptical of Rust as a replacement for Python, Rust-based Python packages are already changing the game 🐻‍❄️. I think the solutions Oz presented in WebAssembly (WASM) warrant a further look. This tech is _so_ under the radar (my coworker and I had no idea what WASM stood for), but seems super useful.
+It was both funny and informative. While I'm skeptical of Rust as a replacement for Python, Rust-backed Python packages are already changing the game 🐻‍❄️. I also think the solutions Oz presented in WebAssembly (WASM) warrant a further look. This tech is _so_ under the radar (my coworker and I had no idea what WASM stood for), but seems super useful.
 
 ## 🎉 Events & Socialization
 
@@ -86,15 +88,15 @@ It was both funny and informative. While I'm skeptical of Rust as a replacement 
 
 My favorite part of conferences (after snacks), I get the most value from meeting other passionate folks and learning about their experiences. I accomplished just that: there was no shortage of sharp individuals to chat and mingle with.
 
-On Wednesday night, I spoke with a guest from Australia who observed that Americans seem to spend their money with almost no self-control. Having recently moved to the Bay Area, I was in no position to argue. Additionally, his observation occurred at the Chase Club, which is located court-side at the home of the Golden State Warriors. This took place at an event where Databricks rented the stadium for a performance by none other than Salt-N-Pepa... he might be on to something.
+On Wednesday night, I spoke with a guest from Australia who observed that Americans seem to spend their money with almost no self-control. Having recently moved to the Bay Area, I was in no position to argue. Additionally, his observation occurred at the Chase Club, which is located court-side at the home of the Golden State Warriors. This took place at an event where Databricks rented the entire stadium for a performance by none other than Salt-N-Pepa... he might be on to something.
 
 ![](/posts/data-ai-23-rated/salt-n-peppa.gif)
 
 Personally, I'm a much bigger fan of low-key events. I didn't even know who the performers were until some more... ahem... “distinguished” members of the community informed me.
 
-Give me some solid snacks and a room full of nerds and I'm more than happy to chat for hours. Renting the entire Chase Center was clearly a big flex by Databricks, Salt-N-Pepa more of a weird flex. My favorite moments were their pauses for the audience to sing along— after the very first it was apparent that a crowd of data nerds was not prepared to go word-for-word with the 1995 Grammy-award winning duo.
+Give me some solid snacks and a room full of nerds and I'm more than happy to chat for hours. Renting the entire Chase Center was clearly a big flex by Databricks, Salt-N-Pepa more of a weird flex. My favorite moments were their pauses for the audience to sing along— after the very first it was apparent that we were not prepared to go word-for-word with the 1995 Grammy-award winning duo.
 
-The concert also highlighted that, while most technical authors fear their material will be used as a sedative, Matt & Joe should be proud theirs is more interesting than a live hip-hop performance.
+The concert also highlighted that, while most technical authors fear their material being used as a sedative, Matt & Joe should be proud theirs is as interesting as a live hip-hop performance.
 
 ![](/posts/data-ai-23-rated/party-time.png)
 
@@ -124,7 +126,7 @@ It doesn't matter if you're a Snowflake or Databricks customer, at the end of th
 
 I could have done without the very loud pop music being piped into every crevice of the Moscone Center, but aside from a few quirks, I had a blast. I met amazing people, learned a ton, and gained a better understanding of where data is headed.
 
-I said it earlier and I'll say it again, I'm so grateful for the data community. I heard the phrase "a rising tide lifts all boats" no less than three times this week. The vast majority of practitioners _and_ companies are out there to move the needle for _everyone_ in data. Let's do it, together!
+I said it earlier and I'll say it again: I'm so grateful for the data community. I heard the phrase "a rising tide lifts all ships" no less than three times this week. The vast majority of practitioners _and_ companies are out there to move the needle for _everyone_ in data. Let's do it, together!
 
 ## 🏆 "Best of" awards
 
@@ -142,7 +144,7 @@ I said it earlier and I'll say it again, I'm so grateful for the data community.
 
 **Best dressed:** Guy/gal in duck costume at DuckCon.
 
-**Favorite swag:** Databricks tee informing everyone about my modeling career. Yes, I'm a narcissist.
+**Favorite swag:** Databricks tee informing everyone about my modeling career.
 
 **Best drink:** Bubbly Lime— hits like the base at a Salt-N-Pepa concert.
 
