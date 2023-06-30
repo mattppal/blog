@@ -142,4 +142,6 @@ I said it earlier and I'll say it again, I'm so grateful for the data community.
 
 **Favorite swag:** Databricks tee informing everyone about my modeling career. Yes, I'm a narcissist.
 
-**Best drink:** Lemon-lime Bubbly. That shit hits like the base at a Salt-N-Pepa concert.
+**Best drink:** Bubbly Lime. That s\*\*\* hits like the base at a Salt-N-Pepa concert.
+
+![](/posts/data-ai-23-rated/snp-bass.gif)
