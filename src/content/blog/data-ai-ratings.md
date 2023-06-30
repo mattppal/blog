@@ -2,7 +2,7 @@
 author: Matt Palmer
 description: Whimsical ratings on the Data+AI Summit.
 draft: false
-featured: false
+featured: true
 ogImage: "/posts/data-ai-23-rated/data-ai-summit-rated-og.gif"
 postSlug: data-ai-23-rated
 pubDatetime: 2023-06-27 00:00:00
@@ -76,7 +76,7 @@ Additionally, presentations not only had no standing room, but standing was enti
 
 That being said, I found most of the speakers fantastic and the content great. I _love_ the data community and I'm so grateful to learn from such bright minds.
 
-I think my favorite talk was by Oz Katz, founder of [lakeFS](https://lakefs.io/): _Delta-rs, Apache Arrow, Polars, WASM: Is Rust the Future of Analytics?_
+I think my favorite talk was by Oz Katz, of [lakeFS](https://lakefs.io/): _Delta-rs, Apache Arrow, Polars, WASM: Is Rust the Future of Analytics?_
 
 It was both funny and informative. While I'm skeptical of Rust as a replacement for Python, Rust-based Python packages are already changing the game 🐻‍❄️. I think the solutions Oz presented in WebAssembly (WASM) warrant a further look. This tech is _so_ under the radar (my coworker and I had no idea what WASM stood for), but seems super useful.
 
@@ -136,12 +136,14 @@ I said it earlier and I'll say it again, I'm so grateful for the data community.
 
 ![](/posts/data-ai-23-rated/rivian.png)
 
-**Busiest booth:** Somehow, Microsoft. There were no less than 50 people there at all times. At one point, a very boisterous man in a suit was attempting to hype the crowd, with moderate success. I have no idea what was going on.
+**Busiest booth:** Somehow, Microsoft. There were no less than 50 people there at all times. At one point, a very boisterous man in a suit with a bulging forehead vein was attempting to hype the crowd, with moderate success. I have no idea what was going on, but I guess they still got it.
+
+![](/posts/data-ai-23-rated/microsoft.gif)
 
 **Best dressed:** Guy/gal in duck costume at DuckCon.
 
 **Favorite swag:** Databricks tee informing everyone about my modeling career. Yes, I'm a narcissist.
 
-**Best drink:** Bubbly Lime. That s\*\*\* hits like the base at a Salt-N-Pepa concert.
+**Best drink:** Bubbly Lime— hits like the base at a Salt-N-Pepa concert.
 
 ![](/posts/data-ai-23-rated/snp-bass.gif)
