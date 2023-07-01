@@ -51,7 +51,7 @@ Snacks, too, seemed to become more abundant as the conference progressed.
 
 ## 🌁 SF
 
-(that's short for _San Francisco_ for out of towners)
+(that's short for _San Francisco_ for out-of-towners)
 
 **Score:** 🧖🏻‍♂️ / 10
 
