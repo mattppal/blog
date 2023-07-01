@@ -55,7 +55,7 @@ Snacks, too, seemed to become more abundant as the conference progressed.
 
 **Score:** 🧖🏻‍♂️ / 10
 
-Full fog and windiness on days 1 & 2 followed by glorious sunshine (!!!!) on day three. I was freezing all days. As Mark Twain said: "The coldest winter I ever spent was in the Moscone Center." At least, I'm pretty sure that was the quote.
+Full fog and windiness on days one & two followed by glorious sunshine (!!!!) on day three. I was freezing all days. As Mark Twain said: "The coldest winter I ever spent was in the Moscone Center." At least, I'm pretty sure that was the quote.
 
 Also, shout-out to the folks at [Striim](https://www.striim.com/), who held an _outdoor_ event on the Bay, but made sure sufficient heaters were present. It was very comfortable with some pretty sweet views. I enjoyed the ceviche and got a signed copy of _Fundamentals of Data Engineering_.
 
@@ -72,7 +72,7 @@ All talks were held in one of 12 conference halls. Lines snaked around the main 
 - Get into a super long line and end up in the wrong talk.
 - Get into a line where the talk reached capacity and I wasn't allowed in 😢.
 
-To the credit of the organizers, this was completely fixed on the second day, but I feel like this is something to have on day 1.
+To the credit of the organizers, this was completely fixed on the second day, but I feel like this is something to have on day one.
 
 Another observation: presentations not only had no standing room, but standing was entirely disallowed (fire code was blamed?). There's plenty of sitting at conferences, so it's nice to stand and watch a talk sometimes. Oh well 🤷‍♂️.
 
