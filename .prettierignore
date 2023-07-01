@@ -8,6 +8,7 @@ public/robots.txt
 *.jpeg
 *.svg
 *.gif
+*.pdf
 
 # Except these files & folders
 !/src
