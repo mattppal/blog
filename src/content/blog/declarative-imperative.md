@@ -3,7 +3,7 @@ author: Matt Palmer
 description: How programming paradigms can revolutionize data engineering.
 draft: false
 featured: true
-ogImage: "header.png"
+ogImage: "/posts/declarative-imperative/header.png"
 postSlug: declarative-imperative
 pubDatetime: 2023-07-05 8:39:00
 tags: [data, meta, opinion, collaboration]
