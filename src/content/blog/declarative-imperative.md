@@ -1,11 +1,11 @@
 ---
 author: Matt Palmer
 description: How programming paradigms can revolutionize data engineering.
-draft: true
+draft: false
 featured: true
 ogImage: "header.png"
 postSlug: declarative-imperative
-pubDatetime: 2023-06-24 8:39:00
+pubDatetime: 2023-07-05 8:39:00
 tags: [data, meta, opinion, collaboration]
 title: Declarative & Imperative Code for Data Engineering
 emoji: ❗️
@@ -79,7 +79,7 @@ The downside? What happens when Fivetran doesn't have the connector you need?
 
 Furthermore, because declarative solutions abstract away implementation details, they can be harder to debug and maintain— it's not always apparent _why_ something breaks. Without access to the underlying code, it can be impossible to triage the issue. For Fivetran, while you _do_ have vendor support, you'd better be willing to fork over the 💰🤑.
 
-In my experience, even vednor support isn't the _most_ helpful for obscure pipelines... Though I'm not a [die-hard Fivetran fan](https://benn.substack.com/p/how-fivetran-fails), it is a solution that _works well enough_.
+In my experience, even vendor support isn't the _most_ helpful for obscure pipelines... Though I'm not a [die-hard Fivetran fan](https://benn.substack.com/p/how-fivetran-fails), it is a solution that _works well enough_.
 
 ## 🚗 Declarative or imperative? An analogy
 
@@ -180,7 +180,7 @@ For dbt, leveraging macros is _essential_ for introducing declarative solutions.
 
 ### Hybrid tools
 
-While they're in short supply, new data transformation tools are being built from the ground up to support declarative/imperative patterns natively. Here area a few examples:
+While they're in short supply, new data transformation tools are being built from the ground up to support declarative/imperative patterns natively. Here are a few examples:
 
 <figure>
   <center><img src="/posts/declarative-imperative/mage.png"/></center>
@@ -188,13 +188,15 @@ While they're in short supply, new data transformation tools are being built fro
 
 [Mage](https://www.mage.ai/): the core functionality of Mage caters to the idea of pattern reuse. Each "step" in a pipeline exists as a "block." End-to-end pipelines are constructed by chaining blocks to produce the desired output. Blocks can load, transform, and export data— they're not just limited to SQL. Mage supports dbt models, streaming frameworks, and a host of other features.
 
-It's not difficult to see how an intelligent architecture could effectively democratize engineering and eliminate bottlenecks in analytics. Furthermore, the GUI is lightyears ahead of most other tools. It's this combination of imperative blocks with a declarative implementation (and GUI) that's extremely powerful.
+It's not difficult to see how intelligent architecture could effectively democratize engineering and eliminate bottlenecks in analytics. Furthermore, the GUI is lightyears ahead of most other tools. It's this combination of imperative blocks with a declarative implementation (and GUI) that's extremely powerful.
 
 <figure>
   <center><img src="/posts/declarative-imperative/coalesce-c.png"/></center>
 </figure>
 
-[Coalesce](https://coalesce.io/): as I mentioned earlier, Coalesce is very intriguing. Combining column-level lineage with Data Architecture as a Service (DAaaS), Coalesce allows architects to define SQL patterns (like a SCD Type-2 table) that can be subsequently implemented by _anyone_, even less-technical users, via a GUI. The tool is currently positioned as an enterprise solution and only works on Snowflake, but I think they'll be a player to watch. I highly recommend giving them a look if you're on Snowflake and looking for a SQL transformation solution.
+[Coalesce](https://coalesce.io/): as I mentioned earlier, Coalesce is very intriguing. Combining column-level lineage with Data Architecture as a Service (DAaaS), Coalesce allows architects to define SQL patterns (like an SCD Type-2 table) that can be subsequently implemented by _anyone_, even less-technical users, via a GUI. The tool is currently positioned as an enterprise solution and only works on Snowflake, but I think they'll be a player to watch. I highly recommend giving them a look if you're on Snowflake and looking for a SQL transformation solution.
+
+🚨 **Disclaimer**: I'm currently employed by Mage and I've done work with Coalesce, but I'd like to emphasize this _is not_ a sponsored post. I truly believe in these tools— they embody the paradigms we've discussed up to this point!
 
 ## 🎬 Conclusion
 
