@@ -1,14 +1,12 @@
 import Datetime from "./Datetime";
-import type { BlogFrontmatter } from "@content/_schemas";
 
 export interface Props {
   href?: string;
-  frontmatter: BlogFrontmatter;
   secHeading?: boolean;
 }
 
 export default function Card({ href, frontmatter, secHeading = true }: Props) {
-  const { emoji, title, pubDatetime, description } = frontmatter;
+  const { emoji, title, pubDatetime, description, readingTime } = frontmatter;
   return (
     <li className="my-6">
       <a
@@ -25,7 +23,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
           </h3>
         )}
       </a>
-      <Datetime datetime={pubDatetime} />
+      <Datetime datetime={pubDatetime} readingTime={readingTime} />
       <p>{description}</p>
     </li>
   );

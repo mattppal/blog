@@ -10,7 +10,7 @@ export const SITE: Site = {
   jobTitle: "Developer Success Engineer",
   email: "hello@mattpalmer.io",
   team: "Data",
-  company: "Mage.ai",
+  company: "Mage",
   location: "San Jose, CA",
   ogImage: "og.jpg",
   googleAnalyticsId: "",

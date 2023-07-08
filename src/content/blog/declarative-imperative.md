@@ -19,7 +19,7 @@ emoji: ❗️
   }
 </style>
 
-![](/posts/declarative-imperative/header.png)
+![Header image](/posts/declarative-imperative/header.png)
 
 ## ToC
 
@@ -73,7 +73,7 @@ Ingestion is a perfect problem space for declarative solutions. There are a pred
 
 The downside? What happens when Fivetran doesn't have the connector you need?
 
-![](/posts/declarative-imperative/oh-no-monkey.gif)
+![Oh no monkey meme](/posts/declarative-imperative/oh-no-monkey.gif)
 
 <center><figcaption>A data engineer realizes they need a custom code for data ingestion.</figcaption></center>
 
