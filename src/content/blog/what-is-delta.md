@@ -1,6 +1,6 @@
 ---
 author: Matt Palmer
-description: An intro to Delta Lake— what it is, how it works, and what's new in Delta 3.0.
+description: A Delta intro— what it is, how it works, and what's new in Delta 3.0.
 draft: false
 featured: true
 ogImage: "/posts/what-is-delta/og.gif"
@@ -27,9 +27,9 @@ emoji: 🌎
 
 ## 🎞️ Intro
 
-If you’re like me, Delta Lake probably evokes dreams of a visit to the [Tetons](https://www.alltrails.com/trail/us/wyoming/delta-lake-via-lupine-meadows-access). I've actually made [my case before](https://www.linkedin.com/posts/matt-palmer_delta-lake-via-lupine-meadows-access-activity-7067143615147380737-2JaF?utm_source=share&utm_medium=member_desktop), and I fully expect a data retreat to Delta Lake in 2024 (yes, Databricks, I have room for a sponsorship).
+"Delta Lake" sounds more like a [fun weekend hike](https://www.alltrails.com/trail/us/wyoming/delta-lake-via-lupine-meadows-access) than a part of a modern data stack. I've made [my case before](https://www.linkedin.com/posts/matt-palmer_delta-lake-via-lupine-meadows-access-activity-7067143615147380737-2JaF) and I fully expect a data retreat to the Tetons in 2024 (yes, Databricks, I have room for a sponsorship).
 
-Of course, Delta Lake is also an open-source storage framework. It is designed to enable a [lakehouse architecture](https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf) with compute engines like Spark, PrestoDB, Flink, Trino, Hive. It has APIs for Scala, Java, Rust, Ruby, & Python.
+Of course, Delta Lake is primarily an open-source storage framework. It is designed to enable a [lakehouse architecture](https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf) with compute engines like Spark, PrestoDB, Flink, Trino, and Hive. It has APIs for Scala, Java, Rust, Ruby, & Python. Storage frameworks like Delta have played a major role in lakehouse architectures, but the technology behind them can be unapproachable.
 
 As always, we’ll break this down to basics and give you a comprehensive picture of what Delta Lake is and how you can get started.
 
@@ -37,9 +37,9 @@ So...
 
 ## 🚤 What is Delta Lake?
 
-While Delta is an open-source framework, it’s important to note that it also underpins Databricks’ platform. That means Databricks uses Delta Lake for storing tables and other data. It should be no surprise that they’re also responsible for quite a bit of the work on the library and its APIs.
+While Delta is an open-source framework, it’s important to note that it also underpins Databricks’ platform. That means Databricks uses Delta Lake for storing tables and other data. It should be no surprise they’re responsible for most work on the library and its APIs.
 
-Notably, as we’ll discuss later in a follow-up post, Iceberg is a very similar format and powers Snowflake’s data storage… If you know about the ongoing feud between Databricks and Snowflake you can probably guess where this is headed. In typical fashion, we now have folks proclaiming "[Iceberg won this](https://bitsondatadev.substack.com/p/iceberg-won-the-table-format-war)" or "Delta won that." In reality, they're storage formats. _Extremely_ similar storage formats... but what does that mean?
+Notably, as we’ll discuss in a follow-up post, Iceberg is a very similar format and powers _Snowflake’s_ data storage... If you know about the ongoing feud between Databricks and Snowflake you can probably guess where this is headed. In typical fashion, we now have folks proclaiming "[Iceberg won this](https://bitsondatadev.substack.com/p/iceberg-won-the-table-format-war)" or "Delta won that." In reality, they're storage formats. _Extremely_ similar storage formats... but what does that mean?
 
 If you peruse the Databricks/Delta docs, you’ll probably find something like this:
 
@@ -65,7 +65,7 @@ Now, if you have a bit of background with these technologies, you might remark �
 
 <center><figcaption>Not Hudi, also a lakehouse. 🤦‍♂️</figcaption></center>
 
-## The Transaction Log
+## 📜 The Transaction Log
 
 Here’s the part where I save you from reading a [15,000-word technical document](https://github.com/delta-io/delta/blob/master/PROTOCOL.md)! See, this is why 7 readers can't be wrong— we're just delivering value, nonstop. 🚀
 
@@ -75,7 +75,7 @@ So if Delta files are parquet + the transaction log, we know the transaction log
 
 <center><figcaption>👋 <a href='https://parquet.apache.org/'>Apache</a>, I'm open to sponsorships.</figcaption></center>
 
-The transaction log works by breaking down transactions into atomic commits, the atomicity in ACID. So, whenever you perform an operation that modifies a table, Delta Lake breaks it down into discrete steps, composed of one or more of the following:
+The transaction log works by breaking down transactions into atomic commits, the atomicity in ACID. So, whenever you perform an operation that modifies a table, Delta Lake breaks it down into one of the following discrete steps:
 
 - Add a file
 - Remove a file
@@ -124,16 +124,26 @@ Perhaps more impressive is that UniForm _improves read performance_ for Iceberg.
 
 ![Uniform read performance](/posts/what-is-delta/uniform-read.png)
 
-This is some 4D chess-type stuff from Databricks. It's a way for them to say "Hey, we're unifying the data space," while continuing to build market share and keep their formats in production. It's a clever move, for sure. We saw the same theme at the Data+AI Summit, where a major focus was on providing services that were universally accessible (marketplace, apps, etc).
+This is some 4D chess-type stuff from Databricks. It's a way for them to say "Hey, we're unifying the data space," while continuing to build market share and keep their formats in production. It's a clever one, for sure. We saw the same theme at the Data+AI Summit, where a major focus was on providing services that were universally accessible (marketplace, apps, etc).
 
-While I'm largely [against the Databricks/Snowflake beef](/posts/data-ai-23-rated/#-beef-with-snowflake), it's awesome to see competition producing something _good_ for the community— interoperability is undoubtedly a benefit. Improving performance _across_ formats benefits everyone. I applaud them on their decision and work— I think it's insanely cool.
+This parallels Snowflake's announcement of managed [Iceberg Catalog support](https://www.snowflake.com/blog/iceberg-tables-catalog-support-available-now/). My hunch is that Databricks saw the writing on the wall and wanted to avoid a situation where using Iceberg = using Snowflake.
+
+WAIT! We don't talk about things without explaining them first here, so what's a catalog? Let's hear it straight from Snowflake:
+
+> A key benefit of open table formats, such as Apache Iceberg, is the ability to use multiple compute engines over a single copy of the data. What enables multiple, concurrent writers to run ACID transactions is a catalog. A catalog tracks tables and abstracts physical file paths in queries, making it easier to interact with tables. A catalog serves as an option to ensure all readers have the same view, and to make it cleaner to manage the underlying files.
+
+That's a great description! If you thought, "Huh, I wonder if Databricks has a competing service," you'd be [💯 percent correct.](https://www.databricks.com/product/unity-catalog). Unity Catalog is a _much_ more complex topic, so we'll save that discussion for another post, but you can [read more here](https://docs.databricks.com/data-governance/unity-catalog/index.html).
+
+While I'm largely [against the Databricks/Snowflake beef](/posts/data-ai-23-rated/#-beef-with-snowflake), it's awesome to see competition producing something _good_ for the community— interoperability is undoubtedly a good thing. Improving performance _across_ formats benefits everyone. I applaud them on their decision and work— I think it's insanely cool.
 
 ## Conclusion
 
-That's pretty much it! Delta's a great example of powerful technology: incredibly simple at its core, but insanely functional in practice.
+That's pretty much it! Delta's a great example of powerful technology: simple at its core, but insanely functional in practice.
 
 With Delta 3.0, the team continues to innovate and takes a major step towards the unification of lakehouse storage frameworks.
 
-As much as the term lakehouse is annoying, it's here to stay, so I might as well use it. At the very least, please try to come up with more original puns the next time you talk about "visiting a lakehouse" in your data presentation. 😑
+Yes, the term lakehouse is annoying and _every_ presentation makes a joke about it, but it's here to stay so I might as well use it. At the very least, we, as a data community, need to come up with better puns! 😂
 
-In a future post, we might dig into some more advanced features of Delta— Liquid clustering (and `ZORDER` by relation), Optimistic Concurrency Control, and much more!
+In a future post, we might dig into some more advanced features of Delta like Liquid clustering (and `ZORDER` by relation) and Optimistic Concurrency Control. As I just mentioned, Unity Catalog is another complex subject that needs thorough dissection.
+
+If you have a topic you'd like to see here, [drop me a note](/about/#contact)!

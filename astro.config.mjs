@@ -3,6 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs";
+import remarkObsidianCallout from "remark-obsidian-callout";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
@@ -26,6 +27,8 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       remarkReadingTime,
+      // Need to config. See: https://github.com/escwxyz/remark-obsidian-callout
+      remarkObsidianCallout,
       [
         remarkToc,
         {
