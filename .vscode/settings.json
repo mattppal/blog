@@ -6,9 +6,11 @@
         }
     ],
     "cSpell.words": [
-      "EV's",
-      "Fivetran",
-      "Influencers",
-      "solopreneurship"
+        "EV's",
+        "Fivetran",
+        "Hudi",
+        "Influencers",
+        "lakehouse",
+        "solopreneurship"
     ]
 }

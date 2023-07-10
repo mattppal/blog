@@ -12,6 +12,7 @@ export const blogSchema = z
     ogImage: z.string(),
     description: z.string(),
     emoji: z.string(),
+    readingTime: z.string().optional(),
   })
   .strict();
 
