@@ -50,6 +50,16 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     <ul class="tags-container">
       {tags.map(tag => <Tag name={tag} />)}
     </ul>
+    <center
+      ><iframe
+        src="https://embeds.beehiiv.com/65982cd1-bbd0-4d6f-bd49-ea049be44d70?slim=true"
+        data-test-id="beehiiv-embed"
+        height="52"
+        frameborder="0"
+        scrolling="no"
+        style="margin: 0; border-radius: 0px !important; background-color: transparent; display: block;"
+      ></iframe></center
+    >
   </main>
   <Footer />
 </Layout>

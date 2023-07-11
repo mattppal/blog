@@ -23,7 +23,7 @@ const next = pageNum < totalPages ? "" : "disabled";
 
 <Layout title={`Posts | ${SITE.title}`}>
   <Header activeNav="posts" />
-  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
+  <Main pageTitle="Posts" pageDesc="All posts.">
     <ul>
       {
         posts.map(({ data }) => (
@@ -31,6 +31,17 @@ const next = pageNum < totalPages ? "" : "disabled";
         ))
       }
     </ul>
+
+    <center
+      ><iframe
+        src="https://embeds.beehiiv.com/65982cd1-bbd0-4d6f-bd49-ea049be44d70?slim=true"
+        data-test-id="beehiiv-embed"
+        height="52"
+        frameborder="0"
+        scrolling="no"
+        style="margin: 0; border-radius: 0px !important; background-color: transparent; display: block;"
+      ></iframe></center
+    >
   </Main>
 
   {
