@@ -1,7 +1,7 @@
 ---
 author: Matt Palmer
 description: A Delta intro— what it is, how it works, and what's new in Delta 3.0.
-draft: true
+draft: false
 featured: true
 ogImage: "/posts/what-is-delta/og.gif"
 postSlug: what-is-delta
@@ -21,15 +21,15 @@ emoji: 🌎
 
 ![Header image](/posts/what-is-delta/header-2.png)
 
-<center><figcaption>Have you seen a post about Delta Lake <i>without</i> a serene lake image? At least this one is courtesy of Midjourney. 😎</figcaption></center>
+<center><figcaption>Have you seen a post about Delta Lake <i>without</i> a serene lake image? This one is courtesy of Midjourney. 😂😎</figcaption></center>
 
 ## ToC
 
 ## 🎞️ Intro
 
-"Delta Lake" sounds more like a [fun weekend hike](https://www.alltrails.com/trail/us/wyoming/delta-lake-via-lupine-meadows-access) than a part of a modern data stack. I've made [my case before](https://www.linkedin.com/posts/matt-palmer_delta-lake-via-lupine-meadows-access-activity-7067143615147380737-2JaF) and I fully expect a data retreat to the Tetons in 2024 (yes, Databricks, I have room for a sponsorship).
+"Delta Lake" sounds more like a [fun weekend hike](https://www.alltrails.com/trail/us/wyoming/delta-lake-via-lupine-meadows-access) than a part of the modern data stack. I've made [my case before](https://www.linkedin.com/posts/matt-palmer_delta-lake-via-lupine-meadows-access-activity-7067143615147380737-2JaF) and I fully expect a data retreat to the Tetons in 2024 (yes, Databricks, I have room for a sponsorship).
 
-Of course, Delta Lake is primarily an open-source storage framework. It is designed to enable a [lakehouse architecture](https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf) with compute engines like Spark, PrestoDB, Flink, Trino, and Hive. It has APIs for Scala, Java, Rust, Ruby, & Python. Storage frameworks like Delta have played a major role in lakehouse architectures, but the technology behind them can be unapproachable.
+Of course, Delta Lake is primarily an open-source storage framework. It's designed to enable a [lakehouse architecture](https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf) with compute engines like Spark, PrestoDB, Flink, Trino, and Hive. It has APIs for Scala, Java, Rust, Ruby, & Python. Storage frameworks like Delta have played a major role in lakehouse architectures, but I've found the technology behind them unapproachable. What is it? Git for data? (no) How does it work? Why should I use this instead of pure Parquet?
 
 As always, we’ll break this down to basics and give you a comprehensive picture of what Delta Lake is and how you can get started.
 
@@ -57,13 +57,33 @@ The very simple truth is that Delta files are just Parquet files with a metadata
 
 ![Actually Delta Lake](/posts/what-is-delta/delta-metadata.png)
 
-<center><figcaption>Ok, not THIS is Delta.</figcaption></center>
+<center><figcaption>Ok, now THIS is Delta.</figcaption></center>
 
 Now, if you have a bit of background with these technologies, you might remark “Hey, so is Iceberg” or “Huh, that sounds like Hudi” and you’d be right. Those formats are pretty much the same thing. They even use very similar marketing materials.
 
 ![Not Hudi](/posts/what-is-delta/hudi-example.png)
 
 <center><figcaption>Not Hudi, also a lakehouse. 🤦‍♂️</figcaption></center>
+
+The _key_ benefits of these formats are almost entirely obtained from those metadata layers— ACID guarantees, scalability, time travel (‼️), unified batch/streaming, DML ops, and audit histories, to name a few.
+
+Now, this sounds like a whole lot, but remember this all comes from the metadata layer, so it can't be too complicated (or can it?)
+
+I'll give a brief overview of key features, then dive into maybe the most important characteristic, the transaction log.
+
+## 🔑 Key Features of Delta
+
+### ACID Guarantees
+
+### Scalable Metadata
+
+### Time Travel
+
+### Unified Streaming
+
+### DML
+
+### Audit Histories
 
 ## 📜 The Transaction Log
 
