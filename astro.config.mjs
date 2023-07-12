@@ -10,6 +10,8 @@ import { SITE } from "./src/config";
 import mdx from "@astrojs/mdx";
 import image from "@astrojs/image";
 
+import prefetch from "@astrojs/prefetch";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -23,6 +25,7 @@ export default defineConfig({
     sitemap(),
     mdx(),
     image(),
+    prefetch(),
   ],
   markdown: {
     remarkPlugins: [
@@ -43,7 +46,6 @@ export default defineConfig({
         },
       ],
     ],
-
     shikiConfig: {
       theme: "one-dark-pro",
       wrap: true,

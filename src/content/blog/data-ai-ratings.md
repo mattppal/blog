@@ -2,7 +2,7 @@
 author: Matt Palmer
 description: Whimsical ratings on the Data+AI Summit.
 draft: false
-featured: true
+featured: false
 ogImage: "/posts/data-ai-23-rated/data-ai-summit-rated-og.gif"
 postSlug: data-ai-23-rated
 pubDatetime: 2023-06-27 00:00:00
