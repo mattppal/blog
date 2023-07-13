@@ -1,7 +1,7 @@
 ---
 author: Matt Palmer
 description: A Delta intro— what it is, how it works, and what's new in Delta 3.0.
-draft: false
+draft: true
 featured: true
 ogImage: "/posts/what-is-delta/og.gif"
 postSlug: what-is-delta
@@ -74,6 +74,13 @@ I'll give a brief overview of key features, then dive into maybe the most import
 ## 🔑 Key Features of Delta
 
 ### ACID Guarantees
+
+Ok, this term gets thrown around a lot without much explanation. Databricks [has a nice writeup](https://docs.databricks.com/lakehouse/acid.html#what-are-acid-guarantees-on-databricks) on these, but for posterity, ACID stands for:
+
+- **Atomicity**: all transactions succeed or fail completely (no partial writes, for example). This is handled primarily by the transaction log.
+- **Consistency**: How data is _observed_ during simultaneous operations. Delta uses something called "optimistic concurrency control" to handle consistency— we'll discuss this in a future post. For now, we'll only note that it sounds nicer than _pessimistic_ concurrency control.
+- **Isolation**: simultaneous operations are handled without conflict. Again, this depends largely on optimistic concurrency control.
+- **Durability**: committed changes are _permanent_. Delta simply relies on cloud object storage for this guarantee: "Because transactions either succeed or fail completely and the transaction log lives alongside data files in cloud object storage, tables on Databricks inherit the durability guarantees of the cloud object storage on which they’re stored."
 
 ### Scalable Metadata
 

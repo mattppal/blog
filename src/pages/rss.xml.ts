@@ -3,6 +3,14 @@ import { getCollection } from "astro:content";
 import getSortedPosts from "@utils/getSortedPosts";
 import slugify from "@utils/slugify";
 import { SITE } from "@config";
+import sanitizeHtml from "sanitize-html";
+import MarkdownIt from "markdown-it";
+
+const parser = new MarkdownIt({
+  html: true,
+  linkify: true,
+  typographer: true,
+});
 
 export async function get() {
   const posts = await getCollection("blog");
@@ -11,11 +19,15 @@ export async function get() {
     title: SITE.title,
     description: SITE.desc,
     site: SITE.website,
-    items: sortedPosts.map(({ data }) => ({
+    items: sortedPosts.map(({ data, body }) => ({
       link: `posts/${slugify(data)}`,
-      title: data.title,
+      title: sanitizeHtml(data.title),
       description: data.description,
       pubDate: new Date(data.pubDatetime),
+      ogImage: data.ogImage,
+      customData: `<meta property="og:image" content="${data.ogImage}" />`,
+      content: sanitizeHtml(parser.render(body)),
+      stylesheet: "/rss/styles.xsl",
     })),
   });
 }
