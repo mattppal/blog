@@ -1,7 +1,7 @@
 ---
 author: Matt Palmer
 description: A Delta intro— what it is, how it works, and what's new in Delta 3.0.
-draft: true
+draft: false
 featured: true
 ogImage: "/posts/what-is-delta/og.gif"
 postSlug: what-is-delta
@@ -21,7 +21,7 @@ emoji: 🌎
 
 ![Header image](/posts/what-is-delta/header-2.png)
 
-<center><figcaption>Have you seen a post about Delta Lake <i>without</i> a serene lake image? This one is courtesy of Midjourney. 😂😎</figcaption></center>
+<center><figcaption>Have you seen a post about Delta Lake <i>without</i> a serene lake image?</figcaption></center>
 
 ## ToC
 
@@ -65,7 +65,7 @@ Now, if you have a bit of background with these technologies, you might remark �
 
 <center><figcaption>Not Hudi, also a lakehouse. 🤦‍♂️</figcaption></center>
 
-The _key_ benefits of these formats are almost entirely obtained from those metadata layers— ACID guarantees, scalability, time travel (‼️), unified batch/streaming, DML ops, and audit histories, to name a few.
+The _key_ benefits of these formats are almost entirely obtained from those metadata layers— ACID guarantees, scalability, time travel (❗️), unified batch/streaming, DML ops, and audit histories, to name a few.
 
 Now, this sounds like a whole lot, but remember this all comes from the metadata layer, so it can't be too complicated (or can it?)
 
@@ -82,19 +82,61 @@ Ok, this term gets thrown around a lot without much explanation. Databricks [has
 - **Isolation**: simultaneous operations are handled without conflict. Again, this depends largely on optimistic concurrency control.
 - **Durability**: committed changes are _permanent_. Delta simply relies on cloud object storage for this guarantee: "Because transactions either succeed or fail completely and the transaction log lives alongside data files in cloud object storage, tables on Databricks inherit the durability guarantees of the cloud object storage on which they’re stored."
 
-### Scalable Metadata
-
 ### Time Travel
 
-### Unified Streaming
+![Great Scott](/posts/what-is-delta/great-scott.gif)
+
+<center><figcaption>True story, I had a professor that went by Doc Brown and researched plasma. 👀</figcaption></center>
+
+⏰ Easily the _coolest sounding_ feature of Delta, time travel allows us to query older snapshots of tables using stored metadata (up to 30 days, by default).
+
+I think the most obvious application is disaster recovery, but as a former analyst, getting questions like "why did this number change," or "why doesn't this number equal this number" was an \*ahem\* unfortunate part of my job.
+
+Being able to query tables at various states in time would be _huge_ for debugging purposes and fixing data errors.
+
+Time travel many other uses as well:
+
+- An improved snapshot— you can use time travel to backfill missed snapshots (up to 30 days), unlike `dbt snapshot`.
+- Complex temporal queries.
+- Audit purposes.
+
+The query syntax is exactly what you'd expect:
+
+```sql
+SELECT * FROM table_name TIMESTAMP AS OF timestamp_expression
+```
+
+This works by using those `_delta_log` files we discussed earlier— Delta finds the snapshot closest to the requested timestamp then "replays" the recorded changes. A pretty important note [from Delta](https://docs.delta.io/latest/delta-batch.html#query-an-older-snapshot-of-a-table-time-travel):
+
+> The timestamp of each version N depends on the timestamp of the log file corresponding to the version N in Delta table log. Hence, time travel by timestamp can break if you copy the entire Delta table directory to a new location.
+
+### Scalable Metadata
+
+Ok, so I'm pretty skeptical of just how scalable Delta is, but they claim:
+
+> Scalable metadata handling: Leverages Spark distributed processing power to handle all the metadata for petabyte-scale tables with billions of files at ease.
+
+So here's my question: if you're streaming petabyte-sized tables and capturing granular metadata on every change, I'd assume your ability to [retain data](https://docs.delta.io/latest/delta-batch.html#data-retention) drops pretty rapidly.
+
+I don't have experience with anything petabyte-sized (perhaps someone in the audience can chime in) so I'm curious what a `delta.logRetentionDuration` would look like in that case.
+
+### Unified Batch & Streaming
+
+Delta tables are _both_ batch tables _and_ streaming sources/sinks. I'll refrain from joining [that debate](https://www.linkedin.com/posts/daniel-beach-6ab8b4132_datainfluncers-meta-google-activity-7078024000479645696-MzCe), but hey, flexibility is good.
+
+Using Delta, you get all the benefits of streaming _and_ batch— streaming ingest, batch backfill, interactive queries, etc.
 
 ### DML
 
-### Audit Histories
+Delta supports merge, update, and delete operations— making things like change data capture (CDC), slowly changing dimensions (SCD), and streaming upserts possible. Merge/update/delete are powerful tools that enable foundational datastores.
+
+One of the first [posts I ever wrote](/posts/scd-type-2) was about creating an SCD Type-2 table using `UPSERT` in Delta. Admittedly, that was in 2021 and I had little idea what I was doing. Hopefully, someone has a better guide or _much_ improved process by now. 😂
+
+SO let's talk about the underlying technology that makes most of these possible.
 
 ## 📜 The Transaction Log
 
-Here’s the part where I save you from reading a [15,000-word technical document](https://github.com/delta-io/delta/blob/master/PROTOCOL.md)! See, this is why 7 readers can't be wrong— we're just delivering value, nonstop. 🚀
+Here’s the part where I save you from reading a [15,000-word technical document](https://github.com/delta-io/delta/blob/master/PROTOCOL.md)! See, this is why 7 readers can't be wrong— we're just delivering value, nonstop.
 
 So if Delta files are parquet + the transaction log, we know the transaction log must be pretty special… otherwise, we’d just have parquet files. While I do love parquet files, I’m not sure they would warrant as much hype.
 
@@ -121,7 +163,9 @@ Delta will automatically generate checkpoint files for good read performance on 
 
 Checkpoint files save the entire state of the table at a point in time, in native Parquet. While this does incur some additional storage, storage is cheap! For many, this is well worth it.
 
-Let's take a look (in real-time)!
+By default, snapshots are saved for [30 days](https://docs.delta.io/latest/delta-batch.html#data-retention), but that's entirely configurable. I'd imagine storing all that metadata might get unfeasible at some point for most tables.
+
+Anywho, Let's take a look (in real-time)!
 
 ## ⏰ Demo time
 
@@ -143,7 +187,7 @@ There are three headline features of the release, but we'll focus on numero uno:
 
 > With UniForm, customers can choose Delta with confidence, knowing that by choosing Delta, they’ll have broad support from any tool that supports lakehouse formats.
 
-The functionality is pretty impressive. _Since_ all three formats are Parquet-based and solely differentiated by their metadata, UniForm provides the framework for translating metadata between formats. Have an Iceberg table? It's now effectively a Delta table (with some [limitations](https://docs.databricks.com/delta/uniform.html#limitations)).
+The functionality is pretty impressive. Since all three formats are Parquet-based and solely differentiated by their metadata, UniForm provides the framework for translating this metadata. Have an Iceberg table? It's now effectively a Delta table (with some [limitations](https://docs.databricks.com/delta/uniform.html#limitations)).
 
 ![Uniform in Delta 3.0](/posts/what-is-delta/uniform.png)
 
@@ -155,22 +199,20 @@ This is some 4D chess-type stuff from Databricks. It's a way for them to say "He
 
 This parallels Snowflake's announcement of managed [Iceberg Catalog support](https://www.snowflake.com/blog/iceberg-tables-catalog-support-available-now/). My hunch is that Databricks saw the writing on the wall and wanted to avoid a situation where using Iceberg = using Snowflake.
 
-WAIT! We don't talk about things without explaining them first here, so what's a catalog? Let's hear it straight from Snowflake:
+WAIT! We don't talk about things without explaining them first, so what's a catalog? Let's hear it straight from Snowflake:
 
 > A key benefit of open table formats, such as Apache Iceberg, is the ability to use multiple compute engines over a single copy of the data. What enables multiple, concurrent writers to run ACID transactions is a catalog. A catalog tracks tables and abstracts physical file paths in queries, making it easier to interact with tables. A catalog serves as an option to ensure all readers have the same view, and to make it cleaner to manage the underlying files.
 
-That's a great description! If you thought, "Huh, I wonder if Databricks has a competing service," you'd be [💯 percent correct.](https://www.databricks.com/product/unity-catalog). Unity Catalog is a _much_ more complex topic, so we'll save that discussion for another post, but you can [read more here](https://docs.databricks.com/data-governance/unity-catalog/index.html).
+That's a great description! If you thought, "Huh, I wonder if Databricks has a competing service," you'd be [💯 percent correct.](https://www.databricks.com/product/unity-catalog) Unity Catalog is a _much_ more complex topic, so we'll save that discussion for another post, but you can [read more here](https://docs.databricks.com/data-governance/unity-catalog/index.html).
 
-While I'm largely [against the Databricks/Snowflake beef](/posts/data-ai-23-rated/#-beef-with-snowflake), it's awesome to see competition producing something _good_ for the community— interoperability is undoubtedly a good thing. Improving performance _across_ formats benefits everyone. I applaud them on their decision and work— I think it's insanely cool.
+While I'm largely [against the Databricks/Snowflake beef](/posts/data-ai-23-rated/#-beef-with-snowflake), it's awesome to see competition producing something _good_ for the community— interoperability is undoubtedly a win. Improving performance _across_ formats benefits everyone. I applaud them on their decision and work— I think it's insanely cool.
 
 ## Conclusion
 
-That's pretty much it! Delta's a great example of powerful technology: simple at its core, but insanely functional in practice.
+That's pretty much it! Delta's a great example of powerful technology: simple at its core, but insanely functional in practice. With Delta 3.0, the team continues to innovate and takes a major step towards the unification of lakehouse storage frameworks.
 
-With Delta 3.0, the team continues to innovate and takes a major step towards the unification of lakehouse storage frameworks.
+Yes, the term lakehouse is annoying and _every_ presentation makes a joke about it, but it's here to stay so I might as well use it. At the very least, we, as a data community, need to come up with better puns.
 
-Yes, the term lakehouse is annoying and _every_ presentation makes a joke about it, but it's here to stay so I might as well use it. At the very least, we, as a data community, need to come up with better puns! 😂
-
-In a future post, we might dig into some more advanced features of Delta like Liquid clustering (and `ZORDER` by relation) and Optimistic Concurrency Control. As I just mentioned, Unity Catalog is another complex subject that needs thorough dissection.
+In a future post, we might dig into some more advanced features of Delta like Liquid Clustering (and `ZORDER` by relation), Unity Catalog, and Optimistic Concurrency Control. I'm just glad I don't have to talk about _pessimistic_ concurrency control, as that's a more somber subject.
 
 If you have a topic you'd like to see here, [drop me a note](/about/#contact)!
