@@ -29,15 +29,15 @@ emoji: 🌎
 
 "Delta Lake" sounds more like a [fun weekend hike](https://www.alltrails.com/trail/us/wyoming/delta-lake-via-lupine-meadows-access) than a part of the modern data stack. I've made [my case before](https://www.linkedin.com/posts/matt-palmer_delta-lake-via-lupine-meadows-access-activity-7067143615147380737-2JaF) and I fully expect a data retreat to the Tetons in 2024 (yes, Databricks, I have room for a sponsorship).
 
-Of course, Delta Lake is primarily an open-source storage framework. It's designed to enable a [lakehouse architecture](https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf) with compute engines like Spark, PrestoDB, Flink, Trino, and Hive. It has APIs for Scala, Java, Rust, Ruby, & Python. Storage frameworks like Delta have played a major role in lakehouse architectures, but I've found the technology behind them unapproachable. What is it? Git for data? (no) How does it work? Why should I use this instead of pure Parquet?
+Of course, Delta Lake is primarily an open-source storage framework. It's designed to enable a [lakehouse architecture](https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf) with compute engines like Spark, PrestoDB, Flink, Trino, and Hive. It has APIs for Scala, Java, Rust, Ruby, & Python. Storage frameworks like Delta have played a major role in lakehouse architectures, but I've found the technology behind them unapproachable. What is it? Git for data? (no) How does it work? Why should I use this instead of Parquet? (this _is_ Parquet!)
 
-As always, we’ll break this down to basics and give you a comprehensive picture of what Delta Lake is and how you can get started.
+As always, we’ll break things down to the basics and give you a comprehensive picture of what Delta Lake is and how you can get started.
 
 So...
 
 ## 🚤 What is Delta Lake?
 
-While Delta is an open-source framework, it’s important to note that it also underpins Databricks’ platform. That means Databricks uses Delta Lake for storing tables and other data. It should be no surprise they’re responsible for most work on the library and its APIs.
+While Delta is an open-source framework, it’s important to note that it also underpins the Databricks platform. That means Databricks uses Delta Lake for storing tables and other data. It should be no surprise they _created_ the format & they’re subsequently responsible for most work on the library and its APIs.
 
 Notably, as we’ll discuss in a follow-up post, Iceberg is a very similar format and powers _Snowflake’s_ data storage... If you know about the ongoing feud between Databricks and Snowflake you can probably guess where this is headed. In typical fashion, we now have folks proclaiming "[Iceberg won this](https://bitsondatadev.substack.com/p/iceberg-won-the-table-format-war)" or "Delta won that." In reality, they're storage formats. _Extremely_ similar storage formats... but what does that mean?
 
@@ -47,7 +47,7 @@ If you peruse the Databricks/Delta docs, you’ll probably find something like t
 
 <center><figcaption>This is a lakehouse, not Delta Lake. 🤨</figcaption></center>
 
-I don't find this particularly helpful for understanding Delta Lake. For some reason, the majority of their docs describe a lakehouse framework, not the underlying technology. A _lakehouse_ is a fancy buzzword, [also created by Databricks](https://www.databricks.com/glossary/data-lakehouse), used to describe a solution combining data lakes and data warehouses, i.e. leveraging cloud storage with semi-structured data formats _and_ traditional OLAP solutions.
+I don't find this particularly helpful for understanding Delta Lake. For some reason, the majority of their docs describe a lakehouse framework with a medallion architecture, not the underlying technology. A _lakehouse_ is a fancy buzzword, [also created by Databricks](https://www.databricks.com/glossary/data-lakehouse), used to describe a solution combining data lakes and data warehouses, i.e. leveraging cloud storage with semi-structured data formats _and_ traditional OLAP solutions.
 
 ![This is also a lakehouse](/posts/what-is-delta/lakehouse-arch.png)
 
@@ -65,6 +65,8 @@ Now, if you have a bit of background with these technologies, you might remark �
 
 <center><figcaption>Not Hudi, also a lakehouse. 🤦‍♂️</figcaption></center>
 
+All of these formats originated at companies that needed production-grade data lakes at scale, primarily for Spark jobs. You may notice most features comprise reliability, quality, and disaster recovery. These companies needed to process _massive_ amounts of data and be _certain_ they could roll-back changes, make simultaneous edits, and store reliable data: Hudi was started by Uber, Iceberg by Netflix, Delta by Databricks.
+
 The _key_ benefits of these formats are almost entirely obtained from those metadata layers— ACID guarantees, scalability, time travel (❗️), unified batch/streaming, DML ops, and audit histories, to name a few.
 
 Now, this sounds like a whole lot, but remember this all comes from the metadata layer, so it can't be too complicated (or can it?)
@@ -77,7 +79,7 @@ I'll give a brief overview of key features, then dive into maybe the most import
 
 Ok, this term gets thrown around a lot without much explanation. Databricks [has a nice writeup](https://docs.databricks.com/lakehouse/acid.html#what-are-acid-guarantees-on-databricks) on these, but for posterity, ACID stands for:
 
-- **Atomicity**: all transactions succeed or fail completely (no partial writes, for example). This is handled primarily by the transaction log.
+- **Atomicity**: all transactions succeed or fail completely (no partial writes, for example).
 - **Consistency**: How data is _observed_ during simultaneous operations. Delta uses something called "optimistic concurrency control" to handle consistency— we'll discuss this in a future post. For now, we'll only note that it sounds nicer than _pessimistic_ concurrency control.
 - **Isolation**: simultaneous operations are handled without conflict. Again, this depends largely on optimistic concurrency control.
 - **Durability**: committed changes are _permanent_. Delta simply relies on cloud object storage for this guarantee: "Because transactions either succeed or fail completely and the transaction log lives alongside data files in cloud object storage, tables on Databricks inherit the durability guarantees of the cloud object storage on which they’re stored."
@@ -86,15 +88,15 @@ Ok, this term gets thrown around a lot without much explanation. Databricks [has
 
 ![Great Scott](/posts/what-is-delta/great-scott.gif)
 
-<center><figcaption>True story, I had a professor that went by Doc Brown and researched plasma. 👀</figcaption></center>
+<center><figcaption>I had a professor in college that <i>also</i> went by Doc Brown and researched plasma. 👀 🥽</figcaption></center>
 
-⏰ Easily the _coolest sounding_ feature of Delta, time travel allows us to query older snapshots of tables using stored metadata (up to 30 days, by default).
+Easily the _coolest sounding_ feature of Delta, time travel ⏰ allows us to query older snapshots of tables using stored metadata (up to 30 days, by default).
 
 I think the most obvious application is disaster recovery, but as a former analyst, getting questions like "why did this number change," or "why doesn't this number equal this number" was an \*ahem\* unfortunate part of my job.
 
-Being able to query tables at various states in time would be _huge_ for debugging purposes and fixing data errors.
+Being able to query tables at various states is _huge_ for debugging purposes and triaging data errors.
 
-Time travel many other uses as well:
+Time travel has many other uses as well:
 
 - An improved snapshot— you can use time travel to backfill missed snapshots (up to 30 days), unlike `dbt snapshot`.
 - Complex temporal queries.
@@ -106,13 +108,17 @@ The query syntax is exactly what you'd expect:
 SELECT * FROM table_name TIMESTAMP AS OF timestamp_expression
 ```
 
-This works by using those `_delta_log` files we discussed earlier— Delta finds the snapshot closest to the requested timestamp then "replays" the recorded changes. A pretty important note [from Delta](https://docs.delta.io/latest/delta-batch.html#query-an-older-snapshot-of-a-table-time-travel):
+This works by using `_delta_log` files. Delta finds the snapshot closest to the requested timestamp then "replays" the recorded changes. We'll give a demo of what these files look like later in this post!
+
+A pretty important note [from Delta](https://docs.delta.io/latest/delta-batch.html#query-an-older-snapshot-of-a-table-time-travel):
 
 > The timestamp of each version N depends on the timestamp of the log file corresponding to the version N in Delta table log. Hence, time travel by timestamp can break if you copy the entire Delta table directory to a new location.
 
+So don't go moving Delta files around!
+
 ### Scalable Metadata
 
-Ok, so I'm pretty skeptical of just how scalable Delta is, but they claim:
+Ok, so I'm pretty skeptical of just how scalable Delta metadata is, but they claim:
 
 > Scalable metadata handling: Leverages Spark distributed processing power to handle all the metadata for petabyte-scale tables with billions of files at ease.
 
@@ -136,13 +142,13 @@ SO let's talk about the underlying technology that makes most of these possible.
 
 ## 📜 The Transaction Log
 
-Here’s the part where I save you from reading a [15,000-word technical document](https://github.com/delta-io/delta/blob/master/PROTOCOL.md)! See, this is why 7 readers can't be wrong— we're just delivering value, nonstop.
+Here’s the part where I save you from reading a [15,000-word technical document](https://github.com/delta-io/delta/blob/master/PROTOCOL.md)! See, 4 readers can't be wrong— we're just delivering value here, nonstop.
 
-So if Delta files are parquet + the transaction log, we know the transaction log must be pretty special… otherwise, we’d just have parquet files. While I do love parquet files, I’m not sure they would warrant as much hype.
+So if Delta files are Parquet + the transaction log, we know the transaction log must be pretty special… otherwise, we’d just have Parquet files. While I do love Parquet files, I’m not sure they would warrant as much hype.
 
-![Drake Parquet Meme](/posts/what-is-delta/drake-parquet.png)
+![Drake Parquet Meme](/posts/what-is-delta/drake-Parquet.png)
 
-<center><figcaption>👋 <a href='https://parquet.apache.org/'>Apache</a>, I'm open to sponsorships.</figcaption></center>
+<center><figcaption>👋 <a href='https://Parquet.apache.org/'>Apache</a>, I'm open to sponsorships.</figcaption></center>
 
 The transaction log works by breaking down transactions into atomic commits, the atomicity in ACID. So, whenever you perform an operation that modifies a table, Delta Lake breaks it down into one of the following discrete steps:
 
@@ -162,8 +168,6 @@ That’s a valid concern! Delta creates a `_delta_log` subdirectory within every
 Delta will automatically generate checkpoint files for good read performance on every 10th commit, e.g. `0000010.json`.
 
 Checkpoint files save the entire state of the table at a point in time, in native Parquet. While this does incur some additional storage, storage is cheap! For many, this is well worth it.
-
-By default, snapshots are saved for [30 days](https://docs.delta.io/latest/delta-batch.html#data-retention), but that's entirely configurable. I'd imagine storing all that metadata might get unfeasible at some point for most tables.
 
 Anywho, Let's take a look (in real-time)!
 
@@ -213,6 +217,6 @@ That's pretty much it! Delta's a great example of powerful technology: simple at
 
 Yes, the term lakehouse is annoying and _every_ presentation makes a joke about it, but it's here to stay so I might as well use it. At the very least, we, as a data community, need to come up with better puns.
 
-In a future post, we might dig into some more advanced features of Delta like Liquid Clustering (and `ZORDER` by relation), Unity Catalog, and Optimistic Concurrency Control. I'm just glad I don't have to talk about _pessimistic_ concurrency control, as that's a more somber subject.
+In a future post, we might dig into some more advanced features of Delta like Liquid Clustering (and `ZORDER` by relation), Unity Catalog, and Optimistic Concurrency Control.
 
 If you have a topic you'd like to see here, [drop me a note](/about/#contact)!
