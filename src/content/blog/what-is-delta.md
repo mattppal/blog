@@ -3,7 +3,7 @@ author: Matt Palmer
 description: A Delta intro— what it is, how it works, and what's new in Delta 3.0.
 draft: false
 featured: true
-ogImage: "/posts/what-is-delta/og.gif"
+ogImage: "/posts/what-is-delta/og.png"
 postSlug: what-is-delta
 pubDatetime: 2023-07-10
 tags: [data, tutorial, delta, opinion]
