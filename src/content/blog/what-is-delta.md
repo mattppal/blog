@@ -1,6 +1,6 @@
 ---
 author: Matt Palmer
-description: "We've all heard quite a bit about parquet-based Lakehouse storage systems: Iceberg, Delta, & Hudi, but how they work is often overlooked. Today, we'll dig into Delta— what it is, how it works, and what's new in Delta 3.0."
+description: "We've all heard quite a bit about Lakehouse storage systems: Iceberg, Delta, & Hudi, but how they work is often overlooked. Today, we'll dig into Delta— what it is, how it works, and what's new in Delta 3.0."
 draft: false
 featured: true
 ogImage: "/posts/what-is-delta/og.png"

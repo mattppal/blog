@@ -2,7 +2,7 @@
 author: Matt Palmer
 description: My take on the state of the modern data stack in 2023.
 draft: false
-featured: true
+featured: false
 ogImage: ""
 postSlug: hot-takes
 pubDatetime: 2023-04-07 00:00:00
