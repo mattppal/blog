@@ -1,6 +1,6 @@
 ---
 author: Matt Palmer
-description: A Delta intro— what it is, how it works, and what's new in Delta 3.0.
+description: "We've all heard quite a bit about parquet-based Lakehouse storage systems: Iceberg, Delta, & Hudi, but how they work is often overlooked. Today, we'll dig into Delta— what it is, how it works, and what's new in Delta 3.0."
 draft: false
 featured: true
 ogImage: "/posts/what-is-delta/og.png"
@@ -29,21 +29,21 @@ emoji: 🌎
 
 "Delta Lake" sounds more like a [fun weekend hike](https://www.alltrails.com/trail/us/wyoming/delta-lake-via-lupine-meadows-access) than a part of the modern data stack. I've made [my case before](https://www.linkedin.com/posts/matt-palmer_delta-lake-via-lupine-meadows-access-activity-7067143615147380737-2JaF) and I fully expect a data retreat to the Tetons in 2024 (yes, Databricks, I have room for a sponsorship).
 
-Of course, Delta Lake is primarily an open-source storage framework. It's designed to enable a [lakehouse architecture](https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf) with compute engines like Spark, PrestoDB, Flink, Trino, and Hive. It has APIs for Scala, Java, Rust, Ruby, & Python.
+Of course, Delta Lake is primarily an open-source lakehouse storage framework. It's designed to enable a [lakehouse architecture](https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf) with compute engines like Spark, PrestoDB, Flink, Trino, and Hive. It has APIs for Scala, Java, Rust, Ruby, & Python.
 
 Storage frameworks like Delta have played a major role in lakehouse architectures, but I've found the technology behind them unapproachable. What is it? Git for data? (no) How does it work? Why should I use this instead of Parquet? (this _is_ Parquet!)
 
-As always, we’ll break things down to the basics and give you a comprehensive picture of what Delta Lake is and how you can get started.
+As always, we'll break things down to the basics and give you a comprehensive picture of what Delta Lake is and how you can get started.
 
 So...
 
 ## 🚤 What is Delta Lake?
 
-While Delta is an open-source framework, it’s important to note that it also underpins the Databricks platform. That means Databricks uses Delta Lake for storing tables and other data. It should be no surprise they _created_ the format & they’re subsequently responsible for most work on the library and its APIs.
+While Delta is an open-source framework, it's important to note that it also underpins the Databricks platform. That means Databricks uses Delta Lake for storing tables and other data. It should be no surprise they _created_ the format & they're subsequently responsible for most work on the library and its APIs.
 
-Notably, as we’ll discuss in a follow-up post, Iceberg is a very similar format and powers some of _Snowflake’s_ offerings... If you know about the ongoing feud between Databricks and Snowflake you can probably guess where this is headed. In typical fashion, we now have folks proclaiming "[Iceberg won this](https://bitsondatadev.substack.com/p/iceberg-won-the-table-format-war)" or "Delta won that." In reality, they're storage formats. _Extremely_ similar storage formats... but what does that mean?
+Notably, as we'll discuss in a follow-up post, Iceberg is a very similar format and powers some of _Snowflake's_ offerings... If you know about the ongoing feud between Databricks and Snowflake you can probably guess where this is headed. In typical fashion, we now have folks proclaiming "[Iceberg won this](https://bitsondatadev.substack.com/p/iceberg-won-the-table-format-war)" or "Delta won that." In reality, they're storage formats. _Extremely_ similar storage formats... but what does that mean?
 
-If you peruse the Databricks/Delta docs, you’ll probably find something like this:
+If you peruse the Databricks/Delta docs, you'll probably find something like this:
 
 ![This is a lakehouse, not delta](/posts/what-is-delta/delta-example.png)
 
@@ -55,13 +55,13 @@ I don't find this particularly helpful for understanding Delta Lake. For some re
 
 <center><figcaption>This is also a lakehouse.</figcaption></center>
 
-The very simple truth is that Delta files are just Parquet files with a metadata layer on top. That’s it. Not to understate the ingenuity and usefulness of Delta, but it’s a pretty simple concept.
+The very simple truth is that Delta files are just Parquet files with a metadata layer on top. That's it. Not to understate the ingenuity and usefulness of Delta, but it's a pretty simple concept.
 
 ![Actually Delta Lake](/posts/what-is-delta/delta-metadata.png)
 
 <center><figcaption>Ok, now THIS is Delta.</figcaption></center>
 
-Now, if you have a bit of background with these technologies, you might remark “Hey, so is Iceberg” or “Huh, that sounds like Hudi” and you’d be right. Those formats are pretty much the same thing. They even use very similar marketing materials.
+Now, if you have a bit of background with these technologies, you might remark "Hey, so is Iceberg" or "Huh, that sounds like Hudi" and you'd be right. Those formats are pretty much the same thing. They even use very similar marketing materials.
 
 ![Not Hudi](/posts/what-is-delta/hudi-example.png)
 
@@ -86,7 +86,7 @@ Ok, this term gets thrown around a lot without much explanation. Databricks [has
 - **Atomicity**: all transactions succeed or fail completely (no partial writes, for example).
 - **Consistency**: How data is _observed_ during simultaneous operations. Delta uses something called "optimistic concurrency control" to handle consistency— we'll discuss this in a future post. For now, we'll only note that it sounds nicer than _pessimistic_ concurrency control.
 - **Isolation**: simultaneous operations are handled without conflict. Again, this depends largely on optimistic concurrency control.
-- **Durability**: committed changes are _permanent_. Delta simply relies on cloud object storage for this guarantee: "Because transactions either succeed or fail completely and the transaction log lives alongside data files in cloud object storage, tables on Databricks inherit the durability guarantees of the cloud object storage on which they’re stored."
+- **Durability**: committed changes are _permanent_. Delta simply relies on cloud object storage for this guarantee: "Because transactions either succeed or fail completely and the transaction log lives alongside data files in cloud object storage, tables on Databricks inherit the durability guarantees of the cloud object storage on which they're stored."
 
 ### Time Travel
 
@@ -136,9 +136,9 @@ Storage is cheap, right?
 
 Delta tables are _both_ batch tables _and_ streaming sources/sinks. I'll refrain from joining [that debate](https://www.linkedin.com/posts/daniel-beach-6ab8b4132_datainfluncers-meta-google-activity-7078024000479645696-MzCe), but hey, flexibility is good.
 
-Using Delta, you get all the benefits of streaming _and_ batch— streaming ingest, batch backfill, interactive queries, etc. It's a very flexible format, and the ability to have _all_ of these features _and_ support streaming functionality of Spark is what I would call
+Using Delta, you get all the benefits of streaming _and_ batch— streaming ingest, batch backfill, interactive queries, etc. It's a very flexible format, and the ability to have _all_ of these features _and_ support streaming functionality of Spark is what I would call:
 
-![](/posts/what-is-delta/larry-david-pretty-good.gif)
+![Larry David pretty pretty good](/posts/what-is-delta/larry-david-pretty-good.gif)
 
 ### DML
 
@@ -150,17 +150,11 @@ SO let's talk about the underlying technology that makes most of these possible.
 
 ## 📜 The Transaction Log
 
-Here’s the part where I save you from reading a [15,000-word technical document](https://github.com/delta-io/delta/blob/master/PROTOCOL.md)! See, 4 readers can't be wrong— we're just delivering value here, nonstop.
+Here's the part where I save you from reading a [15,000-word technical document](https://github.com/delta-io/delta/blob/master/PROTOCOL.md)! See, 4 readers can't be wrong— we're just delivering value here, nonstop.
 
-So if Delta files are Parquet + the transaction log, we know the transaction log must be pretty special… otherwise, we’d just have Parquet files. While I do love Parquet files, I’m not sure they would warrant as much hype.
+So if Delta files are Parquet + the transaction log, we know the transaction log must be pretty special… otherwise, we'd just have Parquet files. While I do love Parquet files, I'm not sure they would warrant as much hype.
 
 ![Drake Parquet Meme](/posts/what-is-delta/drake-parquet.png)
-
-<div style="display: flex; flex-wrap: wrap; margin:0 auto;">
- <a href="https://https://mage.ai/">
-      <img src="https://raw.githubusercontent.com/mage-ai/assets/main/mage-build.gif">
- </a>
-<div>
 
 <center><figcaption>👋 <a href='https://Parquet.apache.org/'>Apache</a>, I'm open to sponsorships.</figcaption></center>
 
@@ -173,11 +167,11 @@ The transaction log works by breaking down transactions into atomic commits, the
 - Change protocol
 - Commit info
 
-In that sense, it’s sort of like Git, but not really. There isn’t the ability to branch, rollback, merge, or do actual Git stuff. You just get the versioning. If you’re looking for a true “git for data lakes” consider Delta + [lakeFS](https://lakefs.io/), which promises just that.
+In that sense, it's sort of like Git, but not really. There isn't the ability to branch, rollback, merge, or do actual Git stuff. You just get the versioning. If you're looking for a true "git for data lakes" consider Delta + [lakeFS](https://lakefs.io/), which promises just that.
 
-Some of you might be saying “That’s great, but how is Delta storing all of that transaction data? That could get pretty cumbersome!”
+Some of you might be saying "That's great, but how is Delta storing all of that transaction data? That could get pretty cumbersome!"
 
-That’s a valid concern! Delta creates a `_delta_log` subdirectory within every Delta Lake table. As changes are made, each commit is recorded in a JSON file, starting with 0 and incrementing up.
+That's a valid concern! Delta creates a `_delta_log` subdirectory within every Delta Lake table. As changes are made, each commit is recorded in a JSON file, starting with 0 and incrementing up.
 
 Delta will automatically generate checkpoint files for good read performance on every 10th commit, e.g. `0000010.json`. Checkpoint files save the entire state of the table at a point in time, in native Parquet.
 
@@ -185,11 +179,11 @@ Let's take a look (in real-time)!
 
 ## ⏰ Demo time
 
-I recommend opening this in fullscreen to see the code! [Here's](https://gist.github.com/mattppal/033b1081f82d028ac92f36121299531e) the full code from the demo, if you'd like to try it at home. 😀
+I recommend opening this in full-screen to see the code! [Here's](https://gist.github.com/mattppal/033b1081f82d028ac92f36121299531e) the full code from the demo, if you'd like to try it at home. 😀
 
 <div style="position: relative; padding-bottom: 41.86046511627907%; height: 0;"><iframe src="https://www.loom.com/embed/f2809a2e459f45ceabd0c5dfbffe3d37?sid=9e41b24e-c929-46f9-a0e8-9544c1446564" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-So yeah! The transaction log is always watching...
+The transaction log sees all 👀
 
 ![I'm watching you...](/posts/what-is-delta/wazowski.gif)
 
@@ -201,7 +195,7 @@ Up to this point, we've only discussed the fundamentals of Delta, but the team h
 
 There are three headline features of the release, but we'll focus on numero uno: Delta Universal Format (UniForm). With UniForm, ANY tool that can read Iceberg or Hudi… can also read Delta Lake.
 
-> With UniForm, customers can choose Delta with confidence, knowing that by choosing Delta, they’ll have broad support from any tool that supports lakehouse formats.
+> With UniForm, customers can choose Delta with confidence, knowing that by choosing Delta, they'll have broad support from any tool that supports lakehouse formats.
 
 The new functionality is pretty impressive. Since all three formats are Parquet-based and solely differentiated by their metadata, UniForm provides the framework for translating this metadata. Have an Iceberg table? It's now effectively a Delta table (with some [limitations](https://docs.databricks.com/delta/uniform.html#limitations)).
 
