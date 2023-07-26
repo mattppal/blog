@@ -11,6 +11,12 @@ title: What on Earth is Delta Lake?
 emoji: 🌎
 ---
 
+<script>
+    if (window.location.hostname !== "mattpalmer.io"){
+        window.top.location.href = 'https://mattpalmer.io/posts/what-is-delta';
+    }
+</script>
+
 <style>
   img {
     width: auto;

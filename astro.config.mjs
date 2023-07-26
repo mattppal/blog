@@ -14,6 +14,9 @@ import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
 export default defineConfig({
+  redirects: {
+    "/what-is-delta": "https://mattpalmer.io/posts/what-is-delta/",
+  },
   site: SITE.website,
   integrations: [
     tailwind({
