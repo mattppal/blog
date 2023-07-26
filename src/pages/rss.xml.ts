@@ -26,8 +26,12 @@ export async function get() {
       pubDate: new Date(data.pubDatetime),
       ogImage: data.ogImage,
       customData: `<meta property="og:image" content="${data.ogImage}" />`,
-      content: sanitizeHtml(parser.render(body)),
-      stylesheet: "/rss/styles.xsl",
+      content: sanitizeHtml(parser.render(body), {
+        allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img", "style"]),
+        exclusiveFilter: function (h2) {
+          return h2.tag == "h2" && h2.text == "ToC";
+        },
+      }),
     })),
   });
 }
