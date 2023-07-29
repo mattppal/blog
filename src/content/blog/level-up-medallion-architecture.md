@@ -1,7 +1,7 @@
 ---
 author: Matt Palmer
 description: What's a medallion architecture? What are its advantages? Where does it fall short? How can you use it to become a data superstar? 🤩
-draft: false
+draft: true
 featured: true
 ogImage: "/posts/level-up-medallion-architecture/og.png"
 postSlug: level-up-medallion-architecture
