@@ -12,5 +12,8 @@
         "Influencers",
         "lakehouse",
         "solopreneurship"
-    ]
+    ],
+    "markdown.copyFiles.destination": {
+        "/src/content/blog/*": "/public/posts/${documentBaseName}/"
+    }
 }
