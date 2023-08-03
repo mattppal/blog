@@ -1,7 +1,7 @@
 ---
 author: Matt Palmer
 description: What's a medallion architecture? What are its advantages? Where does it fall short? How can you use it to become a data superstar? 🤩
-draft: true
+draft: false
 featured: true
 ogImage: "/posts/level-up-medallion-architecture/og.png"
 postSlug: level-up-medallion-architecture
@@ -39,7 +39,7 @@ emoji: 🥇
 } */
 </style>
 
-✏️ This post is adapted from a contribution I made to [dataengineering.wiki](https://dataengineering.wiki/Concepts/Medallion+Architecture) 💜. I highly recommend you check out their site & community!
+✏️ This post is adapted from a contribution I made to [dataengineering.wiki](https://dataengineering.wiki/Concepts/Medallion+Architecture). I highly recommend you check out their site & community! 💜
 
 ![Header image](/posts/level-up-medallion-architecture/header.png)
 
@@ -47,7 +47,7 @@ emoji: 🥇
 
 ## 🏃‍♂️ Going for Gold
 
-In the theme of my [last article](/posts/what-is-delta), we're continuing with Databricks-inspired buzzwords. I like this one, because it lets me make liberal use of running emojis. 🤷‍♂️
+In the theme of my [last article](/posts/what-is-delta), we're continuing with Databricks-inspired buzzwords. I like this one because it lets me make liberal use of running emojis. 🤷‍♂️
 
 A medallion architecture is a data design pattern used to logically organize data in a lakehouse; to incrementally improve the quality of data as it flows through data quality "layers."
 
@@ -145,7 +145,7 @@ We've talked about what Medallion is and who it's for, but here are some downsid
 - **Medallion doesn't replace dimensional modeling**: schemas and tables within each layer must still be modeled. Medallion architecture provides a framework for data cleaning and storage. You can't throw away your copy of _The Data Warehouse Toolkit_ and adopt a Medallion Architecture.
 - **Medallion uses large amounts of storage**: though, as many have proclaimed, "storage is cheap," Medallion architecture effectively triples the amount of storage in a data lake. For that reason, it might not be practical for data teams with intensive storage demands. Hey, it's 2023 and interest rates are [nearing 6%](https://web.archive.org/web/20230728034854/https://www.newyorkfed.org/markets/reference-rates/effr). We can't be dropping stacks on cloud services anymore. 💸
 - **Medallion requires additional downstream processing**: there _still_ needs to be a place for analysts/analytics engineers to build business-oriented transformations that power BI. Some teams might prefer those processes remain separate, rather than having analysts develop in the gold layer. As such, a medallion architecture is not a drop-in replacement for existing data transformation solutions. You likely still need a warehouse. Though I _have_ heard of analytics teams migrating to a pure data lake, I wouldn't recommend that.
-- **Medallion implies a lakehouse architecture**: if a lakehouse is impractical for your team, this architecture might not make sense. Medallion architectures _can_ be used effectively in hybrid data lake/warehouse implementations, as I alluded to above, but if your team isn't ready for a data lake/lakehouse solution, there's always staging layers in a database. 😄
+- **Medallion implies a lakehouse architecture**: if a lakehouse is impractical for your team, this architecture might not make sense. Medallion architectures _can_ be used effectively in hybrid data lake/warehouse implementations, as I alluded to above, but if your team isn't ready for a data lake/lakehouse solution, there are always staging layers in a database. 😄
 
 ## 📽️ Recap
 
