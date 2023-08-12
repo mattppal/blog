@@ -45,7 +45,20 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         >
           art
         </LinkButton>. 🤘
+        <!-- <br /><br />
+        I also have a fancy newsletter, which you can subscribe to below. 👇
         <br /><br />
+        <center
+          ><iframe
+            src="https://embeds.beehiiv.com/65982cd1-bbd0-4d6f-bd49-ea049be44d70?slim=true"
+            data-test-id="beehiiv-embed"
+            height="52"
+            frameborder="0"
+            scrolling="no"
+            style="margin: 0; border-radius: 0px !important; background-color: transparent; display: block;"
+          ></iframe></center
+        >
+        <br /> -->
         <!-- or see what <i>I've</i> been <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
           href="/books/"
@@ -64,13 +77,9 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </p> -->
       {
         // only display if at least one social link is enabled
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">Links:</div>
-            <Socials />
-          </div>
-        )
+        socialCount > 0 && <Socials />
       }
+
       <a
         target="_blank"
         href="/rss.xml"
