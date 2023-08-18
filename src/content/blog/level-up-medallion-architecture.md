@@ -5,7 +5,7 @@ draft: false
 featured: true
 ogImage: "/posts/level-up-medallion-architecture/og.png"
 postSlug: level-up-medallion-architecture
-pubDatetime: 2023-08-01 05:00:00
+pubDatetime: 2023-08-12 05:00:00
 tags: [data, tutorial, medallion, opinion, dataengineeringwiki]
 title: Level-up with a Medallion Architecture
 emoji: 🥇
