@@ -21,7 +21,7 @@
     "@astrojs/prefetch": "^0.3.0",
     "@astrojs/rss": "^2.3.0",
     "@resvg/resvg-js": "^2.4.1",
-    "astro": "^2.3.0",
+    "astro": "^2.9.0",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
     "mdast-util-to-string": "^4.0.0",
