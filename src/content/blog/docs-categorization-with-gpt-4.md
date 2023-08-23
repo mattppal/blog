@@ -1,7 +1,7 @@
 ---
 author: Matt Palmer
 description: Using the OpenAI API to categorize Mintlify documents using GPT-4
-draft: true
+draft: false
 featured: true
 ogImage: "/posts/level-up-medallion-architecture/og.png"
 postSlug: docs-categorization-with-gpt-4
@@ -53,7 +53,7 @@ A huge part of developer relations (and product, generally) is writing documenta
 
 Similarly, if you have _good documentation_, but no one can find it, does it really exist? I bet y'all didn't wake up expecting this meta of a data post, but here we are. These are the exact questions I've been asking myself for the past few weeks.
 
-The second question is particularly of interest since the [documentation](https://docs.mage.ai) I'm trying to improve is particularly dense and there _currently_ isn't a rigorous way to categorize it. As of this moment, there are currently ~200 pages of docs across ~80 folders... Oh boy.
+The second question is particularly of interest since the [documentation](https://web.archive.org/web/20230521044430/https://docs.mage.ai/introduction/overview) I'm trying to improve is particularly dense and there _currently_ isn't a rigorous way to categorize it. As of this moment, there are currently ~200 pages of docs across ~80 folders... Oh boy.
 
 Breaking it down logically, the process looks like:
 
@@ -109,7 +109,7 @@ git diff --name-status -C -M60 master matt/refactor-nav > scratch.txt
 
 `git diff` will get us changed files, `--name-status` just alters how the diffs are printed, `-C` is short for `--cached`: comparing staged changes with the local repo, and `-M60` sets the threshold for moved files to `60%` (a file is considered "moved" if it has 60% of the original contents). We're piping that out to a file `scratch.txt`:
 
-```text
+```
 ...
 M	docs/design/data-pipeline-management.mdx
 R100	docs/guides/data-validation.mdx	docs/development/data-validation.mdx
@@ -155,9 +155,11 @@ We can do the same thing to jump to the _spaces_ between each change. From there
 
 Voila. We just created ~70 redirects in about 10 minutes. 😎
 
+Honestly, this is something GPT-4 would likely excel at. The only issue is that my input size was greater than the maximum allowable length and I couldn't risk a hallucination or omission.
+
 ### Fixing internal links
 
-Ok, we have the external links taken care of but running `mintlify broken-links` (an awesome new feature) tells us we have ~54 broken internal links. 😱
+Okay, we have the external links taken care of but running `mintlify broken-links` (an awesome new feature) tells us we have ~54 broken internal links. 😱
 
 Fortunately, this is why VSCode extensions exist. I found [this one](https://marketplace.visualstudio.com/items?itemName=angelomollame.batch-replacer) that lets us do a bulk find/replace for the contents of any file.
 
