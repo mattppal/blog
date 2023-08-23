@@ -1,7 +1,7 @@
 ---
 author: Matt Palmer
 description: Using the OpenAI API to categorize Mintlify documents using GPT-4
-draft: false
+draft: true
 featured: true
 ogImage: "/posts/level-up-medallion-architecture/og.png"
 postSlug: docs-categorization-with-gpt-4
@@ -39,7 +39,7 @@ emoji: 🥇
 } */
 </style>
 
-![Header image](/posts/level-up-medallion-architecture/header.png)
+[TODO] Header image
 
 ## ToC
 
@@ -51,7 +51,7 @@ A huge part of developer relations (and product, generally) is writing documenta
 
 ![](/posts/docs-categorization-with-gpt-4/if-a-tree-falls.gif)
 
-Similarly, if you have _good documentation_, but no one can find it, does it really exist? I bet y'all didn't wake up expecting this meta of a data post, but here we are. These are the exact questions I've been asking myself for the past few weeks.
+Similarly, if you have _good documentation_, but no one can find it, does it _really_ exist? I bet y'all didn't wake up expecting a post this meta today, but here we are. These are the exact questions I've been asking myself for the past few weeks.
 
 The second question is particularly of interest since the [documentation](https://web.archive.org/web/20230521044430/https://docs.mage.ai/introduction/overview) I'm trying to improve is particularly dense and there _currently_ isn't a rigorous way to categorize it. As of this moment, there are currently ~200 pages of docs across ~80 folders... Oh boy.
 
@@ -65,12 +65,14 @@ Breaking it down logically, the process looks like:
   - Create a redirect (external links)
 - Get a PR up and deal with MEGA merge conflicts
 
-Sooo pretty much soup-to-nuts that looks:
+Soooo pretty much soup-to-nuts that looks:
 
 1. Not fun
 2. Very time consuming
 
 So let's see what we can automate. I already have a few tricks up my sleeve for the internal/external links. Pretty sure I'll just have to live with the merge conflicts, but that's not the end of the world.
+
+## What is Mintlify?
 
 ## My Solution
 
@@ -78,13 +80,74 @@ So let's see what we can automate. I already have a few tricks up my sleeve for 
   - Reads each doc (up to the limit, ~4000 tokens)
   - Sends the doc to GPT-4 along with context & categories
   - reads the category
-  - Writes to a mintlify-structured json file
-- But wait....
-  - Folder strucutre
+  - Writes to a mintlify-structured `json` file
+- But wait...
+  - Folder structure
   - Redirects
   - Internal links
 
 ### Docs Categorization
+
+```
+You will be provided documentation on a data transformation tool, "Mage". \
+The content supplied is a page in our documentation and a path to that page \
+relative to the current location in a file system. The content is formatted \
+in EITHER "Markdown" or "MDX" format. Please use standard Markdown/MDX syntax in \
+interpreting this content and disregard any frontmatter (content between ---).
+
+You should use the path as a hint as to the category of the page, but \
+be aware that many paths will be incorrect. The content of the document \
+should be used as the primary motivation for the category of the document.
+
+Classify the into a primary category and a secondary category. \
+Additionally, documents may have a tertiary category, but this is optional. \
+Overview pages should never have a tertiary category. If you feel that a \
+secondary or tertiary category should exist with certainty, create one. \
+Categories are defined in a JSON structure like the following: \
+{"Primary-1": {"Secondary-1": ["Tertiary-1", "Tertiary-2"], "Secondary-2": ["Tertiary-1", etc.}... etc}.
+
+Please note that "data integrations" are distinctly different from "integrations." \
+"data integrations" refer to a service similar to fivetran or meltano— they move data \
+between a source and target. "Integrations" refer to Mage-specific integrations, i.e. \
+extensions or compatible tools.
+
+Provide your output in json format with the keys: current_filepath, primary, secondary, \
+and tertiary. For docs lacking a tertiary category, please return an empty string ''
+```
+
+```json
+{
+  "Docs": {
+    "Introduction": ["Setup", "Development"],
+    "Configuration": [
+      "Storage",
+      "Kernels",
+      "Variables",
+      "Dependencies",
+      "Versioning"
+    ],
+    "Concepts": ["Design", "Abstractions", "Orchestration"],
+    "dbt": ["Configuration", "Models", "Commands"],
+    "Integrations": [
+      "Computation",
+      "Orchestration",
+      "Transformation",
+      "Observability",
+      "Reverse ETL"
+    ],
+    "About": ["Community"]
+  },
+  "Guides": { "Get Started": [], "Pipeline Development": [], "Blocks": [] },
+  "Deploy": {
+    "Get Started": [],
+    "Cloud": [],
+    "CI/CD": [],
+    "Team Management": [],
+    "Version Control": []
+  },
+  "Contribute": { "Get Started": [], "Backend": [], "Frontend": [] }
+}
+```
 
 ### Redirects
 
@@ -111,13 +174,15 @@ git diff --name-status -C -M60 master matt/refactor-nav > scratch.txt
 
 ```
 ...
-M	docs/design/data-pipeline-management.mdx
-R100	docs/guides/data-validation.mdx	docs/development/data-validation.mdx
-M	docs/development/environment-variables.mdx
-R100	docs/production/observability/logging.mdx	docs/development/observability/logging.mdx
-R096	docs/production/observability/monitoring.mdx	docs/development/observability/monitoring.mdx
+M docs/design/data-pipeline-management.mdx
+R100 docs/guides/data-validation.mdx docs/development/data-validation.mdx
+M docs/development/environment-variables.mdx
+R100 docs/production/observability/logging.mdx docs/development/observability/logging.mdx
+R096 docs/production/observability/monitoring.mdx docs/development/observability/monitoring.mdx
 ...
 ```
+
+**Note:** due to wrapping, some changed files appear on a separate line— the format goes `RXXX OLD NEW`
 
 Nice!
 
@@ -127,7 +192,7 @@ First, we `CMD + F` for a new find and replace. Using the "regex" option, we'll 
 
 Then, (this one is a bit clever) `CMD + SHIFT + L` selects _all the matches_ and `ESC` exits the find/replace dialogue with cursors intact. Then we just copy-line & paste into a new file.
 
-![](/posts/docs-categorization-with-gpt-4/find-replace.gif)
+![Find replace gif](/posts/docs-categorization-with-gpt-4/find-replace.gif)
 
 We can do the same thing to jump to the _spaces_ between each change. From there, it's a bit of mutli-cursor edits to obtain json with our source/destination structure. Then we:
 
@@ -138,18 +203,18 @@ We can do the same thing to jump to the _spaces_ between each change. From there
 
 ```json
 ...
-  {
-		"source": "guides/data-validation",
-		"destination": "development/data-validation"
-	},
-	{
-		"source": "production/observability/logging",
-		"destination": "development/observability/logging"
-	},
-	{
-		"source": "production/observability/monitoring",
-		"destination": "development/observability/monitoring"
-	}
+{
+  "source": "guides/data-validation",
+  "destination": "development/data-validation"
+},
+{
+  "source": "production/observability/logging",
+  "destination": "development/observability/logging"
+},
+{
+  "source": "production/observability/monitoring",
+  "destination": "development/observability/monitoring"
+}
 ...
 ```
 
@@ -181,7 +246,7 @@ with "development/observability/monitoring"
 
 Running the extension bulk replaces links across all `mdx` files in our repo. Broken links terminated.
 
-![](/posts/docs-categorization-with-gpt-4/terminator.gif)
+![Terminator gif](/posts/docs-categorization-with-gpt-4/terminator.gif)
 
 ## Challenges
 
