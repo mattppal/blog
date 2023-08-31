@@ -1,7 +1,7 @@
 ---
 author: Matt Palmer
 description: Breaking down a complex problem while using some tricks and AI to make it easier. 🤖
-draft: false
+draft: true
 featured: true
 ogImage: "/posts/level-up-medallion-architecture/og.png"
 postSlug: docs-categorization-with-gpt-4
@@ -456,6 +456,5 @@ Here are some challenges:
 
 1. Context is _hard_: take, for example, the idea of "data integration," which refers to tools like FiveTran, Mage, and Airbyte: moving data from one place to another. How is GPT supposed to differentiate that from _third party integrations_ for a _data tool_, i.e. plugins for Mage? I guess this is the nuance of prompt engineering.
 2. Tokenization is a barrier: The GPT-4 API only accepts a max of 8192 tokens. Tokens, prompts, and completions are still pretty obtuse. I suspect much of the knowledge around these topics is buried in private repos/source code. This would probably be a good topic for a future post. Ideally, I'd need to estimate tokens + completion tokens and truncate input accordingly... but then we lose _context_ and the response becomes less trustworthy.
-3.
 
 ## Results
