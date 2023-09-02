@@ -1,11 +1,39 @@
 ---
-layout: ../layouts/AboutLayout.astro
+layout: ../layouts/ContentLayout.astro
 title: Content
 ---
 
+import { Image } from "@astrojs/image/components";
+
+import coalesce from "../../public/logos/coalesce.png";
+import hex_dark from "../../public/logos/hex-pink.png";
+import hex_light from "../../public/logos/hex-purple.png";
+import mage from "../../public/logos/mage.png";
+import orm from "../../public/logos/oreilly.png";
+import zuar from "../../public/logos/zuar.png";
+import shipyard from "../../public/logos/shipyard.svg";
+
+<style>
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+</style>
+
 Outside of work, I enjoy exploring technical projects. Often, I find the best motivator is to work with other passionate individuals on ideas that have real-world applications. One particularly fun & engaging way to do so is creating content!
 
-Here's a sample of my work (outside of this blog):
+I've worked with the following amazing companies to create content on data analytics and engineering:
+
+<div class="container">
+  <Image src={coalesce} width={150} alt="" />
+  <Image src={hex_light} width={150} alt="" />
+  <Image src={mage} width={150} alt="" />
+  <Image src={orm} width={150} alt="" />
+  <Image src={shipyard} width={150} alt="" />
+  <Image src={zuar} width={150} alt="" />
+</div>
 
 ### Coalesce
 
