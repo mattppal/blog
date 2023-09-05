@@ -32,11 +32,11 @@ emoji: 🦾
   display: block;
 }
 
-/* img {
-    width: 45%;
+img {
+    width: 75%;
     height: auto;
     aspect-ratio: attr(width) / attr(height);
-} */
+}
 </style>
 
 ![](/posts/docs-categorization-with-gpt-4/og.jpeg)
@@ -92,6 +92,12 @@ My goal is to use this as a learning opportunity with the [OpenAI API](https://p
 I already have a few tricks up my sleeve for the internal/external links, I'm pretty sure I'll just have to live with the merge conflicts, but that's not the end of the world.
 
 ## What is Mintlify?
+
+<br/>
+
+<img src="/posts/docs-categorization-with-gpt-4/mintlify-logo.svg" />
+
+<br/>
 
 So I'd be remiss if I didn't discuss our docs framework: [Mintlify](https://mintlify.com/).
 
