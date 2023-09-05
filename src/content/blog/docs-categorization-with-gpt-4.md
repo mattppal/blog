@@ -354,6 +354,10 @@ Ta-da 🪄
 ]
 ```
 
+You can find the full notebook below:
+
+<script src="https://gist.github.com/mattppal/c8b765c08e54fe50207263af2b01e764.js"></script>
+
 ### Redirects
 
 Now you get to see all the gory details of making big changes to an existing project. As an aside, it's pretty wild how tech works: without proper knowledge/architecture, changing a system can be _crazy_ difficult.
