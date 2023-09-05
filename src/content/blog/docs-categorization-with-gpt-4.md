@@ -32,11 +32,11 @@ emoji: 🦾
   display: block;
 }
 
-img {
+/* img {
     width: 75%;
     height: auto;
     aspect-ratio: attr(width) / attr(height);
-}
+} */
 </style>
 
 ![](/posts/docs-categorization-with-gpt-4/og.jpeg)
