@@ -5,7 +5,7 @@ draft: false
 featured: true
 ogImage: "/posts/docs-categorization-with-gpt-4/og.jpeg"
 postSlug: docs-categorization-with-gpt-4
-pubDatetime: 2023-09-01 05:00:00
+pubDatetime: 2023-09-05 05:00:00
 tags: [data, ai, gpt, tutorial]
 title: Categorizing Documentation with GPT-4
 emoji: 🦾
