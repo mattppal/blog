@@ -22,23 +22,6 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
 <Layout>
   <Header />
-  <script>
-    window.CustomSubstackWidget = {
-      substackUrl: "casewhen.substack.com",
-      placeholder: "letshave@fun.com",
-      buttonText: "Subscribe",
-      theme: "custom",
-      colors: {
-        primary: "#1157d1",
-        input: "#00000000",
-        email: "#353538",
-        text: "#f2f5ec",
-      },
-      // Go to substackapi.com to unlock custom redirect
-    };
-  </script>
-  <script src="https://substackapi.com/widget.js" async></script>
-
   <main id="main-content">
     <section id="hero">
       <h1>👋 Hey there!</h1>
@@ -63,17 +46,33 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           art
         </LinkButton>. 🤘
         <br /><br />
-        I also have a newsletter called <LinkButton
+        I also have a newsletter— <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
           href="https://casewhen.substack.com"
         >
           CASE WHEN
-        </LinkButton>, which you can subscribe to below.
+        </LinkButton>.
         <br /><br />
         <center>
           <div id="custom-substack-embed"></div>
         </center>
-
+        <script>
+          window.CustomSubstackWidget = {
+            substackUrl: "casewhen.substack.com",
+            placeholder: "letshave@fun.com",
+            buttonText: "Subscribe",
+            theme: "custom",
+            colors: {
+              primary: "#1157d1",
+              input: "#00000000",
+              email: "#353538",
+              text: "#f2f5ec",
+            },
+            // substackapi.com
+          };
+        </script>
+        <script src="https://substackapi.com/widget.js" async></script>
+        <br /><br />
         <!-- or see what <i>I've</i> been <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
           href="/books/"
