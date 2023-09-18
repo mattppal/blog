@@ -54,9 +54,16 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         </LinkButton>.
         <br /><br />
         <center>
-          <div id="custom-substack-embed"></div>
+          <iframe
+            src="https://casewhen.substack.com/embed"
+            width="480"
+            height="320"
+            style="border:1px solid #EEE; background:white;"
+            frameborder="0"
+            scrolling="no"></iframe>
+          <!-- <div id="custom-substack-embed"></div> -->
         </center>
-        <script>
+        <!-- <script>
           window.CustomSubstackWidget = {
             substackUrl: "casewhen.substack.com",
             placeholder: "letshave@fun.com",
@@ -71,7 +78,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             // substackapi.com
           };
         </script>
-        <script src="https://substackapi.com/widget.js" async></script>
+        <script src="https://substackapi.com/widget.js" async></script> -->
         <br /><br />
         <!-- or see what <i>I've</i> been <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
