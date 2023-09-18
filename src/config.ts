@@ -14,7 +14,7 @@ export const SITE: Site = {
   location: "San Jose, CA",
   ogImage: "og.jpg",
   googleAnalyticsId: "",
-  lightAndDarkMode: true,
+  lightAndDarkMode: false,
   postPerPage: 8,
 };
 

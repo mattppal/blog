@@ -11,9 +11,10 @@ function getPreferTheme() {
   if (primaryColorScheme) return primaryColorScheme;
 
   // return user device's prefer color scheme
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  // return window.matchMedia("(prefers-color-scheme: dark)").matches
+  //   ? "dark"
+  //   : "light";
+  return "light";
 }
 
 let themeValue = getPreferTheme();
