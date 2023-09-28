@@ -5,7 +5,7 @@ draft: false
 featured: true
 ogImage: "/posts/docs-categorization-with-gpt-4/og.jpeg"
 postSlug: docs-categorization-with-gpt-4
-pubDatetime: 2023-09-01 05:00:00
+pubDatetime: 2023-09-05 05:00:00
 tags: [data, ai, gpt, tutorial]
 title: Categorizing Documentation with GPT-4
 emoji: 🦾
@@ -33,7 +33,7 @@ emoji: 🦾
 }
 
 /* img {
-    width: 45%;
+    width: 75%;
     height: auto;
     aspect-ratio: attr(width) / attr(height);
 } */
@@ -93,6 +93,12 @@ I already have a few tricks up my sleeve for the internal/external links, I'm pr
 
 ## What is Mintlify?
 
+<br/>
+
+<img src="/posts/docs-categorization-with-gpt-4/mintlify-logo.svg" />
+
+<br/>
+
 So I'd be remiss if I didn't discuss our docs framework: [Mintlify](https://mintlify.com/).
 
 Mintlify leverages markdown/MDX to deploy a hosted documentation site directly from a GitHub repo. For abstracting away the process of deploying a static site, it's pretty great.
@@ -130,7 +136,7 @@ Categories are defined in a JSON structure like the following:
 {"Primary-1": {"Secondary-1": ["Tertiary-1", "Tertiary-2"], "Secondary-2": ["Tertiary-1", etc.}... etc}.
 
 Please note that "data integrations" are distinctly different from "integrations."
-"data integrations" refer to a service similar to fivetran or meltano— they move data between a source and target. "Integrations" refer to Mage-specific integrations, i.e. extensions or compatible tools.
+"data integrations" refer to a service similar to Fivetran or Meltano— they move data between a source and target. "Integrations" refer to Mage-specific integrations, i.e. extensions or compatible tools.
 
 Provide your output in `json` format with the keys: current_filepath, primary, secondary, \
 and tertiary. For docs lacking a tertiary category, please return an empty string ''
@@ -397,7 +403,7 @@ R096 docs/production/observability/monitoring.mdx docs/development/observability
 ...
 ```
 
-**Note:** due to wrapping, some changed files appear on a separate line— the format goes `RXXX OLD NEW`
+**Note:** Due to wrapping, some changed files appear on a separate line— the format goes `RXXX OLD NEW`
 
 Nice! To generate our "sources"/"destinations" keys, we can use some VSCode cursor-foo.
 
@@ -474,9 +480,9 @@ Here are some takeaways:
 
 I think numbers 1,2, and 3 point to 4 as being a potential iteration of this project.
 
-It's so interesting— I was a bit sanguine on the whole ChatGPT thing until I realized potential _solutions_ to problems I experience every day!
+It's so interesting— I was a bit sanguine on the whole ChatGPT thing until I realized potential _solutions_ to problems I experience every day!
 
-Now I'm wondering about solutions to _other_ problems, which I'll keep to myself as potential product ideas— VC's feel free to reach out, I have plenty.
+Now I'm wondering about solutions to _other_ problems, which I'll keep to myself as potential product ideas— VCs feel free to reach out, I have plenty.
 
 I suppose that's my philosophy on learning, which is pretty similar to my guiding principle for work: **make it fun and interesting and the hard parts become easy.**
 

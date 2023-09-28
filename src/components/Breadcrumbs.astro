@@ -16,7 +16,7 @@ breadcrumbList[0] === "posts" &&
   <ul>
     <li>
       <a href="/">Home</a>
-      <span aria-hidden="true">&#62;</span>
+      <span aria-hidden="true">&nbsp;&gt;&nbsp;</span>
     </li>
     {
       breadcrumbList.map((breadcrumb, index) =>
@@ -33,7 +33,7 @@ breadcrumbList[0] === "posts" &&
         ) : (
           <li>
             <a href={`/${breadcrumb}`}>{breadcrumb}</a>
-            <span aria-hidden="true">&#62;</span>
+            <span aria-hidden="true">&nbsp;&gt;&nbsp;</span>
           </li>
         )
       )
@@ -43,7 +43,7 @@ breadcrumbList[0] === "posts" &&
 
 <style>
   .breadcrumb {
-    @apply mx-auto mt-8 mb-1 w-full max-w-3xl px-4;
+    @apply mx-auto mb-1 mt-8 w-full max-w-3xl px-4;
   }
   .breadcrumb ul li {
     @apply inline;

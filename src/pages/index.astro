@@ -48,36 +48,21 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         <br /><br />
         I also have a newsletter— <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
-          href="https://casewhen.substack.com"
+          href="https://casewhen.beehiiv.com/"
         >
           CASE WHEN
-        </LinkButton>.
+        </LinkButton>, subscribe below 👇
         <br /><br />
         <center>
           <iframe
-            src="https://casewhen.substack.com/embed"
-            width="100%"
-            height="300"
+            src="https://embeds.beehiiv.com/2df64b55-c4d3-45b9-99da-2ddec9362b2c?slim=true"
+            data-test-id="beehiiv-embed"
+            height="52"
             frameborder="0"
-            scrolling="no"></iframe>
-          <!-- <div id="custom-substack-embed"></div> -->
+            scrolling="no"
+            style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+          ></iframe>
         </center>
-        <!-- <script>
-          window.CustomSubstackWidget = {
-            substackUrl: "casewhen.substack.com",
-            placeholder: "letshave@fun.com",
-            buttonText: "Subscribe",
-            theme: "custom",
-            colors: {
-              primary: "#1157d1",
-              input: "#00000000",
-              email: "#353538",
-              text: "#f2f5ec",
-            },
-            // substackapi.com
-          };
-        </script>
-        <script src="https://substackapi.com/widget.js" async></script> -->
         <br /><br />
         <!-- or see what <i>I've</i> been <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
@@ -143,16 +128,18 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       <h2>Recent Posts</h2>
       <ul>
         {
-          sortedPosts.map(
-            ({ data }, index) =>
-              index < 4 && (
-                <Card
-                  href={`/posts/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              )
-          )
+          sortedPosts
+            .filter(({ data }) => !data.featured)
+            .map(
+              ({ data }, index) =>
+                index < 4 && (
+                  <Card
+                    href={`/posts/${slugify(data)}`}
+                    frontmatter={data}
+                    secHeading={false}
+                  />
+                )
+            )
         }
       </ul>
       <div class="all-posts-btn-wrapper">
