@@ -18,7 +18,7 @@ const allArt = await Astro.glob("../../public/art/*").then(files => {
       <div class="container">
         {
           allArt.map(sketch => (
-            <Image src={sketch} width={400} alt="" />
+          <div class="aspect-w-1 aspect-h-1"><Image src={sketch} alt="" /></div>
           ))
         }
       </div>
@@ -32,9 +32,5 @@ const allArt = await Astro.glob("../../public/art/*").then(files => {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px;
-  }
-  .container div {
-    background-color: red;
-    aspect-ratio: 1;
   }
 </style>
