@@ -1,51 +1,31 @@
+import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs";
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
-import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs";
-import remarkObsidianCallout from "remark-obsidian-callout";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
-import { SITE } from "./src/config";
-import mdx from "@astrojs/mdx";
-import image from "@astrojs/image";
-
-import prefetch from "@astrojs/prefetch";
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  redirects: {
-    "/writing": "/content",
-  },
-  site: SITE.website,
+  site: "https://astro-paper.pages.dev/", // replace this with your deployed domain
   integrations: [
     tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
+      applyBaseStyles: false,
     }),
     react(),
-    sitemap(),
     mdx(),
-    image(),
-    prefetch(),
+    sitemap(),
   ],
   markdown: {
     remarkPlugins: [
       remarkReadingTime,
-      // Need to config. See: https://github.com/escwxyz/remark-obsidian-callout
-      remarkObsidianCallout,
-      [
-        remarkToc,
-        {
-          tight: true,
-          heading: "ToC",
-        },
-      ],
+      remarkToc,
       [
         remarkCollapse,
         {
-          test: "ToC",
+          test: "Table of contents",
         },
       ],
     ],
@@ -60,8 +40,5 @@ export default defineConfig({
       exclude: ["@resvg/resvg-js"],
     },
   },
-  // build: {
-  //     // Example: Generate `page.html` instead of `page/index.html` during build.
-  //     format: 'file'
-  // }
+  scopedStyleStrategy: "where",
 });

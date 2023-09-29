@@ -3,5 +3,3 @@ Disallow: /nogooglebot/
 
 User-agent: *
 Allow: /
-
-Sitemap: https://mattpalmer.io/sitemap-index.xml

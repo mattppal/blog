@@ -5,6 +5,7 @@ import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
+import { slugifyStr } from "@utils/slugify";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -12,20 +13,29 @@ export interface Props {
 
 const { post } = Astro.props;
 
-const { title, author, description, ogImage, pubDatetime, tags, readingTime } =
+const { title, author, description, ogImage, canonicalURL, pubDatetime, tags, readingTime } =
   post.data;
 
 const { Content } = await post.render();
 
-const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
-  .href;
+const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
+const ogUrl = new URL(
+  ogImageUrl ?? `/posts/${slugifyStr(title)}.png`,
+  Astro.url.origin
+).href;
 ---
 
-<Layout title={title} author={author} description={description} ogImage={ogUrl}>
+<Layout
+  title={title}
+  author={author}
+  description={description}
+  ogImage={ogUrl}
+  canonicalURL={canonicalURL}
+>
   <Header />
   <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
     <button
-      class="focus-outline mt-8 mb-2 flex hover:opacity-75"
+      class="focus-outline mb-2 mt-8 flex hover:opacity-75"
       onclick="history.back()"
     >
       <svg xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +46,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     </button>
   </div>
   <main id="main-content">
-    <h1 class="post-title">{title}</h1>
+    <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
     <Datetime
       datetime={pubDatetime}
       readingTime={readingTime}
@@ -48,7 +58,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     </article>
 
     <ul class="tags-container">
-      {tags.map(tag => <Tag name={tag} />)}
+      {tags.map(tag => <Tag name={slugifyStr(tag)} />)}
     </ul>
   </main>
   <Footer />
