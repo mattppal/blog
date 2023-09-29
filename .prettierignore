@@ -1,15 +1,5 @@
 # Ignore everything
 /*
-public/_redirects
-public/og.jpg
-public/robots.txt
-*.png
-*.jpg
-*.jpeg
-*.svg
-*.gif
-*.pdf
-*.xsl
 
 # Except these files & folders
 !/src

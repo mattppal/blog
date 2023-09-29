@@ -1,12 +1,21 @@
+import { slugifyStr } from "@utils/slugify";
 import Datetime from "./Datetime";
+import type { CollectionEntry } from "astro:content";
 
 export interface Props {
   href?: string;
+  frontmatter: CollectionEntry<"blog">["data"];
   secHeading?: boolean;
 }
 
 export default function Card({ href, frontmatter, secHeading = true }: Props) {
-  const { emoji, title, pubDatetime, description, readingTime } = frontmatter;
+  const { title, pubDatetime, description, readingTime, emoji } = frontmatter;
+
+  const headerProps = {
+    style: { viewTransitionName: slugifyStr(title) },
+    className: "text-lg font-medium decoration-dashed hover:underline",
+  };
+
   return (
     <li className="my-6">
       <a
@@ -14,11 +23,11 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
         className="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
       >
         {secHeading ? (
-          <h2 className="text-lg font-medium decoration-dashed hover:underline">
+          <h2 {...headerProps}>
             {emoji} {title}
           </h2>
         ) : (
-          <h3 className="text-lg font-medium decoration-dashed hover:underline">
+          <h3 {...headerProps}>
             {emoji} {title}
           </h3>
         )}
