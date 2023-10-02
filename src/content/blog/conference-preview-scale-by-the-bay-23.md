@@ -87,7 +87,7 @@ Every now & then, we need to get meta. [Jeremy Smith](https://www.linkedin.com/i
 
 ## Get a discount!
 
-[CASE WHEN](https://newsletter.casewhen.xyz), a newsletter for concise, curated content on data & analytics.
+[CASE WHEN](https://https://casewhen.beehiiv.com/), a newsletter for concise, curated content on data & analytics.
 
 <div align="center">
 <iframe src="https://embeds.beehiiv.com/2df64b55-c4d3-45b9-99da-2ddec9362b2c?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" 
