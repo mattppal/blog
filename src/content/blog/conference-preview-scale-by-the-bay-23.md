@@ -1,7 +1,7 @@
 ---
 author: Matt Palmer
 description: A quick look at the indie conference covering code & data in the age of AI.
-draft: true
+draft: false
 featured: true
 ogImage: ""
 postSlug: conference-preview-scale-by-the-bay-23
