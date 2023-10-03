@@ -104,9 +104,9 @@ OK, now this is the exciting part! I'm going to be giving away _two_ free ticket
 You just have to:
 
 - Share this post with your friends: like and re-share on LinkedIn here [TODO: insert link]
-- Subscribe to my newsletter, [CASE WHEN](https://https://casewhen.beehiiv.com/), a newsletter for concise, curated content on data & analytics.
+- Subscribe to my newsletter on data & analytics, [CASE WHEN](https://https://casewhen.beehiiv.com/), via the subscribe form below.
 
-_Every_ new subscriber that registers for my newsletter through the embed below will get a 20% coupon within the week.
+_Every_ new subscriber that registers for my newsletter through the embed will get a coupon for a 20% discount to the conference.
 
 <div align="center">
 <iframe src="https://embeds.beehiiv.com/5e6a5a7a-87ec-40a9-943a-0b1e412196fd?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
