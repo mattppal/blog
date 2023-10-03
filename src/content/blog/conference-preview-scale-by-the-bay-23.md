@@ -103,7 +103,7 @@ OK, now this is the exciting part! I'm going to be giving away _two_ free ticket
 
 You just have to:
 
-- Share this post with your friends: like and re-share on LinkedIn [here]
+- Share this post with your friends: like and re-share on LinkedIn here [TODO: insert link]
 - Subscribe to my newsletter, [CASE WHEN](https://https://casewhen.beehiiv.com/), a newsletter for concise, curated content on data & analytics.
 
 _Every_ new subscriber that registers for my newsletter through the embed below will get a 20% coupon within the week.
