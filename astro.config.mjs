@@ -9,7 +9,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://mattpalmer.io/", // replace this with your deployed domain
+  site: "https://mattpalmer.io/",
   integrations: [
     tailwind({
       applyBaseStyles: false,
