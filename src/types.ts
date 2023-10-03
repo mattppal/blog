@@ -28,6 +28,7 @@ export type SocialIcons = {
 };
 
 export type SocialMedia =
+  | "Calendly"
   | "Github"
   | "Facebook"
   | "Instagram"

@@ -23,9 +23,16 @@ export default defineConfig({
       remarkReadingTime,
       remarkToc,
       [
+        remarkToc,
+        {
+          tight: true,
+          heading: "ToC",
+        },
+      ],
+      [
         remarkCollapse,
         {
-          test: "Table of contents",
+          test: "ToC",
         },
       ],
     ],

@@ -1,13 +1,13 @@
 ---
 author: Matt Palmer
 description: A quick look at the indie conference covering code & data in the age of AI.
-draft: true
-featured: false
+draft: false
+featured: true
 ogImage: ""
 postSlug: conference-preview-scale-by-the-bay-23
 pubDatetime: 2023-10-01
 tags: [data, sponsored, conference]
-title: "[Sponsored] Conference Preview: Scale By The Bay"
+title: "Conference Preview: Scale By The Bay"
 emoji: 🌉
 ---
 
@@ -15,13 +15,13 @@ emoji: 🌉
 
 ## Overview
 
-I'm _super_ stoked to share a unique, independent conference with you all AND the opportunity to attend at a heavy discount. This is a sponsored post, but I promise all the content within will be my honest and authentic take... Plus, who doesn't like free stuff? Read on to learn more about the conference: its history, talks I'm excited about, and how you can _attend for free_.
+I'm _super_ stoked to share a unique, independent conference with you all AND the opportunity to attend at a heavy discount.
+
+This is a _sponsored_ post, but I promise all the content within will be my honest and authentic take... Plus, who doesn't like **free** stuff?! Read on to learn more about the conference: its history, talks I'm excited about, and how you can _attend for free_.
 
 ![](/posts/conference-preview-scale-by-the-bay-23/breakfast-club.gif)
 
 ## Scale by the what?
-
-![](/posts/conference-preview-scale-by-the-bay-23/top_front_page_sbtb_2023.png)
 
 [_Scale by the Bay_](https://www.scale.bythebay.io/) might not have the notoriety of a Databricks or Snowflake Summit, _but_ it's cemented itself as an independent, professional platform for tech innovators.
 
@@ -29,9 +29,11 @@ Now, in it's **tenth** year 🤯, the conference is bringing you premier data & 
 
 One of the coolest parts? It's in a historic venue (the [Oakland Scottish Rite Center](https://oaklandscottishrite.com/)) with _a ton_ of charisma, or rizz, as the kids say these days.
 
-![](/posts/conference-preview-scale-by-the-bay-23/scottish_rite_center.jpeg)
+<div align="center">  
+<img width="75%" src="/posts/conference-preview-scale-by-the-bay-23/scottish_rite_center.jpeg" >
+</div>
 
-I'll talk a bit about what has me the most excited.
+I'll talk a bit about what has me the most excited, then we can get to the giveaway. 🤑
 
 ## Speakers & Talks
 
@@ -39,9 +41,13 @@ There's quite a [start-studded lineup](https://www.scale.bythebay.io/speakers) f
 
 Here are a few that stand out to me:
 
-### LLM & AI
+### [Scaling Embeddings in Real-Time](https://www.scale.bythebay.io/post/zander-matheson-scaling-embeddings-in-real-time)
 
-#### [Scaling Embeddings in Real-Time](https://www.scale.bythebay.io/post/zander-matheson-scaling-embeddings-in-real-time), Zander Matheson
+_Zander Matheson_
+
+<div align="center">  
+<img width="30%" src="/posts/conference-preview-scale-by-the-bay-23/zm.png">
+</div>
 
 Zander, the CEO of Bytewax (a Python-native, highly scalable, and cloud-native stream processing framework), knows a thing or two about streaming.
 
@@ -49,50 +55,64 @@ While generative AI is great, LLMs are only as powerful as their models, which o
 
 In his talk, Zander will show us just how Bytewax can help to create scalable real-time embeddings, which can be used to power bespoke, generative AI pipelines _in real time_.
 
-#### [Creating Context: Loading Your Life into a Vector Database](https://www.scale.bythebay.io/post/ben-church-creating-context-loading-your-life-into-a-vector-database), Ben Church
+### [Creating Context: Loading Your Life into a Vector Database](https://www.scale.bythebay.io/post/ben-church-creating-context-loading-your-life-into-a-vector-database)
+
+_Ben Church_
+
+<div align="center">  
+<img width="30%" src="/posts/conference-preview-scale-by-the-bay-23/bc.png">
+</div>
 
 _Hello, World_ examples are great, but they're often not that fun or personal. In this talk, Ben Church of Airbyte will walk us through how to extract personal data, transform it into embeddings, and load it into a vector database, providing an LLM with domain-specific context to power your life/business.
 
-### Streaming
+### [Apache Iceberg: Enabling an Open-lakehouse Architecture](https://www.scale.bythebay.io/post/dipankar-mazumdar-apache-iceberg-enabling-an-open-lakehouse-architecture-for-large-scale-analytics)
 
-#### [Latency Goes Sub-second in Apache Spark](https://www.scale.bythebay.io/post/karthik-ramasamy-latency-goes-sub-second-in-apache-spark-structured-streaming), Karthik Ramasamy
+_Dipankar Mazumdar_
 
-Perhaps a bit overshadowed by LLM & AI hype, streaming is still _all the rage_. What better opportunity to learn about streaming from the _Head of Streaming_ at Databricks?!
-
-Karthik's talk will discuss improvements made in offset management to reduce Structured Streaming's inherent processing latency, primarily benefiting operational use cases like real-time monitoring. Evaluations show a latency improvement of 68-75%, reducing times from 700-900 ms to 150-250 ms at varied event throughputs.
-
-### Data Best Practices
-
-#### [Apache Iceberg: Enabling an Open-lakehouse Architecture for Analytics](https://www.scale.bythebay.io/post/dipankar-mazumdar-apache-iceberg-enabling-an-open-lakehouse-architecture-for-large-scale-analytics), Dipankar Mazumdar
+<div align="center">  
+<img width="30%" src="/posts/conference-preview-scale-by-the-bay-23/dm.png">
+</div>
 
 I've written a bit about [Delta Lake](https://mattpalmer.io/posts/what-is-delta/) as a framework for enabling a [Lakehouse Architecture](https://docs.google.com/viewer?url=https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf), but Iceberg is a similar format that has a host of benefits.
 
 I think it's _super important_ that we _all_ keep up-to-date on the latest data tools & tech. I'm looking forward to this talk by Dipankar, a Developer Advocate at Dremio, to learn more about lakehouse architectures and how Iceberg differs from solutions like Delta.
 
-#### [Your Pipeline as a Function: Applying Functional Programming Principles to Data Engineering](https://www.scale.bythebay.io/post/pete-hunt-your-pipeline-as-a-function-applying-functional-programming-principles-to-data-engineering), Pete Hunt
+## Conference Workshop
 
-Software engineers are pretty smart. While there are some true data engineering ninjas out there, we can learn quite a bit from software engineering best practices.
+Scale by the Bay _also_ features a headline workshop, designed to take you from zero-to-LLM-hero
 
-That's why I'm excited to hear [Pete Hunt](https://twitter.com/floydophone), the CEO of Elementl, Inc. (the company behind [Dagster](https://dagster.io/)) talk about how we can apply functional principles to data engineering to build more resillient, scalable solutions.
+### [Building production-ready LLM-powered applications](https://www.scale.bythebay.io/llm-workshop)
 
-### Meta
+_Josh Tobin_
 
-#### [Aging: Evolving Software, Tools, and Ourselves, Jeremy Smith](https://www.scale.bythebay.io/post/jeremy-smith-aging-evolving-software-tools-and-ourselves)
+<div align="center">  
+<img width="30%" src="/posts/conference-preview-scale-by-the-bay-23/jt.png">
+</div>
 
-Every now & then, we need to get meta. [Jeremy Smith](https://www.linkedin.com/in/gentleman-and-a-scala/), a ML platform engineer at Netflix, is here to scratch that itch. I think the blurb speaks for itself:
+[Josh Tobin](https://www.linkedin.com/in/josh-tobin-4b3b10a9) of [Gantry](https://www.gantry.io/) & [Full Stack Deep Learning](https://fullstackdeeplearning.com/) will deliver the conference workshop: _Building production-ready LLM-powered applications_.
 
-> If it ain't broke, should you fix it? If it is broke, shouldn't you just rewrite it instead? Evolving software over years (and decades) isn't glamorous or exciting, but it's the necessary work that enables our field to create real economic value. How should we think about – and plan for – the ongoing evolution of our software? How can we know when to evolve and when to push back? When should we or shouldn't we throw it away and go green-field?
+Josh will teach us how to build AI-powered applications from scratch, while following best practices to balance shipping quickly with building high-quality, production-ready applications your users trust.
 
-## Workshop
+Additionally, he'll walk us through a structured approach to AI app development loosely based on the test-driven development methodology used in traditional software engineering.
 
-## Get a discount!
+This is one you _won't_ want to miss: learning from the _best_ in AI at peak hype cycle. 😂
 
-[CASE WHEN](https://https://casewhen.beehiiv.com/), a newsletter for concise, curated content on data & analytics.
+## Get a discount
+
+OK, now this is the exciting part! I'm going to be giving away _two_ free tickets _and_ 20% discount codes. 😱
+
+You just have to:
+
+- Share this post with your friends: like and re-share on LinkedIn [here]
+- Subscribe to my newsletter, [CASE WHEN](https://https://casewhen.beehiiv.com/), a newsletter for concise, curated content on data & analytics.
+
+_Every_ new subscriber that registers for my newsletter through the embed below will get a 20% coupon within the week.
 
 <div align="center">
-<iframe src="https://embeds.beehiiv.com/2df64b55-c4d3-45b9-99da-2ddec9362b2c?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" 
-scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+<iframe src="https://embeds.beehiiv.com/5e6a5a7a-87ec-40a9-943a-0b1e412196fd?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
 </div>
+
+Additionally, I'll be randomly selecting TWO folks on [DATE] for the free ticket.
 
 ## Learn More
 
