@@ -116,6 +116,8 @@ Additionally, I'll be randomly selecting TWO folks on [DATE] for the free ticket
 
 ## Learn More
 
-1. https://www.youtube.com/channel/UCKvhw2CPR-0S4XZ1bNlihnw
+1. [Conference site](https://www.scale.bythebay.io/)
+2. [Past talks](https://www.youtube.com/channel/UCKvhw2CPR-0S4XZ1bNlihnw)
+3. ...
 
 <script type="text/javascript" async src="https://embeds.beehiiv.com/attribution.js"></script>
