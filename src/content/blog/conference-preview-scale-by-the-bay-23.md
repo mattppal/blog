@@ -11,6 +11,19 @@ title: "Conference Preview: Scale By The Bay"
 emoji: 🌉
 ---
 
+<style>
+  .myClass {
+      width:auto;
+      text-align:center;
+      padding:50px;
+  }
+  img {
+      width: auto;
+      max-height: 150;
+      aspect-ratio: attr(width) / attr(height);
+  }
+</style>
+
 ## ToC
 
 ## Overview
@@ -29,9 +42,8 @@ Now, in it's **tenth** year 🤯, the conference is bringing you premier data & 
 
 One of the coolest parts? It's in a historic venue (the [Oakland Scottish Rite Center](https://oaklandscottishrite.com/)) with _a ton_ of charisma, or rizz, as the kids say these days.
 
-<div align="center">
+<div class="flex flex-row w-3/4">
   <img
-    width="75%"
     src="/posts/conference-preview-scale-by-the-bay-23/scottish_rite_center.jpeg"
   ></img>
 </div>
@@ -48,11 +60,8 @@ Here are a few that stand out to me:
 
 _Zander Matheson_
 
-<div align="center">
-  <img
-    width="30%"
-    src="/posts/conference-preview-scale-by-the-bay-23/zm.png"
-  ></img>
+<div class="w-1/4 items-center">
+<img src="/posts/conference-preview-scale-by-the-bay-23/zm.png"></img>
 </div>
 
 Zander, the CEO of Bytewax (a Python-native, highly scalable, and cloud-native stream processing framework), knows a thing or two about streaming.
@@ -65,9 +74,8 @@ In his talk, Zander will show us just how Bytewax can help to create scalable re
 
 _Ben Church_
 
-<div align="center">
+<div class="w-1/4 items-center">
   <img
-    width="30%"
     src="/posts/conference-preview-scale-by-the-bay-23/bc.png"
   ></img>
 </div>
@@ -78,9 +86,8 @@ _Hello, World_ examples are great, but they're often not that fun or personal. I
 
 _Dipankar Mazumdar_
 
-<div align="center">
+<div class="w-1/4 items-center">
   <img
-    width="30%"
     src="/posts/conference-preview-scale-by-the-bay-23/dm.png"
   ></img>
 </div>
@@ -97,9 +104,8 @@ Scale by the Bay _also_ features a headline workshop, designed to take you from 
 
 _Josh Tobin_
 
-<div align="center">
+<div class="w-1/4 items-center">
   <img
-    width="30%"
     src="/posts/conference-preview-scale-by-the-bay-23/jt.png"
   ></img>
 </div>
