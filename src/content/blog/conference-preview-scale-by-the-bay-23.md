@@ -11,19 +11,6 @@ title: "Conference Preview: Scale By The Bay"
 emoji: 🌉
 ---
 
-<style>
-  .myClass {
-      width:auto;
-      text-align:center;
-      padding:50px;
-  }
-  img {
-      width: auto;
-      max-height: 150;
-      aspect-ratio: attr(width) / attr(height);
-  }
-</style>
-
 ## ToC
 
 ## Overview
