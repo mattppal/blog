@@ -2,10 +2,11 @@
 author: Matt Palmer
 description: A quick look at the indie conference covering code & data in the age of AI.
 draft: false
+draft: false
 featured: true
 ogImage: "/posts/conference-preview-scale-by-the-bay-23/og.png"
 postSlug: conference-preview-scale-by-the-bay-23
-pubDatetime: 2023-10-01
+pubDatetime: 2023-10-06
 tags: [data, sponsored, conference]
 title: "Conference Preview: Scale By The Bay"
 emoji: 🌉
@@ -19,7 +20,7 @@ I'm _super_ stoked to share a unique, independent conference with you all AND th
 
 This is a _sponsored_ post, but I promise all the content within will be my honest and authentic take... Plus, who doesn't like **free** stuff?! Read on to learn more about the conference: its history, talks I'm excited about, and how you can _attend for free_.
 
-![](/posts/conference-preview-scale-by-the-bay-23/breakfast-club.gif)
+![breakfast club](/posts/conference-preview-scale-by-the-bay-23/breakfast-club.gif)
 
 ## Scale by the what?
 
@@ -111,10 +112,14 @@ OK, now this is the exciting part! I'm going to be giving away _two_ free ticket
 
 You just have to:
 
-- Share this post with your friends: like and re-share on LinkedIn here [TODO: insert link]
-- Subscribe to my newsletter on data & analytics, [CASE WHEN](https://https://casewhen.beehiiv.com/), via the subscribe form below.
+- Share this content with your friends: like it on LinkedIn!
+- Subscribe to **CASE WHEN**, a newsletter for concise, curated content on data & analytics (use the embed below).
 
-_Every_ new subscriber that registers for my newsletter through the embed will get a coupon for a 20% discount to the conference.
+<div align="center">  
+<img width="70%" src="/posts/conference-preview-scale-by-the-bay-23/case-when.png">
+</div>
+
+_Every_ new subscriber that registers for my newsletter through the embed below will get a 20% coupon— if you really don't like my newsletter, you can unsubscribe right away, but I promise it will be worth a read 😀
 
 <div align="center">
   <iframe
@@ -127,13 +132,12 @@ _Every_ new subscriber that registers for my newsletter through the embed will g
   ></iframe>
 </div>
 
-Additionally, I'll be randomly selecting TWO folks on [DATE] for the free ticket.
+Additionally, I'll be randomly selecting TWO folks on 10/14 for the free tickets!
 
 ## Learn More
 
-1. [Conference site](https://www.scale.bythebay.io/)
+1. [Conference site](https://scale.bythebay.io)
 2. [Past talks](https://www.youtube.com/channel/UCKvhw2CPR-0S4XZ1bNlihnw)
-3. ...
 
 <script
   type="text/javascript"
