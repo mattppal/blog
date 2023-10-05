@@ -111,7 +111,7 @@ OK, now this is the exciting part! I'm going to be giving away _two_ free ticket
 
 You just have to:
 
-- Share this content with your friends: like it on LinkedIn!
+- Share this content with your friends: like it on LinkedIn! (forthcoming)
 - Subscribe to **CASE WHEN**, a newsletter for concise, curated content on data & analytics (use the embed below).
 
 <div align="center">  
