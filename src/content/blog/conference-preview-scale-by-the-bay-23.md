@@ -1,11 +1,11 @@
 ---
 author: Matt Palmer
 description: A quick look at the indie conference covering code & data in the age of AI.
-draft: true
+draft: false
 featured: true
-ogImage: ""
+ogImage: "/posts/conference-preview-scale-by-the-bay-23/og.png"
 postSlug: conference-preview-scale-by-the-bay-23
-pubDatetime: 2023-10-01
+pubDatetime: 2023-10-06
 tags: [data, sponsored, conference]
 title: "Conference Preview: Scale By The Bay"
 emoji: 🌉
@@ -15,29 +15,31 @@ emoji: 🌉
 
 ## Overview
 
-I'm _super_ stoked to share a unique, independent conference with you all AND the opportunity to attend at a heavy discount.
+I'm _super_ stoked to share a unique, independent conference with you all AND the opportunity to attend at a heavy discount (or for free!).
 
 This is a _sponsored_ post, but I promise all the content within will be my honest and authentic take... Plus, who doesn't like **free** stuff?! Read on to learn more about the conference: its history, talks I'm excited about, and how you can _attend for free_.
 
-![](/posts/conference-preview-scale-by-the-bay-23/breakfast-club.gif)
+![breakfast club](/posts/conference-preview-scale-by-the-bay-23/breakfast-club.gif)
 
 ## Scale by the what?
 
 [_Scale by the Bay_](https://www.scale.bythebay.io/) might not have the notoriety of a Databricks or Snowflake Summit, _but_ it's cemented itself as an independent, professional platform for tech innovators.
 
-Now, in it's **tenth** year 🤯, the conference is bringing you premier data & cloud content with [tracks](https://www.scale.bythebay.io/about) on _Software Engineering_, _Cloud Architecture_, _Data & AI_, and _Open Source Science_.
+Now, in its **tenth** year 🤯, the conference is bringing you premier data & cloud content with [tracks](https://www.scale.bythebay.io/about) on _Software Engineering_, _Cloud Architecture_, _Data & AI_, and _Open Source Science_.
 
 One of the coolest parts? It's in a historic venue (the [Oakland Scottish Rite Center](https://oaklandscottishrite.com/)) with _a ton_ of charisma, or rizz, as the kids say these days.
 
-<div align="center">  
-<img width="75%" src="/posts/conference-preview-scale-by-the-bay-23/scottish_rite_center.jpeg" >
+<div class="w-3/4 mx-auto">
+  <img
+    src="/posts/conference-preview-scale-by-the-bay-23/scottish_rite_center.jpeg"
+  ></img>
 </div>
 
 I'll talk a bit about what has me the most excited, then we can get to the giveaway. 🤑
 
 ## Speakers & Talks
 
-There's quite a [start-studded lineup](https://www.scale.bythebay.io/speakers) for the conference, so I highly recommend you check out the full list of speakers, but the `TLDR` is that _Scale By the Bay_ will feature speakers from companies like Netflix, Disney, IBM, Databricks, and Confluent, covering topics ranging from _building LLMs_ to _data engineering best practices_.
+There's quite a [star-studded lineup](https://www.scale.bythebay.io/speakers) for the conference, so I highly recommend you check out the full list of speakers, but the `TLDR` is that _Scale By the Bay_ will feature speakers from companies like Netflix, Disney, IBM, Databricks, and Confluent, covering topics ranging from _building LLMs_ to _data engineering best practices_.
 
 Here are a few that stand out to me:
 
@@ -45,8 +47,8 @@ Here are a few that stand out to me:
 
 _Zander Matheson_
 
-<div align="center">  
-<img width="30%" src="/posts/conference-preview-scale-by-the-bay-23/zm.png">
+<div class="w-1/4 mx-auto">
+<img src="/posts/conference-preview-scale-by-the-bay-23/zm.png"></img>
 </div>
 
 Zander, the CEO of Bytewax (a Python-native, highly scalable, and cloud-native stream processing framework), knows a thing or two about streaming.
@@ -59,8 +61,10 @@ In his talk, Zander will show us just how Bytewax can help to create scalable re
 
 _Ben Church_
 
-<div align="center">  
-<img width="30%" src="/posts/conference-preview-scale-by-the-bay-23/bc.png">
+<div class="w-1/4 mx-auto">
+  <img
+    src="/posts/conference-preview-scale-by-the-bay-23/bc.png"
+  ></img>
 </div>
 
 _Hello, World_ examples are great, but they're often not that fun or personal. In this talk, Ben Church of Airbyte will walk us through how to extract personal data, transform it into embeddings, and load it into a vector database, providing an LLM with domain-specific context to power your life/business.
@@ -69,8 +73,10 @@ _Hello, World_ examples are great, but they're often not that fun or personal. I
 
 _Dipankar Mazumdar_
 
-<div align="center">  
-<img width="30%" src="/posts/conference-preview-scale-by-the-bay-23/dm.png">
+<div class="w-1/4 mx-auto">
+  <img
+    src="/posts/conference-preview-scale-by-the-bay-23/dm.png"
+  ></img>
 </div>
 
 I've written a bit about [Delta Lake](https://mattpalmer.io/posts/what-is-delta/) as a framework for enabling a [Lakehouse Architecture](https://docs.google.com/viewer?url=https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf), but Iceberg is a similar format that has a host of benefits.
@@ -85,8 +91,10 @@ Scale by the Bay _also_ features a headline workshop, designed to take you from 
 
 _Josh Tobin_
 
-<div align="center">  
-<img width="30%" src="/posts/conference-preview-scale-by-the-bay-23/jt.png">
+<div class="w-1/4 mx-auto">
+  <img
+    src="/posts/conference-preview-scale-by-the-bay-23/jt.png"
+  ></img>
 </div>
 
 [Josh Tobin](https://www.linkedin.com/in/josh-tobin-4b3b10a9) of [Gantry](https://www.gantry.io/) & [Full Stack Deep Learning](https://fullstackdeeplearning.com/) will deliver the conference workshop: _Building production-ready LLM-powered applications_.
@@ -95,7 +103,7 @@ Josh will teach us how to build AI-powered applications from scratch, while foll
 
 Additionally, he'll walk us through a structured approach to AI app development loosely based on the test-driven development methodology used in traditional software engineering.
 
-This is one you _won't_ want to miss: learning from the _best_ in AI at peak hype cycle. 😂
+This is one you _won't_ want to miss: learn from the _best_ in AI when it's at peak hype. 😂
 
 ## Get a discount
 
@@ -103,19 +111,35 @@ OK, now this is the exciting part! I'm going to be giving away _two_ free ticket
 
 You just have to:
 
-- Share this post with your friends: like and re-share on LinkedIn [here]
-- Subscribe to my newsletter, [CASE WHEN](https://https://casewhen.beehiiv.com/), a newsletter for concise, curated content on data & analytics.
+- Share this content with your friends: like it on LinkedIn! (forthcoming)
+- Subscribe to **CASE WHEN**, a newsletter for concise, curated content on data & analytics (use the embed below).
 
-_Every_ new subscriber that registers for my newsletter through the embed below will get a 20% coupon within the week.
-
-<div align="center">
-<iframe src="https://embeds.beehiiv.com/5e6a5a7a-87ec-40a9-943a-0b1e412196fd?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+<div align="center">  
+<img width="65%" src="/posts/conference-preview-scale-by-the-bay-23/case-when.png">
 </div>
 
-Additionally, I'll be randomly selecting TWO folks on [DATE] for the free ticket.
+_Every_ new subscriber that registers for my newsletter through the embed below will get a 20% coupon— if you really don't like my newsletter, you can unsubscribe right away, but I promise it will be worth a read 😀
+
+<div align="center">
+  <iframe
+    src="https://embeds.beehiiv.com/5e6a5a7a-87ec-40a9-943a-0b1e412196fd?slim=true"
+    data-test-id="beehiiv-embed"
+    height="52"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+Additionally, I'll be randomly selecting TWO folks on 10/14 for the free tickets!
 
 ## Learn More
 
-1. https://www.youtube.com/channel/UCKvhw2CPR-0S4XZ1bNlihnw
+1. [Conference site](https://scale.bythebay.io)
+2. [Past talks](https://www.youtube.com/channel/UCKvhw2CPR-0S4XZ1bNlihnw)
 
-<script type="text/javascript" async src="https://embeds.beehiiv.com/attribution.js"></script>
+<script
+  type="text/javascript"
+  async
+  src="https://embeds.beehiiv.com/attribution.js"
+></script>
