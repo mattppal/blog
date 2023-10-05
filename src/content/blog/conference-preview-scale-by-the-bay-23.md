@@ -2,7 +2,6 @@
 author: Matt Palmer
 description: A quick look at the indie conference covering code & data in the age of AI.
 draft: false
-draft: false
 featured: true
 ogImage: "/posts/conference-preview-scale-by-the-bay-23/og.png"
 postSlug: conference-preview-scale-by-the-bay-23
@@ -16,7 +15,7 @@ emoji: 🌉
 
 ## Overview
 
-I'm _super_ stoked to share a unique, independent conference with you all AND the opportunity to attend at a heavy discount.
+I'm _super_ stoked to share a unique, independent conference with you all AND the opportunity to attend at a heavy discount (or for free!).
 
 This is a _sponsored_ post, but I promise all the content within will be my honest and authentic take... Plus, who doesn't like **free** stuff?! Read on to learn more about the conference: its history, talks I'm excited about, and how you can _attend for free_.
 
@@ -26,7 +25,7 @@ This is a _sponsored_ post, but I promise all the content within will be my hone
 
 [_Scale by the Bay_](https://www.scale.bythebay.io/) might not have the notoriety of a Databricks or Snowflake Summit, _but_ it's cemented itself as an independent, professional platform for tech innovators.
 
-Now, in it's **tenth** year 🤯, the conference is bringing you premier data & cloud content with [tracks](https://www.scale.bythebay.io/about) on _Software Engineering_, _Cloud Architecture_, _Data & AI_, and _Open Source Science_.
+Now, in its **tenth** year 🤯, the conference is bringing you premier data & cloud content with [tracks](https://www.scale.bythebay.io/about) on _Software Engineering_, _Cloud Architecture_, _Data & AI_, and _Open Source Science_.
 
 One of the coolest parts? It's in a historic venue (the [Oakland Scottish Rite Center](https://oaklandscottishrite.com/)) with _a ton_ of charisma, or rizz, as the kids say these days.
 
@@ -40,7 +39,7 @@ I'll talk a bit about what has me the most excited, then we can get to the givea
 
 ## Speakers & Talks
 
-There's quite a [start-studded lineup](https://www.scale.bythebay.io/speakers) for the conference, so I highly recommend you check out the full list of speakers, but the `TLDR` is that _Scale By the Bay_ will feature speakers from companies like Netflix, Disney, IBM, Databricks, and Confluent, covering topics ranging from _building LLMs_ to _data engineering best practices_.
+There's quite a [star-studded lineup](https://www.scale.bythebay.io/speakers) for the conference, so I highly recommend you check out the full list of speakers, but the `TLDR` is that _Scale By the Bay_ will feature speakers from companies like Netflix, Disney, IBM, Databricks, and Confluent, covering topics ranging from _building LLMs_ to _data engineering best practices_.
 
 Here are a few that stand out to me:
 
@@ -104,7 +103,7 @@ Josh will teach us how to build AI-powered applications from scratch, while foll
 
 Additionally, he'll walk us through a structured approach to AI app development loosely based on the test-driven development methodology used in traditional software engineering.
 
-This is one you _won't_ want to miss: learning from the _best_ in AI at peak hype cycle. 😂
+This is one you _won't_ want to miss: learn from the _best_ in AI when it's at peak hype. 😂
 
 ## Get a discount
 
