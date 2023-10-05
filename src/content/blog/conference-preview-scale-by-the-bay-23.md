@@ -115,7 +115,7 @@ You just have to:
 - Subscribe to **CASE WHEN**, a newsletter for concise, curated content on data & analytics (use the embed below).
 
 <div align="center">  
-<img width="70%" src="/posts/conference-preview-scale-by-the-bay-23/case-when.png">
+<img width="65%" src="/posts/conference-preview-scale-by-the-bay-23/case-when.png">
 </div>
 
 _Every_ new subscriber that registers for my newsletter through the embed below will get a 20% coupon— if you really don't like my newsletter, you can unsubscribe right away, but I promise it will be worth a read 😀
