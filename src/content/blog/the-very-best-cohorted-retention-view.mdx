@@ -11,6 +11,9 @@ title: The very best cohorted retention view
 emoji: 📈
 ---
 
+import cohort_grid from "../../assets/posts/cohorted-retention/cohort-grid.png";
+import spaghetti from "../../assets/posts/cohorted-retention/spaghetti.png";
+
 Note: the cohort grid here was adapted from a very helpful [towards data science article](https://towardsdatascience.com/a-step-by-step-introduction-to-cohort-analysis-in-python-a2cbbd8460ea).
 
 ### Preface
@@ -20,10 +23,17 @@ A big part of product analytics is determining how adoption/usage is trending ov
 A _cohorted retention chart_ plots cohorts by row and retention metrics by column, creating a grid. Highlighting the cohorts can visually depict how a product is changing over time:
 
 <center>
-<figure>
-  <img src="../../assets/posts/cohorted-retention/cohort-grid.png" alt="Example user retention cohort grid."/>
-  <figcaption><i><center>Cohort months and totals are displayed for each row, with retention highlighted and colored by column.</center></i></figcaption>
-</figure>
+  <figure>
+    <img src={cohort_grid} alt="Example user retention cohort grid." />
+    <figcaption>
+      <i>
+        <center>
+          Cohort months and totals are displayed for each row, with retention
+          highlighted and colored by column.
+        </center>
+      </i>
+    </figcaption>
+  </figure>
 </center>
 
 ### Generating cohorted views
@@ -84,10 +94,14 @@ Our output will then be similar to the image show earlier, albeit with a more pl
 A great way to visualize cohort grids is in a "Spaghetti" chart— plotting the retention of each cohort by month. While the charts can be quite busy, using a tool like Plotly Express allows you to isolate individual lines with one click, making the charts interactive and useful.
 
 <center>
-<figure>
-  <img src="cohorted-retention/spaghetti.jpg" alt="Example spaghetti chart."/>
-  <figcaption><i><center>Example spaghetti chart for cohorted retention view.</center></i></figcaption>
-</figure>
+  <figure>
+    <img src={spaghetti} alt="Example spaghetti chart." />
+    <figcaption>
+      <i>
+        <center>Example spaghetti chart for cohorted retention view.</center>
+      </i>
+    </figcaption>
+  </figure>
 </center>
 
 Additional analysis around cohorts includes:
