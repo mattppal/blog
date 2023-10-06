@@ -3,7 +3,7 @@ author: Matt Palmer
 description: Whimsical ratings on the Data+AI Summit.
 draft: false
 featured: false
-ogImage: "/src/assets../../assets/posts/data-ai-23-rated/data-ai-summit-rated-og.png"
+ogImage: "../../assets/postsdata-ai-23-rated/data-ai-summit-rated-og.png"
 postSlug: data-ai-23-rated
 pubDatetime: 2023-06-27 00:00:00
 tags: [data, jokes]
@@ -19,7 +19,7 @@ emoji: 🃏
   }
 </style>
 
-![](/src/assets../../assets/posts/data-ai-23-rated/data-ai-summit-rated-og.png)
+![](../../assets/postsdata-ai-23-rated/data-ai-summit-rated-og.png)
 
 ## ToC
 
@@ -43,7 +43,7 @@ My caffeine levels neared dangerous lows as the start of the conference was acco
 
 Unfortunately, I was again disappointed: I saw no coffee between the hours of 9:30 and 11:00 AM. Off to Blue Bottle! Oddly, coffee reappeared at 11:30 directly _after_ I parted with $7.63 to Blue Bottle and the State of California. 🤔
 
-![](/src/assets../../assets/posts/data-ai-23-rated/this-is-fine.gif)
+![](../../assets/postsdata-ai-23-rated/this-is-fine.gif)
 
 When coffee was to be found, it was Peet's. This was satisfactory by my standards. When coffee wasn't present, there was a single small kiosk doling out $5 apples, bananas, and brews. I have never paid $5 for a Granny Smith and this was not going to be the first time I did so.
 
@@ -90,7 +90,7 @@ My favorite part of conferences (after snacks), I get the most value from meetin
 
 On Wednesday night, I spoke with a guest from Australia who observed that Americans seem to spend their money with almost no self-control. Having recently moved to the Bay Area, I was in no position to argue. Additionally, his observation occurred at the Chase Club, which is located court-side at the home of the Golden State Warriors. This took place at an event where Databricks rented the entire stadium for a performance by none other than Salt-N-Pepa... he might be on to something.
 
-![](/src/assets../../assets/posts/data-ai-23-rated/salt-n-peppa.gif)
+![](../../assets/postsdata-ai-23-rated/salt-n-peppa.gif)
 
 Personally, I'm a much bigger fan of low-key events. I didn't even know who the performers were until some more... ahem... “distinguished” members of the community informed me.
 
@@ -98,7 +98,7 @@ Give me some solid snacks and a room full of nerds and I'm more than happy to ch
 
 The concert also highlighted that, while most technical authors fear their material being used as a sedative, Matt & Joe should be proud theirs is as interesting as a live hip-hop performance.
 
-![](/src/assets../../assets/posts/data-ai-23-rated/party-time.png)
+![](../../assets/postsdata-ai-23-rated/party-time.png)
 
 <center><figcaption>Thanks to <a href=https://twitter.com/paolapardoat/status/1674296693846867969>Paola</a> for sharing.</figcaption></center>
 
@@ -108,9 +108,9 @@ The concert also highlighted that, while most technical authors fear their mater
 
 Snowflake billboards outnumbered Databricks 3-to-1 on the 101, oof. While Databricks had Snowflake logos in their slides and made unification a _major_ theme, this appeared to be a shallow attempt at taking the high road evidenced by literally holding a conference on the same day as their competitor.
 
-![](/src/assets../../assets/posts/data-ai-23-rated/logo-in-pres.png)
+![](../../assets/postsdata-ai-23-rated/logo-in-pres.png)
 
-<center><figcaption>Thanks to <a href=https://www.linkedin.com/src/assets../../assets/posts/mehd-io_i-wonder-if-snowflake-had-somewhere-in-their-activity-7079875867849420800-yEqZ>Medhi</a> for sharing.</figcaption></center>
+<center><figcaption>Thanks to <a href=https://www.linkedin.com../../assets/postsmehd-io_i-wonder-if-snowflake-had-somewhere-in-their-activity-7079875867849420800-yEqZ>Medhi</a> for sharing.</figcaption></center>
 
 In all seriousness, I do not appreciate these companies bifurcating the data community.
 
@@ -136,11 +136,11 @@ I said it earlier and I'll say it again: I'm so grateful for the data community.
 
 **Best feature:** The Rivian parked in the Expo Hall. By far the most interesting part of the week.
 
-![](/src/assets../../assets/posts/data-ai-23-rated/rivian.png)
+![](../../assets/postsdata-ai-23-rated/rivian.png)
 
 **Busiest booth:** Somehow, Microsoft. There were no less than 50 people there at all times. At one point, a very boisterous man in a suit with a bulging forehead vein was attempting to hype the crowd, with moderate success. I have no idea what was going on, but I guess they still got it.
 
-![](/src/assets../../assets/posts/data-ai-23-rated/microsoft.gif)
+![](../../assets/postsdata-ai-23-rated/microsoft.gif)
 
 **Best dressed:** Guy/gal in duck costume at DuckCon.
 
@@ -148,4 +148,4 @@ I said it earlier and I'll say it again: I'm so grateful for the data community.
 
 **Best drink:** Bubbly Lime— hits like the base at a Salt-N-Pepa concert.
 
-![](/src/assets../../assets/posts/data-ai-23-rated/snp-bass.gif)
+![](../../assets/postsdata-ai-23-rated/snp-bass.gif)

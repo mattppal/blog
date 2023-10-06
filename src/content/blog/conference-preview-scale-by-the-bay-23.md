@@ -3,7 +3,7 @@ author: Matt Palmer
 description: A quick look at the indie conference covering code & data in the age of AI.
 draft: false
 featured: true
-ogImage: "/src/assets../../assets/posts/conference-preview-scale-by-the-bay-23/og.png"
+ogImage: "../assets/posts/conference-preview-scale-by-the-bay-23/og.png"
 postSlug: conference-preview-scale-by-the-bay-23
 pubDatetime: 2023-10-06
 tags: [data, sponsored, conference]

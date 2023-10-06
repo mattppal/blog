@@ -16,7 +16,7 @@ emoji: 📕
 This content is now outdated, as I've migrated my site over to [Astro](https://astro.build). I hope you can still find it helpful. Enjoy 🙂
 
 <figure>
-  <center><img src="/src/assets../../assets/posts/goodreads/header.png" alt="Currently Reading Header"/></center>
+  <center><img src="../../assets/postsgoodreads/header.png" alt="Currently Reading Header"/></center>
 </figure>
 
 ### Preface

@@ -3,7 +3,7 @@ author: Matt Palmer
 description: An overview of DuckDB and a neat trick to get you started. 🦆
 draft: false
 featured: false
-ogImage: "/src/assets../../assets/posts/whats-the-hype-duckdb/ducks-mid.png"
+ogImage: "../../assets/postswhats-the-hype-duckdb/ducks-mid.png"
 postSlug: whats-the-hype-duckdb
 pubDatetime: 2023-05-24 8:00:00
 tags: [data, tutorial, duckdb, opinion]
@@ -19,7 +19,7 @@ emoji: 🐥
   }
 </style>
 
-![A duck sits peacefully on a stream in a picturesque cartoon meadow.](/src/assets../../assets/posts/whats-the-hype-duckdb/ducks-mid.png)
+![A duck sits peacefully on a stream in a picturesque cartoon meadow.](../../assets/postswhats-the-hype-duckdb/ducks-mid.png)
 
 ## ToC
 
@@ -31,7 +31,7 @@ I mostly agree with Tristan Handy's [characterization of the MDS](https://www.ge
 
 DuckDB is a great example of a new tool that has _tremendous promise_— in its intended use as an OLAP DBMS, but also for _all sorts_ of tangential cases. I'll discuss those a bit today, but first, some background: a few weeks ago I saw Daniel Beech's post: [DuckDB vs. Polars](https://www.confessionsofadataguy.com/duckdb-vs-polars-for-data-engineering/), which led me to experiment with DuckDB the same way he did. Since then, I've been fiddling with the tool and chatting with others— I've even given a few [lightning talks](https://docs.google.com/presentation/d/1NZd8C650TLSEldwvKF2etIWD90QSJJ9VtVFSY_2amBU/edit?usp=sharing) on what I've found.
 
-Of course, I'd be remiss if I didn't share my thoughts [completely](/src/assets../../assets/posts/data-is-a-meme/)— so that's what I'll do!
+Of course, I'd be remiss if I didn't share my thoughts [completely](../../assets/postsdata-is-a-meme/)— so that's what I'll do!
 
 ## 🌎 So, what on earth is DuckDB?
 
@@ -61,7 +61,7 @@ DuckDB utilizes a _vectorized_ query engine. That's a fancy way of saying operat
 
 Being a vectorized engine just means that large batches of values (vectors) are processed in a single operation. Vectorized execution leads to better performance in analytical calculations, which are often performed over _all_ values in a particular column, e.g. an aggregation like `SUM`, `MAX` or window, such as `ROW_NUMBER`.
 
-![A graphic describing the difference between row- & column-oriented databases.](/src/assets../../assets/posts/whats-the-hype-duckdb/row-vs-col.png)
+![A graphic describing the difference between row- & column-oriented databases.](../../assets/postswhats-the-hype-duckdb/row-vs-col.png)
 
 While _technically_ not new, there's a pretty big movement in the open source community right now: [PyArrow](https://arrow.apache.org/docs/python/index.html), [Polars](https://github.com/pola-rs/polars), [Pandas 2.0](https://pandas.pydata.org/docs/dev/whatsnew/v2.0.0.html), _and_ [DuckDB](https://duckdb.org/) all tools built on in-process, vectorized operations. Usually, when many things point in the same direction, it's wise to take note! 📝
 
@@ -75,7 +75,7 @@ Not only is configuration a headache but truly _understanding_ how pricing works
 
 Here's an example: say I want to install Postgres to learn about databases, as I'm sure many have done in their data journeys. Navigating to [Chapter 17](https://www.postgresql.org/docs/) (!) of the Postgres docs, we find _Installation from Source Code_, which sounds both intimidating and not particularly fun. It's telling that section 17.1 is titled "Short Version," which already makes me nervous about what lies ahead. This will be a daunting quest. ⚔️
 
-![Screenshot of the Postgres docs, Chapter 17— "Installation From Source Code."](/src/assets../../assets/posts/whats-the-hype-duckdb/psql-source.png)
+![Screenshot of the Postgres docs, Chapter 17— "Installation From Source Code."](../../assets/postswhats-the-hype-duckdb/psql-source.png)
 
 Similarly, if we want to understand how modern databases _work_, we might seek out whitepapers or technical documents, for example:
 
@@ -109,7 +109,7 @@ This is _huge_ 🤯.
 
 This is the part where I deliver some off-the-wall theories about how this will be awesome, game-changing, etc.
 
-![My opinions on data tooling might make me a conspiracy theorist.](/src/assets../../assets/posts/whats-the-hype-duckdb/ancient-aliens.png)
+![My opinions on data tooling might make me a conspiracy theorist.](../../assets/postswhats-the-hype-duckdb/ancient-aliens.png)
 
 ### Replacement for managed OLAP systems
 
@@ -127,7 +127,7 @@ With a connector tool, you could write that transformed data to your final desti
 
 Maybe that's a stretch, but I think it has potential. 🤔
 
-![Dwayne "The Rock" Johnson KNOWS you have potential.](/src/assets../../assets/posts/whats-the-hype-duckdb/the-rock.gif)
+![Dwayne "The Rock" Johnson KNOWS you have potential.](../../assets/postswhats-the-hype-duckdb/the-rock.gif)
 
 ### An _awesome_ opportunity for tutorials and learning
 
@@ -139,7 +139,7 @@ As a [former analyst](https://hex.tech/blog/hex-at-alltrails/), _the best_ way t
 
 Ben Rogojan has [an awesome post](https://www.theseattledataguy.com/7-data-engineering-projects-to-put-on-your-resume/#page-content) highlighting a few of these, but he forgot about DuckDB! Why spend hours _configuring_ a source that you won't be able to maintain when you could simply drop DuckDB in a container?
 
-![Billy Mays here: you must read on!](/src/assets../../assets/posts/whats-the-hype-duckdb/theres-more.png)
+![Billy Mays here: you must read on!](../../assets/postswhats-the-hype-duckdb/theres-more.png)
 
 ... but now for what I _really_ want to talk about— simplifying a common data engineering task with DuckDB.
 
@@ -301,7 +301,7 @@ conn.sql(f"COPY bank_df TO '{s3}' (FORMAT PARQUET, PARTITION_BY (State), ALLOW_O
 
 and, that's it. We're done!
 
-![Screenshot of S3 bucket containing partitioned folder structure.](/src/assets../../assets/posts/whats-the-hype-duckdb/parts.png)
+![Screenshot of S3 bucket containing partitioned folder structure.](../../assets/postswhats-the-hype-duckdb/parts.png)
 
 Perhaps I'm just easily impressed, but I think this is _really_ neat. You could take it one step further and write a class/function that makes this a bit more robust and production-ready.
 
