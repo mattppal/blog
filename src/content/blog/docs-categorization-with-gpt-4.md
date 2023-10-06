@@ -3,7 +3,7 @@ author: Matt Palmer
 description: Breaking down a complex problem, plus some tricks and AI. 🤖
 draft: false
 featured: true
-ogImage: "/posts/docs-categorization-with-gpt-4/og.jpeg"
+ogImage: "/src/assets/posts/docs-categorization-with-gpt-4/og.jpeg"
 postSlug: docs-categorization-with-gpt-4
 pubDatetime: 2023-09-05 05:00:00
 tags: [data, ai, gpt, tutorial]
@@ -39,7 +39,7 @@ emoji: 🦾
 } */
 </style>
 
-![](/posts/docs-categorization-with-gpt-4/og.jpeg)
+![](/src/assets/posts/docs-categorization-with-gpt-4/og.jpeg)
 
 ## ToC
 
@@ -49,7 +49,7 @@ I'm about two months into my first DevRel role now and _boy_ have I learned a lo
 
 A huge part of developer relations and product, generally, is writing documentation. If you have great features, but no one knows about them, do they really exist? 🤔
 
-![](/posts/docs-categorization-with-gpt-4/if-a-tree-falls.gif)
+![](/src/assets/posts/docs-categorization-with-gpt-4/if-a-tree-falls.gif)
 
 Similarly, if you have _good documentation_, but no one can find it, does it really exist? I bet y'all didn't wake up expecting a post this meta today, but here we are. These are the exact questions I've been asking myself for the past few weeks.
 
@@ -85,7 +85,7 @@ Soooo, soup-to-nuts, that looks less-than-fun. But hey, I'm a crafty DevRel/Data
 
 And if it's fun, it's easy. So there you go, this will be easy!
 
-![](/posts/docs-categorization-with-gpt-4/having-fun.gif)
+![](/src/assets/posts/docs-categorization-with-gpt-4/having-fun.gif)
 
 My goal is to use this as a learning opportunity with the [OpenAI API](https://platform.openai.com/docs/introduction)— we'll feed each doc to GPT-3.5 and see what comes back. Worst case, I'll end up categorizing these manually and still learn a ton!
 
@@ -95,7 +95,7 @@ I already have a few tricks up my sleeve for the internal/external links, I'm pr
 
 <br/>
 
-<img src="/posts/docs-categorization-with-gpt-4/mintlify-logo.svg" />
+<img src="/src/assets/posts/docs-categorization-with-gpt-4/mintlify-logo.svg" />
 
 <br/>
 
@@ -144,7 +144,7 @@ and tertiary. For docs lacking a tertiary category, please return an empty strin
 
 If you have any experience with this sort of thing, you likely already see some flaws.
 
-![Foreshadowing](/posts/docs-categorization-with-gpt-4/foreshadowing.gif)
+![Foreshadowing](/src/assets/posts/docs-categorization-with-gpt-4/foreshadowing.gif)
 
 And now for my categories— these generally align with concepts in <i><a target="_blank" href="https://www.amazon.com/Docs-Developers-Engineers-Technical-Writing/dp/1484272161?&_encoding=UTF8&tag=mattpalmer0a-20&linkCode=ur2&linkId=400ac3aab1e14aaf17328d1d3155ff0d&camp=1789&creative=9325">Docs for Developers</a></i>, but I do believe that a rigid adherence is inappropriate for us.
 
@@ -240,7 +240,7 @@ and
 }
 ```
 
-![It's alive!](/posts/docs-categorization-with-gpt-4/its-alive-young-frankenstein.gif)
+![It's alive!](/src/assets/posts/docs-categorization-with-gpt-4/its-alive-young-frankenstein.gif)
 
 #### Building JSON
 
@@ -272,7 +272,7 @@ I'm sure you'll all be able to see how inefficient this Python is, so feel free 
 
 So we'll need some type of recursion...
 
-![Kryptonite](/posts/docs-categorization-with-gpt-4/dean-cain-superman.gif)
+![Kryptonite](/src/assets/posts/docs-categorization-with-gpt-4/dean-cain-superman.gif)
 
 <center><figcaption>Me, faced with a recursive Python task.</figcaption></center>
 
@@ -411,7 +411,7 @@ First, we `CMD + F` for a new find and replace. Using the "regex" option, we'll 
 
 Then, (this one is a bit clever) `CMD + SHIFT + L` selects _all the matches_ and `ESC` exits the find/replace dialogue with cursors intact. Then we just copy-line & paste into a new file.
 
-![Find replace gif](/posts/docs-categorization-with-gpt-4/find-replace.gif)
+![Find replace gif](/src/assets/posts/docs-categorization-with-gpt-4/find-replace.gif)
 
 We can do the same thing to jump to the _spaces_ between each change. From there, it's a bit of mutli-cursor edits to obtain `json` with our source/destination structure. Then we:
 
@@ -463,13 +463,13 @@ with "development/observability/monitoring"
 
 Running the extension bulk replaces links across all `MDX` files in our repo. Broken links terminated.
 
-![Terminator gif](/posts/docs-categorization-with-gpt-4/terminator.gif)
+![Terminator gif](/src/assets/posts/docs-categorization-with-gpt-4/terminator.gif)
 
 ## Lessons Learned
 
 I presented this as a working solution, but in reality, it's not (I mean, it works _sometimes_ 😅), _but_ I learned a _ton_.
 
-![Alt text](/posts/docs-categorization-with-gpt-4/lying-on-the-internet.png)
+![Alt text](/src/assets/posts/docs-categorization-with-gpt-4/lying-on-the-internet.png)
 
 Here are some takeaways:
 
