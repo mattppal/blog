@@ -13,7 +13,7 @@ emoji: 🤓
 
 <center>
 <figure>
-  <img src="/src/assets/posts/data-council-austin/dca-logo-1.jpg" alt="Confirmed, not much bullsh*t."/>
+  <img src="/src/assets../../assets/posts/data-council-austin/dca-logo-1.jpg" alt="Confirmed, not much bullsh*t."/>
 </figure>
 </center>
 

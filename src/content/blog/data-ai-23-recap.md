@@ -3,7 +3,7 @@ author: Matt Palmer
 description: Reflecting on the 2023 Databricks Data+AI Summit
 draft: true
 featured: false
-ogImage: "/src/assets/posts/data-ai-23-recap/data-ai-summit-og.gif"
+ogImage: "/src/assets../../assets/posts/data-ai-23-recap/data-ai-summit-og.gif"
 postSlug: data-ai-23-recap
 pubDatetime: 2023-06-27 00:00:00
 tags: [data, opinion]
@@ -19,7 +19,7 @@ emoji: 🤓
   }
 </style>
 
-![](/src/assets/posts/data-ai-23-recap/data-ai-summit-og.png)
+![](/src/assets../../assets/posts/data-ai-23-recap/data-ai-summit-og.png)
 
 ## Real time data processing
 

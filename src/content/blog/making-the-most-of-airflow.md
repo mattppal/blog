@@ -3,7 +3,7 @@ author: Matt Palmer
 description: Airflow is obsolete, but here's why you should still use it.
 draft: false
 featured: false
-ogImage: "/src/assets/posts/making-the-most-of-airflow/seinfeld.gif"
+ogImage: "/src/assets../../assets/posts/making-the-most-of-airflow/seinfeld.gif"
 postSlug: making-the-most-of-airflow
 pubDatetime: 2023-04-23 06:15:00
 tags: [data, opinion, guide]
@@ -23,7 +23,7 @@ emoji: 🧂🤝
 
 ## ◽️ Shades of Grey
 
-In my last post, [🌶️ Hot Takes on the Modern Data Stack](/src/assets/posts/hot-takes), I presented my opinions in a raw, unfiltered format, opting for starkness & contrast over nuance. Of course, the truth is rarely black and white— often just a shade of grey. While "hot takes" are fun and generate a buzz, they might not tell the whole story.
+In my last post, [🌶️ Hot Takes on the Modern Data Stack](/src/assets../../assets/posts/hot-takes), I presented my opinions in a raw, unfiltered format, opting for starkness & contrast over nuance. Of course, the truth is rarely black and white— often just a shade of grey. While "hot takes" are fun and generate a buzz, they might not tell the whole story.
 
 One specific point of contention was **[Apache Airflow](https://airflow.apache.org/)**.
 
@@ -41,7 +41,7 @@ My goal this week is to give Airflow a fair shake 🧂 and talk about how **you*
 
 If you've read this far, you're either using Airflow or going forward with an implementation… 😬
 
-<img src="/src/assets/posts/making-the-most-of-airflow/guster.gif"/>
+<img src="/src/assets../../assets/posts/making-the-most-of-airflow/guster.gif"/>
 
 **Not to fear!**
 
@@ -59,7 +59,7 @@ Perhaps the biggest weakness of Airflow is also its biggest strength: _possibili
 
 The result? Without the discipline and rigor to standardize a deployment, DAGs can quickly turn into untested scripts.
 
-<img src="/src/assets/posts/making-the-most-of-airflow/seinfeld.gif">
+<img src="/src/assets../../assets/posts/making-the-most-of-airflow/seinfeld.gif">
 
 **Solution:** [TaskFlow](https://airflow.apache.org/docs/apache-airflow/stable/tutorial/taskflow.html) & DAG Templates
 
@@ -159,7 +159,7 @@ By following this pattern, you'll improve the DRY-ness of your code _and_ improv
 - Senior engineers will benefit since they can focus on patterns and architecture, amplifying impact.
 - The _team_ will benefit since more will get done, problems will be solved, and everyone's time will be freed to pursue meaningful projects, it's a win-win-win!
 
-<img src="/src/assets/posts/making-the-most-of-airflow/biden.gif">
+<img src="/src/assets../../assets/posts/making-the-most-of-airflow/biden.gif">
 
 These features are things new tools like [Mage](https://mage.ai) or [Dagster](https://dagster.io/) do exceptionally well— they allow "architects" to create reusable blocks of code that are then stitched together by downstream users. Even better, their user-friendly GUIs and testing frameworks come out of the box.
 
@@ -169,7 +169,7 @@ For those in Airflow-land, however, the AstroSDK is a great way to implement sim
 
 DAGs can be incredibly complex— at each step (task), the number of unknowns multiply. Now imagine 100… or 1000… all running nightly. It's not hard to envision yourself on-call at 3 A.M. looking like this:
 
-<img src="/src/assets/posts/making-the-most-of-airflow/elmo.gif">
+<img src="/src/assets../../assets/posts/making-the-most-of-airflow/elmo.gif">
 
 Trying to solve every problem concurrently is overwhelming and, quite frankly, not possible (my brain can't parallelize and autoscale, unfortunately 🤖). We need to start from first principles: break the problem down and tackle it at the source.
 

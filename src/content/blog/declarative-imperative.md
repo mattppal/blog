@@ -3,7 +3,7 @@ author: Matt Palmer
 description: How programming paradigms can revolutionize data engineering.
 draft: false
 featured: false
-ogImage: "/src/assets/posts/declarative-imperative/header.png"
+ogImage: "/src/assets../../assets/posts/declarative-imperative/header.png"
 postSlug: declarative-imperative
 pubDatetime: 2023-07-05 8:39:00
 tags: [data, meta, opinion, collaboration]
@@ -19,7 +19,7 @@ emoji: ❗️
   }
 </style>
 
-![Header image](/src/assets/posts/declarative-imperative/header.png)
+![Header image](/src/assets../../assets/posts/declarative-imperative/header.png)
 
 ## ToC
 
@@ -49,7 +49,7 @@ Once we have cleaned datasets, we need to apply analytics and ML logic to derive
 
 Sounds great, right? There's a catch...
 
-![Gif of Bender from Futurama... He's frustrated about "the catch."](/src/assets/posts/declarative-imperative/futurama-bender.gif)
+![Gif of Bender from Futurama... He's frustrated about "the catch."](/src/assets../../assets/posts/declarative-imperative/futurama-bender.gif)
 
 Well, there are a few:
 
@@ -73,7 +73,7 @@ Ingestion is a perfect problem space for declarative solutions. There are a pred
 
 The downside? What happens when Fivetran doesn't have the connector you need?
 
-![Oh no monkey meme](/src/assets/posts/declarative-imperative/oh-no-monkey.gif)
+![Oh no monkey meme](/src/assets../../assets/posts/declarative-imperative/oh-no-monkey.gif)
 
 <center><figcaption>A data engineer realizes they need a custom code for data ingestion.</figcaption></center>
 
@@ -105,7 +105,7 @@ Tools like Airflow and dbt come with hefty implementation costs, steep learning 
 
 By contrast, overly-declarative GUI tools, i.e. Matillion, Informatica, Wherescape, are tough to debug, mandate hacky workarounds, and have UIs reminiscent of the [Vista rendition of Microsoft Minesweeper](https://en.wikipedia.org/wiki/Microsoft_Minesweeper#Windows_Vista_and_Windows_7). The development experience is eerily similar, too.
 
-![A screenshot of Microsoft Minesweeper for Windows Vista](/src/assets/posts/declarative-imperative/minesweeper.png)
+![A screenshot of Microsoft Minesweeper for Windows Vista](/src/assets../../assets/posts/declarative-imperative/minesweeper.png)
 
 <center><figcaption>Screenshot: pipeline development on legacy GUI tooling (2023).</figcaption></center>
 
@@ -158,7 +158,7 @@ Could you imagine if the same thing were true for data orchestration? Transforma
 
 How many times have you written the same code _someone else wrote last month_? What if we could capture 10% of those solutions and open-source them? 30%? 75%? That would revolutionize data transformation.
 
-![Simpsons utopia gif.](/src/assets/posts/declarative-imperative/utopia.gif)
+![Simpsons utopia gif.](/src/assets../../assets/posts/declarative-imperative/utopia.gif)
 
 ## 🧐 Examples
 
@@ -170,7 +170,7 @@ See that! I'll never let you leave empty-handed.
 
 Airflow is a great example of a purely imperative tool that has some publicly available declarative components. Take, for example, [DAG factory](https://github.com/ajbosco/dag-factory), which allows users to generate DAGs from YAML. A similar package, [Gusty](https://github.com/pipeline-tools/gusty), goes a step further, allowing the user to explicitly reference [declarative dependencies](https://github.com/pipeline-tools/gusty#easy-dependencies). The [AstroSDK](https://github.com/astronomer/astro-sdk) also provides a suite of tools for ETL jobs that _drastically_ simplify and democratize the development process. Other frameworks, like [Metaflow](https://metaflow.org/) or [ZenML](https://zenml.io/home), exist for ML-specific workloads. Providers like Databricks even have custom [TaskGroups](https://github.com/astronomer/astro-provider-databricks).
 
-I have [mixed feelings about Airflow](https://mattpalmer.io/src/assets/posts/making-the-most-of-airflow/), but I do feel this is a valid solution for many data teams, _especially_ those with existing deployments.
+I have [mixed feelings about Airflow](https://mattpalmer.io/src/assets../../assets/posts/making-the-most-of-airflow/), but I do feel this is a valid solution for many data teams, _especially_ those with existing deployments.
 
 For dbt, leveraging macros is _essential_ for introducing declarative solutions. Unfortunately, I still find that this does not solve the problem of duplicated SQL. There is a _huge_ opportunity for a hybrid SQL transformation tool, but it's a big problem to solve. Please correct me if I'm wrong, but declarative frameworks in dbt must _currently_ be custom-built.
 
@@ -183,7 +183,7 @@ For dbt, leveraging macros is _essential_ for introducing declarative solutions.
 While they're in short supply, new data transformation tools are being built from the ground up to support declarative/imperative patterns natively. Here are a few examples:
 
 <figure>
-  <center><img src="/src/assets/posts/declarative-imperative/mage.png"/></center>
+  <center><img src="/src/assets../../assets/posts/declarative-imperative/mage.png"/></center>
 </figure>
 
 [Mage](https://www.mage.ai/): the core functionality of Mage caters to the idea of pattern reuse. Each "step" in a pipeline exists as a "block." End-to-end pipelines are constructed by chaining blocks to produce the desired output. Blocks can load, transform, and export data— they're not just limited to SQL. Mage supports dbt models, streaming frameworks, and a host of other features.
@@ -191,7 +191,7 @@ While they're in short supply, new data transformation tools are being built fro
 It's not difficult to see how intelligent architecture could effectively democratize engineering and eliminate bottlenecks in analytics. Furthermore, the GUI is lightyears ahead of most other tools. It's this combination of imperative blocks with a declarative implementation (and GUI) that's extremely powerful.
 
 <figure>
-  <center><img src="/src/assets/posts/declarative-imperative/coalesce-c.png"/></center>
+  <center><img src="/src/assets../../assets/posts/declarative-imperative/coalesce-c.png"/></center>
 </figure>
 
 [Coalesce](https://coalesce.io/): as I mentioned earlier, Coalesce is very intriguing. Combining column-level lineage with Data Architecture as a Service (DAaaS), Coalesce allows architects to define SQL patterns (like an SCD Type-2 table) that can be subsequently implemented by _anyone_, even less-technical users, via a GUI. The tool is currently positioned as an enterprise solution and only works on Snowflake, but I think they'll be a player to watch. I highly recommend giving them a look if you're on Snowflake and looking for a SQL transformation solution.

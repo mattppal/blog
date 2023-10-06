@@ -3,7 +3,7 @@ author: Matt Palmer
 description: Exploring trends in short-form content about data and arguing in favor of that which builds community and generates discourse.
 draft: false
 featured: false
-ogImage: "/src/assets/posts/data-is-a-meme/genie-aladdin.gif"
+ogImage: "/src/assets../../assets/posts/data-is-a-meme/genie-aladdin.gif"
 postSlug: data-is-a-meme
 pubDatetime: 2023-05-16 7:05:00
 tags: [data, opinion, hot-takes]
@@ -25,7 +25,7 @@ Take a look at [top posts](https://www.reddit.com/r/dataengineering/top/?t=year)
 
 Memes have [been around for quite a while](https://www.nytimes.com/2022/01/26/crosswords/what-is-a-meme.html), though they've only gained steam in the past decade or so. At the core of a meme is an **idea**, usually tinged with comedy, that conveys a relatable message. The power of memes comes in their stark simplicity: a meme can traverse complex ideas yet make them available to a broad audience.
 
-![Google Trends for the term "Meme".](/src/assets/posts/data-is-a-meme/google-trends.png)
+![Google Trends for the term "Meme".](/src/assets../../assets/posts/data-is-a-meme/google-trends.png)
 
 <center><figcaption>Search interest in memes might have dipped with COVID, but the term is here to stay.</figcaption></center>
 
@@ -39,7 +39,7 @@ Memes and "LinkedIn-one-liners," by contrast, are much lower friction. A catchy 
 
 While it may produce annoying haiku-like "LinkedIn" prose, I claim this provides indirect value to the data community. We're all familiar with the evils of content algorithms, but they excel at surfacing _viral_ content. Of course, asking for viral content is sort of like a genie granting your wish— you never know what you'll get and it's _likely_ something you didn't want in the first place.
 
-![Gif of Genie from Aladdin.](/src/assets/posts/data-is-a-meme/genie-aladdin.gif)
+![Gif of Genie from Aladdin.](/src/assets../../assets/posts/data-is-a-meme/genie-aladdin.gif)
 
 ## 🤷‍♂️ Short-form isn't _that_ bad
 
@@ -47,11 +47,11 @@ The upside to it all? Some of this viral content is _quite good_, useful stuff. 
 
 Similarly, while a good bit of LinkedIn will always be self-promotion, humble brags, and influencers, I've also found it to be an excellent platform for discovering and learning new information. The small sparks of curiosity that I get from a new post can turn into projects, which turn into blog posts, implementations at work, new connections, etc.
 
-![Example of a "LinkedIn hook" from Fermat's Library.](/src/assets/posts/data-is-a-meme/fermat.png)
+![Example of a "LinkedIn hook" from Fermat's Library.](/src/assets../../assets/posts/data-is-a-meme/fermat.png)
 
 <center><figcaption>Fermat's Library is the one account I will always be hooked by. 👨🏻‍🔬</figcaption></center>
 
-A few weeks ago I saw Daniel Beech's post about [DuckDB vs. Polars](https://www.confessionsofadataguy.com/duckdb-vs-polars-for-data-engineering/). Well, I saw a shorter one-line [post](https://www.linkedin.com/src/assets/posts/daniel-beach-6ab8b4132_duckdb-csv-s3-activity-7053110969643761664-F1ws?utm_source=share&utm_medium=member_desktop) that made me excited for the _full_ piece. That led me to experiment with DuckDB the same way he did— and led to some pretty awesome feature discovery (blog forthcoming) and a better understanding of _what DuckDB is_. 🦆
+A few weeks ago I saw Daniel Beech's post about [DuckDB vs. Polars](https://www.confessionsofadataguy.com/duckdb-vs-polars-for-data-engineering/). Well, I saw a shorter one-line [post](https://www.linkedin.com/src/assets../../assets/posts/daniel-beach-6ab8b4132_duckdb-csv-s3-activity-7053110969643761664-F1ws?utm_source=share&utm_medium=member_desktop) that made me excited for the _full_ piece. That led me to experiment with DuckDB the same way he did— and led to some pretty awesome feature discovery (blog forthcoming) and a better understanding of _what DuckDB is_. 🦆
 
 In turn, I've used this content in a few personal presentations, including a lightning talk, and it's helped me share some cool, exciting stuff in the data space— the whole point of knowledge-sharing and community! Furthermore, it's opened my eyes to how I can _use DuckDB to be a better engineer_.
 
@@ -69,7 +69,7 @@ If we think about what it means to _build a community_, we first must define wha
 
 It's this relatability that's interesting to me— in the data space, memes build a shared context and make us feel like we're not alone. Perhaps related to the prevalence of imposter syndrome (a term I'm not a fan of, but that's a hot take for another time) or the subsequent "smallness" of the data world, memes have helped me relate to the data community and feel like I'm _a part_ of something. Moreover, memes are _fun_: who doesn't like joining in on a joke or poking fun at a concept?
 
-![Meme about stakeholders and Excel](/src/assets/posts/data-is-a-meme/xlsx-drake.jpeg)
+![Meme about stakeholders and Excel](/src/assets../../assets/posts/data-is-a-meme/xlsx-drake.jpeg)
 
 <center><figcaption>If Drake memes and Excel jokes can't build community, I'm not sure what will. <a href=https://twitter.com/JohnKutay>Source</a>.</figcaption></center>
 
@@ -85,14 +85,14 @@ Through posts like this, I aspire to give back to the data community by sharing 
 
 P.S. Here are a few fun memes for your time 😃
 
-![Meme about removing "limit 10;" from the end of a SQL query.](/src/assets/posts/data-is-a-meme/limit-10.jpeg)
+![Meme about removing "limit 10;" from the end of a SQL query.](/src/assets../../assets/posts/data-is-a-meme/limit-10.jpeg)
 
-<center><figcaption><a href=https://www.linkedin.com/src/assets/posts/kevinzenghu_dataengineering-activity-7058069682020347904-QoxA>Source</a>.</figcaption></center>
+<center><figcaption><a href=https://www.linkedin.com/src/assets../../assets/posts/kevinzenghu_dataengineering-activity-7058069682020347904-QoxA>Source</a>.</figcaption></center>
 
-![Meme about aligning columns in a UNION statement.](/src/assets/posts/data-is-a-meme/sql-therapy.jpeg)
+![Meme about aligning columns in a UNION statement.](/src/assets../../assets/posts/data-is-a-meme/sql-therapy.jpeg)
 
 <center><figcaption><a href=https://dataqualitycamp.slack.com/archives/C04ASGU0NDN/p1677067733067259>Source</a>.</figcaption></center>
 
-![Meme about what keeps data engineers up at night.](/src/assets/posts/data-is-a-meme/i-just-want-to-sleep.png)
+![Meme about what keeps data engineers up at night.](/src/assets../../assets/posts/data-is-a-meme/i-just-want-to-sleep.png)
 
 <center><figcaption>Nighttime thoughts about LLMs have 1000x'd this year. <a href=https://www.reddit.com/r/dataengineering/comments/12t22p4/i_just_want_sleep>Source</a>.</figcaption></center>
