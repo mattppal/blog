@@ -3,7 +3,7 @@ author: Matt Palmer
 description: A quick look at the indie conference covering code & data in the age of AI.
 draft: false
 featured: true
-ogImage: "../assets/posts/conference-preview-scale-by-the-bay-23/og.png"
+ogImage: "/posts/conference-preview-scale-by-the-bay-23/og.png"
 postSlug: conference-preview-scale-by-the-bay-23
 pubDatetime: 2023-10-06
 tags: [data, sponsored, conference]
@@ -19,7 +19,7 @@ I'm _super_ stoked to share a unique, independent conference with you all AND th
 
 This is a _sponsored_ post, but I promise all the content within will be my honest and authentic take... Plus, who doesn't like **free** stuff?! Read on to learn more about the conference: its history, talks I'm excited about, and how you can _attend for free_.
 
-![breakfast club](/src/assets../../assets/posts/conference-preview-scale-by-the-bay-23/breakfast-club.gif)
+![breakfast club](/posts/conference-preview-scale-by-the-bay-23/breakfast-club.gif)
 
 ## Scale by the what?
 
@@ -31,7 +31,7 @@ One of the coolest parts? It's in a historic venue (the [Oakland Scottish Rite C
 
 <div class="w-3/4 mx-auto">
   <img
-    src="/src/assets../../assets/posts/conference-preview-scale-by-the-bay-23/scottish_rite_center.jpeg"
+    src="/posts/conference-preview-scale-by-the-bay-23/scottish_rite_center.jpeg"
   ></img>
 </div>
 
@@ -48,7 +48,7 @@ Here are a few that stand out to me:
 _Zander Matheson_
 
 <div class="w-1/4 mx-auto">
-<img src="/src/assets../../assets/posts/conference-preview-scale-by-the-bay-23/zm.png"></img>
+<img src="/posts/conference-preview-scale-by-the-bay-23/zm.png"></img>
 </div>
 
 Zander, the CEO of Bytewax (a Python-native, highly scalable, and cloud-native stream processing framework), knows a thing or two about streaming.
@@ -63,7 +63,7 @@ _Ben Church_
 
 <div class="w-1/4 mx-auto">
   <img
-    src="/src/assets../../assets/posts/conference-preview-scale-by-the-bay-23/bc.png"
+    src="/posts/conference-preview-scale-by-the-bay-23/bc.png"
   ></img>
 </div>
 
@@ -75,11 +75,11 @@ _Dipankar Mazumdar_
 
 <div class="w-1/4 mx-auto">
   <img
-    src="/src/assets../../assets/posts/conference-preview-scale-by-the-bay-23/dm.png"
+    src="/posts/conference-preview-scale-by-the-bay-23/dm.png"
   ></img>
 </div>
 
-I've written a bit about [Delta Lake](https://mattpalmer.io/src/assets../../assets/posts/what-is-delta/) as a framework for enabling a [Lakehouse Architecture](https://docs.google.com/viewer?url=https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf), but Iceberg is a similar format that has a host of benefits.
+I've written a bit about [Delta Lake](https://mattpalmer.io/posts/what-is-delta/) as a framework for enabling a [Lakehouse Architecture](https://docs.google.com/viewer?url=https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf), but Iceberg is a similar format that has a host of benefits.
 
 I think it's _super important_ that we _all_ keep up-to-date on the latest data tools & tech. I'm looking forward to this talk by Dipankar, a Developer Advocate at Dremio, to learn more about lakehouse architectures and how Iceberg differs from solutions like Delta.
 
@@ -93,7 +93,7 @@ _Josh Tobin_
 
 <div class="w-1/4 mx-auto">
   <img
-    src="/src/assets../../assets/posts/conference-preview-scale-by-the-bay-23/jt.png"
+    src="/posts/conference-preview-scale-by-the-bay-23/jt.png"
   ></img>
 </div>
 
@@ -115,7 +115,7 @@ You just have to:
 - Subscribe to **CASE WHEN**, a newsletter for concise, curated content on data & analytics (use the embed below).
 
 <div align="center">  
-<img width="65%" src="/src/assets../../assets/posts/conference-preview-scale-by-the-bay-23/case-when.png">
+<img width="65%" src="/posts/conference-preview-scale-by-the-bay-23/case-when.png">
 </div>
 
 _Every_ new subscriber that registers for my newsletter through the embed below will get a 20% coupon— if you really don't like my newsletter, you can unsubscribe right away, but I promise it will be worth a read 😀

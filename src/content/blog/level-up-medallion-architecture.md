@@ -3,7 +3,7 @@ author: Matt Palmer
 description: What's a medallion architecture? What are its advantages? Where does it fall short? How can you use it to become a data superstar? 🤩
 draft: false
 featured: true
-ogImage: "../../assets/postslevel-up-medallion-architecture/og.png"
+ogImage: "../../assets/posts/level-up-medallion-architecture/og.png"
 postSlug: level-up-medallion-architecture
 pubDatetime: 2023-08-12 05:00:00
 tags: [data, tutorial, medallion, opinion, dataengineeringwiki]
@@ -41,19 +41,19 @@ emoji: 🥇
 
 ✏️ This post is adapted from a contribution I made to [dataengineering.wiki](https://dataengineering.wiki/Concepts/Medallion+Architecture). I highly recommend you check out their site & community! 💜
 
-![Header image](../../assets/postslevel-up-medallion-architecture/header.png)
+![Header image](../../assets/posts/level-up-medallion-architecture/header.png)
 
 ## ToC
 
 ## 🏃‍♂️ Going for Gold
 
-In the theme of my [last article](../../assets/postswhat-is-delta), we're continuing with Databricks-inspired buzzwords. I like this one because it lets me make liberal use of running emojis. 🤷‍♂️
+In the theme of my [last article](../../assets/posts/what-is-delta), we're continuing with Databricks-inspired buzzwords. I like this one because it lets me make liberal use of running emojis. 🤷‍♂️
 
 A medallion architecture is a data design pattern used to logically organize data in a lakehouse; to incrementally improve the quality of data as it flows through data quality "layers."
 
 This architecture consists of three distinct layers – bronze (raw), silver (validated), and gold (enriched) – each representing progressively higher levels of quality. Medallion architectures are sometimes referred to as "multi-hop" architectures.
 
-![Medallion Architecture](../../assets/postslevel-up-medallion-architecture/architecture.png)
+![Medallion Architecture](../../assets/posts/level-up-medallion-architecture/architecture.png)
 
 Medallion architectures came about as lakehouse and lakehouse storage formats (e.g. Delta, Iceberg, Hudi) became more widely adopted. That is when Spark and PySpark started to overtake older frameworks for distributed processing.
 
@@ -100,7 +100,7 @@ It's funny in a sense: though we've seen an explosion of new data tech, many con
 
 It's a bit on the longer side, but if you shuffle through, you'll find Tom O'Neill, former Co-Founder of Periscope Data (🪦 [RIP](https://techcrunch.com/2019/05/14/sisense-acquires-periscope-data-to-build-integrated-data-science-and-analytics-solution/)), discussing _fundamental_ data warehousing ideas, many of which are still _extremely_ relevant.
 
-![Youtube snippet](../../assets/postslevel-up-medallion-architecture/periscope.png)
+![Youtube snippet](../../assets/posts/level-up-medallion-architecture/periscope.png)
 
 Now, don't get me wrong— I'm not saying medallion architecture = data warehousing or anything of the sort, really.
 
@@ -108,7 +108,7 @@ I'm simply emphasizing that medallion architecture is just a common pattern in d
 
 This one just has a fancy name. See, there's a method behind the madness.
 
-![Forest running](../../assets/postslevel-up-medallion-architecture/run-forest-run.gif)
+![Forest running](../../assets/posts/level-up-medallion-architecture/run-forest-run.gif)
 
 ## 🤓 Why Medallion?
 
@@ -118,7 +118,7 @@ Medallion is similar to our data warehouse analogy with some key differences. So
 
 With a layered architecture, we can eliminate _most_ of the headaches from upstream schema changes. What usually happens when an upstream source changes?
 
-<img src='../../assets/postslevel-up-medallion-architecture/sponge-fire.png'>
+<img src='../../assets/posts/level-up-medallion-architecture/sponge-fire.png'>
 
 Clever engineers and analysts have taken note! With multiple layers of storage, we have a single breakpoint to remedy changes. Column name changed from `createdAt` to `created_at`? No big deal! We'll just rename `createdAt` ➡️ `created_at` in our silver layer: a simple and incredibly effective solution. Thought this would be further evidence that any data using camel case is extremely sus. 🤨
 
@@ -126,7 +126,7 @@ Medallion architecture can be used to protect against schema changes from extern
 
 ### 🚤 Lakehouse benefits
 
-Additional benefits are obtained when using a lakehouse storage format, though it's not a prerequisite. I've discussed [Delta Lake](../../assets/postswhat-is-delta/) and lakehouse tech before, but the gist is these formats record changes in a "transaction log" and thus have the ability to "time travel" for some retention period.
+Additional benefits are obtained when using a lakehouse storage format, though it's not a prerequisite. I've discussed [Delta Lake](../../assets/posts/what-is-delta/) and lakehouse tech before, but the gist is these formats record changes in a "transaction log" and thus have the ability to "time travel" for some retention period.
 
 Separate layers + ACID guarantees + time travel makes versioned and incrementally stored data a reality— a boon for disaster recovery, audits, and overall understanding of a data pipeline.
 
@@ -153,4 +153,4 @@ A medallion architecture is a data engineer's version of warehouse storage layer
 
 No, it's not going to replace your data warehouse and no, you can't forget everything you know about dimensional modelling. You _can_ however have greater confidence in your data engineering pipelines _and_ use more Forest Gump gifs in your documentation.
 
-![I felt like it](../../assets/postslevel-up-medallion-architecture/keep-running.gif)
+![I felt like it](../../assets/posts/level-up-medallion-architecture/keep-running.gif)

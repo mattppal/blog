@@ -21,7 +21,7 @@ A _cohorted retention chart_ plots cohorts by row and retention metrics by colum
 
 <center>
 <figure>
-  <img src="../../assets/postscohorted-retention/cohort-grid.png" alt="Example user retention cohort grid."/>
+  <img src="../../assets/posts/cohorted-retention/cohort-grid.png" alt="Example user retention cohort grid."/>
   <figcaption><i><center>Cohort months and totals are displayed for each row, with retention highlighted and colored by column.</center></i></figcaption>
 </figure>
 </center>

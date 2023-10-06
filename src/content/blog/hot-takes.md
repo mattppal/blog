@@ -13,7 +13,7 @@ emoji: 🌶️
 
 ## Intro
 
-Hot on the heels of [Data Council Austin](../../assets/postsdata-council-austin), I've been thinking about the data landscape— both from what I've seen firsthand and gleaned from discussions, forums, and blog posts. I'm grateful for my exposure to a spectrum of data teams, from going 0 ➡️ 1 to driving product at scale. Simultaneously, it's been refreshing to see community growth, led by [dbt](https://www.getdbt.com/community/join-the-community/), [Locally Optimistic](https://locallyoptimistic.com/), [Operational Analytics](https://www.operationalanalytics.club/) and others, that has shed light on what it means to be a data practitioner.
+Hot on the heels of [Data Council Austin](../../assets/posts/data-council-austin), I've been thinking about the data landscape— both from what I've seen firsthand and gleaned from discussions, forums, and blog posts. I'm grateful for my exposure to a spectrum of data teams, from going 0 ➡️ 1 to driving product at scale. Simultaneously, it's been refreshing to see community growth, led by [dbt](https://www.getdbt.com/community/join-the-community/), [Locally Optimistic](https://locallyoptimistic.com/), [Operational Analytics](https://www.operationalanalytics.club/) and others, that has shed light on what it means to be a data practitioner.
 
 Through these media, I've found common pain points and trends that I felt warranted a blog post. The data landscape has changed drastically in the past 5 years, so here's what I feel are some (potentially painful) truths:
 
