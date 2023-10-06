@@ -110,7 +110,7 @@ Snowflake billboards outnumbered Databricks 3-to-1 on the 101, oof. While Databr
 
 ![](../../assets/posts/data-ai-23-rated/logo-in-pres.png)
 
-<center><figcaption>Thanks to <a href=https://www.linkedin.com../../assets/postsmehd-io_i-wonder-if-snowflake-had-somewhere-in-their-activity-7079875867849420800-yEqZ>Medhi</a> for sharing.</figcaption></center>
+<center><figcaption>Thanks to <a href=https://www.linkedin.com/posts/mehd-io_i-wonder-if-snowflake-had-somewhere-in-their-activity-7079875867849420800-yEqZ>Medhi</a> for sharing.</figcaption></center>
 
 In all seriousness, I do not appreciate these companies bifurcating the data community.
 
