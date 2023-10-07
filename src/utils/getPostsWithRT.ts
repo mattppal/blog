@@ -6,7 +6,7 @@ export const getReadingTime = async () => {
   // Get all posts using glob. This is to get the updated frontmatter
   const globPosts = import.meta.glob<
     MarkdownInstance<CollectionEntry<"blog">["data"]>
-  >("../content/blog/*.md");
+  >(["../content/blog/*.md", "../content/blog/*.mdx"]);
 
   // Then, set those frontmatter value in a JS Map with key value pair
   const mapFrontmatter = new Map();
