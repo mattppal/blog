@@ -1,18 +1,19 @@
 ---
-layout: ../layouts/ContentLayout.astro
+layout: "@layouts/ContentLayout.astro"
 title: Content
 ---
 
 import { Image } from "astro:assets";
 
-import coalesce from "../../public/logos/coalesce.png";
-import hex_dark from "../../public/logos/hex-pink.png";
-import hex_light from "../../public/logos/hex-purple.png";
-import mage from "../../public/logos/mage.png";
-import orm from "../../public/logos/oreilly.png";
-import zuar from "../../public/logos/zuar.png";
-import shipyard from "../../public/logos/shipyard.svg";
-import sbtb from "../../public/logos/sbtb.png";
+import coalesce from "@assets/logos/coalesce.png";
+import hex_dark from "@assets/logos/hex-pink.png";
+import hex_light from "@assets/logos/hex-purple.png";
+import mage from "@assets/logos/mage.png";
+import orm from "@assets/logos/oreilly.png";
+import zuar from "@assets/logos/zuar.png";
+import shipyard from "@assets/logos/shipyard.svg";
+import sbtb from "@assets/logos/sbtb.png";
+import hex_header from "@assets/logos/hex-header.png";
 
 In addition to my own content, I've worked with the following _amazing_ companies to create content on analytics and data engineering:
 
@@ -63,10 +64,7 @@ In addition to my own content, I've worked with the following _amazing_ companie
 ## Hex
 
 <div align="center">
-  <img
-    src="https://images.ctfassets.net/mmgv7yhaaeds/3mSgDO6aJx098xwrbd4NTz/d9496225622e015e3726fcf9f68237e2/with_hex.png"
-    width="75%"
-  ></img>
+  <img src={hex_header.src} alt=""></img>
 </div>
 
 - 📊 [One Chart Forward, Two Queries Back](https://hex.tech/blog/iterating-in-analytics/): I had a blast working with the Hex team to discuss analytics workflows. I'm pretty opinionated about the data developer experience and I feel strongly that a focus on process can yield huge gains in analytics productivity.

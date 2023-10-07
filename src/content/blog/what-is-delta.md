@@ -3,7 +3,7 @@ author: Matt Palmer
 description: "We've all heard quite a bit about Lakehouse storage systems: Iceberg, Delta, & Hudi, but how they work is often overlooked. Today, we'll dig into Delta— what it is, how it works, and what's new in Delta 3.0."
 draft: false
 featured: true
-ogImage: "../../assets/posts/what-is-delta/og.png"
+ogImage: "@assets/posts/what-is-delta/og.png"
 postSlug: what-is-delta
 pubDatetime: 2023-07-10
 tags: [data, tutorial, delta, opinion]
@@ -13,7 +13,7 @@ emoji: 🌎
 
 <script>
     if (window.location.hostname !== "mattpalmer.io"){
-        window.top.location.href = 'https://mattpalmer.io../../assets/posts/what-is-delta';
+        window.top.location.href = 'https://mattpalmer.io@assets/posts/what-is-delta';
     }
 </script>
 
@@ -25,7 +25,7 @@ emoji: 🌎
   }
 </style>
 
-![Header image](../../assets/posts/what-is-delta/header-2.png)
+![Header image](@assets/posts/what-is-delta/header-2.png)
 
 <center><figcaption>Have you seen a post about Delta Lake <i>without</i> a serene lake image?</figcaption></center>
 
@@ -33,7 +33,7 @@ emoji: 🌎
 
 ## 🎞️ Intro
 
-"Delta Lake" sounds more like a [fun weekend hike](https://www.alltrails.com/trail/us/wyoming/delta-lake-via-lupine-meadows-access) than a part of the modern data stack. I've made [my case before](https://www.linkedin.com../../assets/posts/matt-palmer_delta-lake-via-lupine-meadows-access-activity-7067143615147380737-2JaF) and I fully expect a data retreat to the Tetons in 2024 (yes, Databricks, I have room for a sponsorship).
+"Delta Lake" sounds more like a [fun weekend hike](https://www.alltrails.com/trail/us/wyoming/delta-lake-via-lupine-meadows-access) than a part of the modern data stack. I've made [my case before](https://www.linkedin.com@assets/posts/matt-palmer_delta-lake-via-lupine-meadows-access-activity-7067143615147380737-2JaF) and I fully expect a data retreat to the Tetons in 2024 (yes, Databricks, I have room for a sponsorship).
 
 Of course, Delta Lake is primarily an open-source lakehouse storage framework. It's designed to enable a [lakehouse architecture](https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf) with compute engines like Spark, PrestoDB, Flink, Trino, and Hive. It has APIs for Scala, Java, Rust, Ruby, & Python.
 
@@ -51,25 +51,25 @@ Notably, as we'll discuss in a follow-up post, Iceberg is a very similar format 
 
 If you peruse the Databricks/Delta docs, you'll probably find something like this:
 
-![This is a lakehouse, not delta](../../assets/posts/what-is-delta/delta-example.png)
+![This is a lakehouse, not delta](@assets/posts/what-is-delta/delta-example.png)
 
 <center><figcaption>This is a lakehouse, not Delta Lake. 🤨</figcaption></center>
 
 I don't find this particularly helpful for understanding Delta Lake. For some reason, the majority of their docs describe a lakehouse framework with a [medallion](https://www.databricks.com/glossary/medallion-architecture) architecture, not the underlying technology. A _lakehouse_ is a fancy buzzword, [also created by Databricks](https://www.databricks.com/glossary/data-lakehouse), used to describe a solution combining data lakes and data warehouses, i.e. leveraging cloud storage with semi-structured data formats _and_ traditional OLAP solutions.
 
-![This is also a lakehouse](../../assets/posts/what-is-delta/lakehouse-arch.png)
+![This is also a lakehouse](@assets/posts/what-is-delta/lakehouse-arch.png)
 
 <center><figcaption>This is also a lakehouse.</figcaption></center>
 
 The very simple truth is that Delta files are just Parquet files with a metadata layer on top. That's it. Not to understate the ingenuity and usefulness of Delta, but it's a pretty simple concept.
 
-![Actually Delta Lake](../../assets/posts/what-is-delta/delta-metadata.png)
+![Actually Delta Lake](@assets/posts/what-is-delta/delta-metadata.png)
 
 <center><figcaption>Ok, now THIS is Delta.</figcaption></center>
 
 Now, if you have a bit of background with these technologies, you might remark "Hey, so is Iceberg" or "Huh, that sounds like Hudi" and you'd be right. Those formats are pretty much the same thing. They even use very similar marketing materials.
 
-![Not Hudi](../../assets/posts/what-is-delta/hudi-example.png)
+![Not Hudi](@assets/posts/what-is-delta/hudi-example.png)
 
 <center><figcaption>Not Hudi, also a lakehouse. 🤦‍♂️</figcaption></center>
 
@@ -96,7 +96,7 @@ Ok, this term gets thrown around a lot without much explanation. Databricks [has
 
 ### Time Travel
 
-![Great Scott](../../assets/posts/what-is-delta/great-scott.gif)
+![Great Scott](@assets/posts/what-is-delta/great-scott.gif)
 
 <center><figcaption>I had a professor in college that <i>also</i> went by Doc Brown...</figcaption></center>
 
@@ -140,17 +140,17 @@ Storage is cheap, right?
 
 ### Unified Batch & Streaming
 
-Delta tables are _both_ batch tables _and_ streaming sources/sinks. I'll refrain from joining [that debate](https://www.linkedin.com../../assets/posts/daniel-beach-6ab8b4132_datainfluncers-meta-google-activity-7078024000479645696-MzCe), but hey, flexibility is good.
+Delta tables are _both_ batch tables _and_ streaming sources/sinks. I'll refrain from joining [that debate](https://www.linkedin.com@assets/posts/daniel-beach-6ab8b4132_datainfluncers-meta-google-activity-7078024000479645696-MzCe), but hey, flexibility is good.
 
 Using Delta, you get all the benefits of streaming _and_ batch— streaming ingest, batch backfill, interactive queries, etc. It's a very flexible format, and the ability to have _all_ of these features _and_ support streaming functionality of Spark is what I would call:
 
-![Larry David pretty pretty good](../../assets/posts/what-is-delta/larry-david-pretty-good.gif)
+![Larry David pretty pretty good](@assets/posts/what-is-delta/larry-david-pretty-good.gif)
 
 ### DML
 
 Delta supports merge, update, and delete operations— making things like change data capture (CDC), slowly changing dimensions (SCD), and streaming upserts possible. Merge/update/delete are powerful tools that enable foundational datastores.
 
-One of the first [posts I ever wrote](../../assets/posts/scd-type-2) was about creating an SCD Type-2 table using `UPSERT` in Delta. Admittedly, that was in 2021 and I had little idea what I was doing. Hopefully, someone has a better guide or much-improved process by now. 😂
+One of the first [posts I ever wrote](@assets/posts/scd-type-2) was about creating an SCD Type-2 table using `UPSERT` in Delta. Admittedly, that was in 2021 and I had little idea what I was doing. Hopefully, someone has a better guide or much-improved process by now. 😂
 
 SO let's talk about the underlying technology that makes most of these possible.
 
@@ -160,7 +160,7 @@ Here's the part where I save you from reading a [15,000-word technical document]
 
 So if Delta files are Parquet + the transaction log, we know the transaction log must be pretty special… otherwise, we'd just have Parquet files. While I do love Parquet files, I'm not sure they would warrant as much hype.
 
-![Drake Parquet Meme](../../assets/posts/what-is-delta/drake-parquet.png)
+![Drake Parquet Meme](@assets/posts/what-is-delta/drake-parquet.png)
 
 <center><figcaption>👋 <a href='https://Parquet.apache.org/'>Apache</a>, I'm open to sponsorships.</figcaption></center>
 
@@ -191,7 +191,7 @@ I recommend opening this in full-screen to see the code! [Here's](https://gist.g
 
 The transaction log sees all 👀
 
-![I'm watching you...](../../assets/posts/what-is-delta/wazowski.gif)
+![I'm watching you...](@assets/posts/what-is-delta/wazowski.gif)
 
 <center><figcaption>You can think of your Delta Table as Mike Wozowski and the Transaction Log like The Librarian from Monsters, Inc.</figcaption></center>
 
@@ -205,11 +205,11 @@ There are three headline features of the release, but we'll focus on numero uno:
 
 The new functionality is pretty impressive. Since all three formats are Parquet-based and solely differentiated by their metadata, UniForm provides the framework for translating this metadata. Have an Iceberg table? It's now effectively a Delta table (with some [limitations](https://docs.databricks.com/delta/uniform.html#limitations)).
 
-![Uniform in Delta 3.0](../../assets/posts/what-is-delta/uniform.png)
+![Uniform in Delta 3.0](@assets/posts/what-is-delta/uniform.png)
 
 Perhaps more impressive is that UniForm _improves read performance_ for Iceberg. So not only does UniForm consolidate formats and unify infrastructure— it can result in performance enhancements for non-native formats, too!
 
-![Uniform read performance](../../assets/posts/what-is-delta/uniform-read.png)
+![Uniform read performance](@assets/posts/what-is-delta/uniform-read.png)
 
 This is some 4D chess-type stuff from Databricks. It's a way for them to say "Hey, we're unifying the data space," while continuing to build market share and keep their formats in production. It's a clever one, for sure. We saw the same theme at the Data+AI Summit, where a major focus was on providing services that were universally accessible (marketplace, apps, etc).
 
@@ -223,7 +223,7 @@ That's a great description! So the catalog "orchestrates" the transaction loggin
 
 If you thought, "Huh, I wonder if Databricks has a competing service," you'd be [💯 percent correct.](https://www.databricks.com/product/unity-catalog) Unity Catalog is a _much_ more complex topic, so we'll save that discussion for another post, but you can [read more here](https://docs.databricks.com/data-governance/unity-catalog/index.html).
 
-While I'm largely [against the Databricks/Snowflake beef](../../assets/posts/data-ai-23-rated/#-beef-with-snowflake), it's awesome to see competition producing something _good_ for the community— interoperability is undoubtedly a win. Improving performance _across_ formats benefits everyone. I applaud them on their decision and work— I think it's insanely cool.
+While I'm largely [against the Databricks/Snowflake beef](@assets/posts/data-ai-23-rated/#-beef-with-snowflake), it's awesome to see competition producing something _good_ for the community— interoperability is undoubtedly a win. Improving performance _across_ formats benefits everyone. I applaud them on their decision and work— I think it's insanely cool.
 
 ## Conclusion
 
