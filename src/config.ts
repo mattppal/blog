@@ -2,7 +2,7 @@ import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
   website: "https://mattpalmer.io",
-  calendar: "https://calendar.app.google/mVAr85FzJQqzpVce9",
+  calendar: "https://calendar.app.google/4Aoa3R1HKFPF48rU6",
   linkedin: "https://linkedin.com/in/matt-palmer",
   author: "Matt Palmer",
   desc: "Matt's musings— all things data, writing, & fun.",
