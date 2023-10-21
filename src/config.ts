@@ -12,7 +12,7 @@ export const SITE: Site = {
   team: "Data",
   company: "Mage",
   location: "San Jose, CA",
-  ogImage: "/src/assets/og.png",
+  ogImage: "/og.png",
   googleAnalyticsId: "",
   lightAndDarkMode: true,
   postPerPage: 8,
