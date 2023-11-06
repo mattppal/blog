@@ -3,7 +3,7 @@ author: Matt Palmer
 description: An overview of DuckDB and a neat trick to get you started. 🦆
 draft: false
 featured: false
-ogImage: "@assets/posts/whats-the-hype-duckdb/ducks-mid.png"
+ogImage: "/posts/whats-the-hype-duckdb/ducks-mid.png"
 postSlug: whats-the-hype-duckdb
 pubDatetime: 2023-05-24 8:00:00
 tags: [data, tutorial, duckdb, opinion]
