@@ -1,0 +1,24 @@
+---
+import LinkButton from "./LinkButton.astro";
+
+export interface Props {
+  href: string;
+  text: string;
+}
+
+const { href, text } = Astro.props;
+---
+<div class="text-center w-full place-items-center">
+    {
+        <LinkButton
+          href={href}
+          className="link-button"
+          title={text}
+        >
+        <button type="button" class="middle none border border-black center mr-4 rounded-lg py-3 px-6 text-s uppercase">
+            {text}
+        </button>
+        </LinkButton>
+    }
+  </div>
+  
