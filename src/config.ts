@@ -13,7 +13,7 @@ export const SITE: Site = {
   company: "Mage",
   location: "San Jose, CA",
   ogImage: "/og-new.png",
-  googleAnalyticsId: "",
+  googleAnalyticsId: "G-8WC5WJ1JXH",
   lightAndDarkMode: true,
   postPerPage: 8,
 };
