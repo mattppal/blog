@@ -6,7 +6,7 @@ import LinkButton from "./LinkButton.astro";
 export interface Props {
   activeNav?: "posts" | "tags" | "about" | "search";
 }
-const { googleAnalytics } = SITE.googleAnalyticsId;
+
 const { activeNav } = Astro.props;
 ---
 
@@ -216,7 +216,7 @@ const { activeNav } = Astro.props;
 <!-- head -->
 <script
   type="text/partytown"
-  src=`https://www.googletagmanager.com/gtag/js?id=${googleAnalytics}`
+  src=`https://www.googletagmanager.com/gtag/js?id=${SITE.googleAnalyticsId}`
 ></script>
 <script type="text/partytown">
   window.dataLayer = window.dataLayer || [];
@@ -224,6 +224,6 @@ const { activeNav } = Astro.props;
     dataLayer.push(arguments);
   }
   gtag("js", new Date());
-  gtag("config", googleAnalytics);
+  gtag("config", SITE.googleAnalyticsId);
 </script>
 <!-- more head -->
