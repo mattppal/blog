@@ -6,7 +6,7 @@ import LinkButton from "./LinkButton.astro";
 export interface Props {
   activeNav?: "posts" | "tags" | "about" | "search";
 }
-
+const { googleAnalytics } = SITE.googleAnalyticsId;
 const { activeNav } = Astro.props;
 ---
 
@@ -212,3 +212,18 @@ const { activeNav } = Astro.props;
   // Runs on view transitions navigation
   document.addEventListener("astro:after-swap", toggleNav);
 </script>
+
+<!-- head -->
+<script
+  type="text/partytown"
+  src=`https://www.googletagmanager.com/gtag/js?id=${googleAnalytics}`
+></script>
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", googleAnalytics);
+</script>
+<!-- more head -->

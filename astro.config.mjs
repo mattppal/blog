@@ -8,45 +8,36 @@ import sitemap from "@astrojs/sitemap";
 import mdx from '@astrojs/mdx';
 import { SITE } from "./src/config";
 
+import partytown from "@astrojs/partytown";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    react(),
-    mdx(),
-    sitemap(),
-  ],
+  integrations: [tailwind({
+    applyBaseStyles: false
+  }), react(), mdx(), sitemap(), partytown({
+    // Adds dataLayer.push as a forwarding-event.
+    config: {
+      forward: ["dataLayer.push"],
+    },
+  }),],
   markdown: {
-    remarkPlugins: [
-      remarkReadingTime,
-      remarkToc,
-      [
-        remarkToc,
-        {
-          tight: true,
-          heading: "ToC",
-        },
-      ],
-      [
-        remarkCollapse,
-        {
-          test: "ToC",
-        },
-      ],
-    ],
+    remarkPlugins: [remarkReadingTime, remarkToc, [remarkToc, {
+      tight: true,
+      heading: "ToC"
+    }], [remarkCollapse, {
+      test: "ToC"
+    }]],
     shikiConfig: {
       theme: "one-dark-pro",
-      wrap: true,
+      wrap: true
     },
-    extendDefaultPlugins: true,
+    extendDefaultPlugins: true
   },
   vite: {
     optimizeDeps: {
-      exclude: ["@resvg/resvg-js"],
-    },
+      exclude: ["@resvg/resvg-js"]
+    }
   },
-  scopedStyleStrategy: "where",
+  scopedStyleStrategy: "where"
 });
