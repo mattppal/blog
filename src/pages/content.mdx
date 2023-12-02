@@ -1,12 +1,11 @@
 ---
 layout: "@layouts/ContentLayout.astro"
-title: Content
+title: Collaborations
 ---
 
 import { Image } from "astro:assets";
 
 import coalesce from "@assets/logos/coalesce.png";
-import hex_dark from "@assets/logos/hex-pink.png";
 import hex_light from "@assets/logos/hex-purple.png";
 import mage from "@assets/logos/mage.png";
 import orm from "@assets/logos/oreilly.png";
@@ -14,15 +13,17 @@ import zuar from "@assets/logos/zuar.png";
 import shipyard from "@assets/logos/shipyard.svg";
 import sbtb from "@assets/logos/sbtb.png";
 import hex_header from "@assets/logos/hex-header.png";
+import softserve from "@assets/logos/softserve.jpeg";
+import influxdb from "@assets/logos/influxdb.png";
 
 In addition to my own content, I've worked with the following _amazing_ companies to create content on analytics and data engineering:
 
-<div class="grid auto-cols-max grid-cols-7 items-center">
-  <span class="px-3">
+<div class="grid auto-cols-max grid-cols-5 items-center">
+  <div class="px-3">
     <a href="https://coalesce.io">
       <Image src={coalesce} alt="coalesce" />
     </a>
-  </span>
+  </div>
   <div class="px-3">
     <a href="https://hex.tech">
       <Image src={hex_light} alt="hex" />
@@ -48,32 +49,63 @@ In addition to my own content, I've worked with the following _amazing_ companie
       <Image src={mage} alt="mage" />
     </a>
   </div>
-  <span class="px-3">
+  <div class="px-3">
     <a href="https://www.scale.bythebay.io/">
       <Image src={sbtb} alt="scale by the bay" />
     </a>
-  </span>
+  </div>
+  <div class="px-3">
+    <a href="https://www.influxdata.com/">
+      <Image src={influxdb} alt="influxdb" />
+    </a>
+  </div>
+  <div class="px-3">
+    <a href="https://www.softserveinc.com/">
+      <Image src={softserve} alt="softserve" />
+    </a>
+  </div>
 </div>
 
-## Coalesce
+Here's some of my recent work:
+
+## Technical Guides
+
+- 🤖 [Automating Data Transformation](https://coalesce.io/wp-content/uploads/2023/05/OReilly-AutomateDataTransformations.pdf)
+- 📊 [Understanding ETL](https://hex.tech/guides/iterating-in-analytics/)
+
+## Blogs
 
 - 🧂 [Shaking up the "T" in "ELT"](https://coalesce.io/product-technology/automating-data-transformation-with-coalesce/)
-- 🤖 [Automating Data Transformation](https://coalesce.io/wp-content/uploads/2023/05/OReilly-AutomateDataTransformations.pdf): A report I ghost-authored on the current state of the modern data stack, with a focus on data transformation. This was a collaboration with O'Reilly Media.
-- 🥳 [Data Fundamentals](https://coalesce.io/all-things-data/before-jumping-into-generative-ai-and-llm-ensure-data-fundamentals-are-in-place/): An article arguing for a focus on the _fundamentals_ of data analysis rather than the hype of generative AI.
+- 🥳 [Data Fundamentals](https://coalesce.io/all-things-data/before-jumping-into-generative-ai-and-llm-ensure-data-fundamentals-are-in-place/)
+- 📊 [One Chart Forward, Two Queries Back](https://hex.tech/blog/iterating-in-analytics/)
+- 🥾 [Hex at AllTrails](https://hex.tech/blog/hex-at-alltrails/)
 
-## Hex
+## Video
 
 <div align="center">
-  <img src={hex_header.src} alt=""></img>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com//embed/zAHEcl3aSng"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
 </div>
-
-- 📊 [One Chart Forward, Two Queries Back](https://hex.tech/blog/iterating-in-analytics/): I had a blast working with the Hex team to discuss analytics workflows. I'm pretty opinionated about the data developer experience and I feel strongly that a focus on process can yield huge gains in analytics productivity.
-- 🥾 [Hex at AllTrails](https://hex.tech/blog/hex-at-alltrails/): One of my favorite pieces— I wrote about the data culture at AllTrails and how we used [Hex](https://hex.tech) to improve our analytics workflows.
-
-## Shipyard
-
-I appeared on Captain's Compass #10 to talk a bit about data orchestration:
-
+<br />
+<div align="center">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/JKALtxziBG0?si=m5zq1vp_J2uuh2-J"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
+<br />
 <div align="center">
   <iframe
     width="560"
@@ -85,43 +117,7 @@ I appeared on Captain's Compass #10 to talk a bit about data orchestration:
     allowfullscreen
   ></iframe>
 </div>
-
-## Mage
-
-In my role as a DevRel at Mage, I've created _a ton_ of resources and worked to overhaul our docs: here's a [before](https://web.archive.org/web/20230521044430/https://docs.mage.ai/introduction/overview) and [after](https://docs.mage.ai/).
-
-### Demos
-
-- [Magic Devcontainer](https://github.com/mage-ai/magic-devcontainer): a self-contained Mage demo, leveraging VSCode devcontainers to demo an end-to-end Mage pipeline.
-
-### Presentations
-
-- [UTDeM](https://www.meetup.com/utah-data-engineering-meetup/events/292397377) - August 2023
-- [DataTalksClub](https://www.eventbrite.de/e/make-data-magical-with-mage-tickets-698259853017) - September 2023
-  <div align="center">
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/JKALtxziBG0?si=m5zq1vp_J2uuh2-J"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-    ></iframe>
-  </div>
-- [SoftServe](https://fb.me/e/3iPH4OEOG) - November 2023
-  <div align="center">
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com//embed/zAHEcl3aSng"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-    ></iframe>
-  </div>
-
+{/* 
 ## Zuar
 
 I've worked with the team at [Zuar](https://www.zuar.com/) to publish a number of technical blog posts:
@@ -142,4 +138,4 @@ I've worked with the team at [Zuar](https://www.zuar.com/) to publish a number o
 - [What is Google Cloud Dataflow?](https://www.zuar.com/blog/what-is-google-cloud-dataflow/)
 - [BigQuery Cheat Sheet](https://www.zuar.com/blog/bigquery-cheat-sheet/)
 - [How to Load Data From an Amazon S3 Bucket to Redshift](https://www.zuar.com/blog/load-amazon-s3-data-to-redshift/)
-- [Amazon Redshift Cheat Sheet](https://www.zuar.com/blog/amazon-redshift-cheat-sheet/)
+- [Amazon Redshift Cheat Sheet](https://www.zuar.com/blog/amazon-redshift-cheat-sheet/) \*/}
