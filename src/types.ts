@@ -4,7 +4,6 @@ export type Site = {
   linkedin: string;
   author: string;
   email: string;
-  googleAnalyticsId: string;
   company: string;
   team: string;
   jobTitle: string;
