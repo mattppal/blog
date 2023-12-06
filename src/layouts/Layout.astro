@@ -81,6 +81,20 @@ const socialImageURL = new URL(
     <ViewTransitions />
 
     <script is:inline src="/toggle-theme.js"></script>
+    <!-- GA -->
+    <script
+      type="text/partytown"
+      src=`https://www.googletagmanager.com/gtag/js?id=${SITE.googleAnalyticsId}`
+    ></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", SITE.googleAnalyticsId);
+    </script>
+    
   </head>
   <body>
     <slot />
