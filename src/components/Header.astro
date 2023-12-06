@@ -212,18 +212,3 @@ const { activeNav } = Astro.props;
   // Runs on view transitions navigation
   document.addEventListener("astro:after-swap", toggleNav);
 </script>
-
-<!-- head -->
-<script
-  type="text/partytown"
-  src=`https://www.googletagmanager.com/gtag/js?id=${SITE.googleAnalyticsId}`
-></script>
-<script type="text/partytown">
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-  gtag("config", SITE.googleAnalyticsId);
-</script>
-<!-- more head -->
