@@ -4,6 +4,7 @@ export const SITE: Site = {
   website: "https://mattpalmer.io",
   calendar: "https://calendar.app.google/4Aoa3R1HKFPF48rU6",
   linkedin: "https://linkedin.com/in/matt-palmer",
+  twitter: "https://twitter.com/mattppal",
   author: "Matt Palmer",
   desc: "Data engineering, product marketing, occasional humor",
   title: "Matt Palmer",
