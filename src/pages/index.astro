@@ -13,7 +13,7 @@ import { SOCIALS } from "@config";
 import { SITE } from "@config";
 import CtaButton from "@components/CtaButton.astro";
 // Import a single file
-import {Content as OverviewContent} from './index.mdx';
+import {Content as OverviewContent} from './overview.mdx';
 const posts = await getCollection("blog");
 
 const sortedPosts = await getSortedPosts(posts);
