@@ -1,6 +1,7 @@
 export type Site = {
   website: string;
   calendar: string;
+  twitter: string;
   linkedin: string;
   author: string;
   email: string;
