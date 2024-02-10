@@ -1,5 +1,6 @@
 # Ignore everything
 /*
+/src/components/overview.mdx
 
 # Except these files & folders
 !/src
@@ -11,4 +12,3 @@
 !.prettierrc
 !.eslintrc.js
 !README.md
-!/components/overview.mdx
