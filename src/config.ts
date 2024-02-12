@@ -13,7 +13,7 @@ export const SITE: Site = {
   team: "DevRel",
   company: "Replit",
   location: "San Jose, CA",
-  ogImage: "/og-new.png",
+  ogImage: "/og.png",
   lightAndDarkMode: true,
   postPerPage: 8,
 };
