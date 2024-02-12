@@ -12,8 +12,8 @@ export const SITE: Site = {
   email: "hello@mattpalmer.io",
   team: "DevRel",
   company: "Replit",
-  location: "San Jose, CA",
-  ogImage: "/og.png",
+  location: "Campbell, CA",
+  ogImage: "/mp-og.png",
   lightAndDarkMode: true,
   postPerPage: 8,
 };
