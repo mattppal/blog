@@ -7,7 +7,7 @@ import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import mdx from '@astrojs/mdx';
 import { SITE } from "./src/config";
-
+import rehypeExternalLinks from 'rehype-external-links'
 import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
@@ -28,6 +28,7 @@ export default defineConfig({
     }], [remarkCollapse, {
       test: "ToC"
     }]],
+    rehypePlugins: [[rehypeExternalLinks, {target: ["_blank"]}]],
     shikiConfig: {
       theme: "one-dark-pro",
       wrap: true
