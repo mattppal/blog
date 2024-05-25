@@ -66,7 +66,7 @@ In reality, there are several other classes of solution that are overlooked:
 *  **Change the game:** This is the Kobyashi Maru. Instead of playing an impossible game, change the rules. This is easier said than done, but maybe you have unrealistic goals for yourself. Would adjusting them allow you to get more done? Could _eliminating dogma and stereotypes_ unlock powerful new trajectories in your life?
 
 And I’d be remiss if I didn’t mention my favorite:
-  *  **Do nothing:** Have you considered that doing precisely nothing is a solution to your problem? Maybe you’re actually making **great** progress and could use some more compassion. I overlook this _far_ too often. 
+*  **Do nothing:** Have you considered that doing precisely nothing is a solution to your problem? Maybe you’re actually making **great** progress and could use some more compassion. I overlook this _far_ too often. 
 
 I’ve begun to notice in my own life the lack of preparedness for the incredibly broad and open possibilities of the world. I am not someone who wants to be told what to do, but the ability to scope and define the actions necessary to move towards our goals is an incredibly daunting task. This is especially true once you realize the simple truth: 
 
@@ -83,8 +83,6 @@ What about:
 2. Do things on the side that I’m passionate about… _Maybe_ these become my job one day.
 
 3. Finagle my life so I can chase #1 **and** #2 **while** finding time to make friends, build community, expand my social circle, and, most importantly, _have fun._
-
-[![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5c7803ae-7435-4f8e-b81c-28b997196f7b_500x228.gif)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5c7803ae-7435-4f8e-b81c-28b997196f7b_500x228.gif)
 
 Today, many of us can do whatever we want, live wherever we want, and be whoever we want, but we lock ourselves into predefined outcomes and put a cap on our talents. 
 
