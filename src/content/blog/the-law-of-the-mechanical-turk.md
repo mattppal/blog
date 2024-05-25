@@ -33,10 +33,6 @@ Now the important part:
 However, order-of-magnitude changes in efficiency mean the gap between the 1% and the 99% will get _much_ larger. Winners will be the ones that:
 
   1. Have the best ideas
-
   2. Use the new rules to _iterate_ on their ideas the fastest.
-
-
-
 
 #1 is, of course, developer experience. So “winning” product looks like creativity + project management + developer experience. 
