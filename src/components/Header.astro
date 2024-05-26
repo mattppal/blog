@@ -13,6 +13,7 @@ const { activeNav } = Astro.props;
 <header>
   <a id="skip-to-content" href="#main-content">Skip to content</a>
   <div class="nav-container">
+    <a href="/"><img class="rounded-full w-10" src="assets/headshot.jpg"  /></a>
     <div class="top-nav-wrap">
       <a href="/" class="logo whitespace-nowrap">
         {
@@ -57,7 +58,7 @@ const { activeNav } = Astro.props;
         <ul id="menu-items" class="display-none sm:flex">
           <li>
             <a href="https://blog.mattpalmer.io" class={activeNav === "posts" ? "active" : ""}>
-              Blog
+              Newsletter
             </a>
           </li>
           <!-- <li>
