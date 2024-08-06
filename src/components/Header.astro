@@ -56,8 +56,20 @@ const { activeNav } = Astro.props;
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
-            <a href="https://blog.mattpalmer.io" class={activeNav === "posts" ? "active" : ""}>
+            <a
+              href="https://blog.mattpalmer.io"
+              class={activeNav === "posts" ? "active" : ""}
+            >
               Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://guestbook.mattpalmer.io"
+              class={activeNav === "posts" ? "active" : ""}
+              target="_blank"
+            >
+              Guestbook
             </a>
           </li>
           <!-- <li>
@@ -70,7 +82,7 @@ const { activeNav } = Astro.props;
               About
             </a>
           </li> -->
-          <li>
+          <!-- <li>
             <LinkButton
               href="/search"
               className={`focus-outline p-3 sm:p-1 ${
@@ -87,7 +99,7 @@ const { activeNav } = Astro.props;
                 ></path>
               </svg>
             </LinkButton>
-          </li>
+          </li> -->
           <li>
             {
               SITE.lightAndDarkMode && (
